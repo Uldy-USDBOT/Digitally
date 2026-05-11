@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://digitally.ly/</loc>
-      <lastmod>2026-05-11</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
+  <url>
+    <loc>https://digitally.ly/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>1.00</priority>
+  </url>
 
-   <url>
-      <loc>https://digitally.ly/articles.html</loc>
-      <lastmod>2026-05-11</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://digitally.ly/articles/articles.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://digitally.ly/articles/digital-trends-libya.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://digitally.ly/articles/cybersecurity-libya.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://digitally.ly/articles/ai-north-africa.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://digitally.ly/articles/web-seo-benefits.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.70</priority>
+  </url>
 </urlset>
