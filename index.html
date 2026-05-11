@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Digitally.ly | خبراء التحول الرقمي والحلول التقنية المبتكرة</title>
-    <meta name="description" content="منصة Digitally.ly هي وجهتكم الأولى لخدمات التحول الرقمي، تطوير البرمجيات، والاستشارات التقنية. نحن نساعد الشركات في ليبيا والعالم على النمو الرقمي المستدام.">
+    <meta name="description" content="منصة Digitally.ly هي وجهتكم الأولى لخدمات التحول الرقمي، تطوير البرمجيات، والاستشارات التقنية في ليبيا.">
     <meta name="keywords" content="التحول الرقمي، Digitally، حلول تقنية، تطوير مواقع، استشارات برمجية، ليبيا، تقنية المعلومات، Digitally.ly">
     
     <style>
         :root {
             --bg-white: #ffffff;
-            --bg-soft-blue: #f1f8ff; /* أزرق خافت جداً خلفي */
-            --primary-blue: #0066cc; /* أزرق أساسي للنصوص الهامة */
-            --faint-blue: #a3c4f3;   /* أزرق خافت للتأثيرات والحواف */
+            --bg-soft-blue: #f1f8ff;
+            --primary-blue: #0066cc;
+            --faint-blue: #a3c4f3;
             --text-dark: #333333;
             --text-light: #777777;
             --shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -21,35 +21,78 @@
         }
 
         body {
-            font-family: 'Poppins', 'Noto Sans AR', 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             line-height: 1.8;
             color: var(--text-dark);
             background-color: var(--bg-soft-blue);
         }
 
-        /* تنسيق الهيدر المبهر */
+        /* شريط التنقل */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 800;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        /* الهيدر */
         header {
             background-color: var(--bg-white);
             color: var(--primary-blue);
-            padding: 120px 20px;
+            padding: 100px 20px;
             text-align: center;
             border-bottom: 2px solid var(--bg-soft-blue);
         }
 
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
-            letter-spacing: -2px;
             font-weight: 800;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--text-light);
             max-width: 750px;
             margin: 0 auto 40px;
-            opacity: 0.9;
         }
 
         .container {
@@ -58,20 +101,11 @@
             padding: 60px 20px;
         }
 
-        .section-title {
-            text-align: center;
-            color: var(--primary-blue);
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            font-weight: 700;
-        }
-
-        /* تنسيق بطاقات التواصل */
+        /* بطاقات التواصل */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
 
         .contact-card {
@@ -80,47 +114,27 @@
             border-radius: 20px;
             text-align: center;
             box-shadow: var(--shadow);
-            border: 2px solid transparent;
             transition: var(--transition);
+            border: 1px solid #eee;
         }
 
         .contact-card:hover {
             transform: translateY(-10px);
-            border-color: var(--faint-blue);
             box-shadow: 0 15px 40px rgba(163, 196, 243, 0.2);
         }
 
-        .contact-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-card p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        /* زر واتساب عصري بالأزرق */
         .whatsapp-btn {
             background-color: var(--primary-blue);
             color: white;
-            padding: 14px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
-            transition: var(--transition);
+            margin-top: 10px;
         }
 
-        .whatsapp-btn:hover {
-            background-color: #0055aa;
-            transform: scale(1.05);
-        }
-
-        /* قسم الخصوصية */
+        /* سياسة الخصوصية */
         .privacy-box {
             background: var(--bg-white);
             padding: 30px;
@@ -128,20 +142,12 @@
             font-size: 0.95rem;
             color: var(--text-light);
             margin-top: 60px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             border: 1px solid #f1f1f1;
         }
 
-        .privacy-box h4 {
-            color: var(--primary-blue);
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        /* الفوتر العذب */
+        /* الفوتر */
         footer {
             background-color: var(--bg-white);
-            color: var(--text-light);
             text-align: center;
             padding: 50px 20px;
             margin-top: 60px;
@@ -149,54 +155,57 @@
         }
 
         .ownership-tag {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--primary-blue);
             border: 2px solid var(--faint-blue);
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 50px;
             display: inline-block;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .ownership-tag:hover {
-            background-color: var(--bg-soft-blue);
-            border-color: var(--primary-blue);
+            margin-bottom: 20px;
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .section-title { font-size: 1.8rem; }
+            .hero-title { font-size: 2.2rem; }
+            .nav-container { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Digitally.ly</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="articles.html">المقالات التقنية</a></li>
+                <li><a href="https://wa.me/218918883918">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <h1 class="hero-title">Digitally.ly</h1>
-        <p class="hero-subtitle">نقود التحول الرقمي ونصنع مستقبل الحلول التقنية باحترافية تامة. نحن شريككم الاستراتيجي للنمو في الفضاء الرقمي.</p>
+        <p class="hero-subtitle">نبتكر الحلول الرقمية ونصنع مستقبل التقنية باحترافية. شريككم الأول للتحول الرقمي المتكامل.</p>
     </header>
 
     <div class="container">
-        <h2 class="section-title">الحلول الرقمية المتكاملة</h2>
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>اتصال واتساب فوري</h3>
-                <p>نحن هنا للإجابة على استفساراتكم التقنية بخصوص التحول الرقمي على مدار الساعة.</p>
-                <a href="https://wa.me/218918883918" class="whatsapp-btn">تحدث معنا: 218918883918+</a>
+                <h3>تواصل فوري عبر واتساب</h3>
+                <p>للاستفسارات والخدمات التقنية السريعة:</p>
+                <a href="https://wa.me/218918883918" class="whatsapp-btn">218918883918+</a>
             </div>
             <div class="contact-card">
-                <h3>المراسلة الإلكترونية</h3>
-                <p>للمراسلات الرسمية، طلب عروض الأسعار، والاستشارات البرمجية العميقة:</p>
+                <h3>البريد الإلكتروني</h3>
+                <p>للمراسلات الرسمية وطلبات المشاريع:</p>
                 <p><strong style="color: var(--primary-blue);">offcetech@gmail.com</strong></p>
             </div>
         </div>
 
         <div class="privacy-box">
-            <h4>سياسة الخصوصية وأمن البيانات</h4>
-            <p>في Digitally.ly، نحن نلتزم بحماية خصوصية بيانات عملائنا. المعلومات التي يتم جمعها عبر وسائل التواصل (واتساب أو البريد الإلكتروني) تُستخدم فقط لغرض تقديم الخدمة والتواصل المهني، ولا يتم مشاركتها مع أي أطراف ثالثة لضمان أقصى درجات الأمان الرقمي.</p>
+            <h4 style="color: var(--primary-blue); margin-top: 0;">سياسة الخصوصية</h4>
+            <p>نحن في Digitally.ly نولي أهمية قصوى لخصوصية بياناتكم. المعلومات التي يتم تبادلها عبر قنوات التواصل تُستخدم حصراً لتقديم الدعم والخدمات المطلوبة ولا يتم مشاركتها مع أي جهة خارجية.</p>
         </div>
     </div>
 
@@ -204,7 +213,7 @@
         <div class="ownership-tag">
             امتلك الدومين | Own the Domain
         </div>
-        <p>&copy; 2026 Digitally.ly. جميع الحقوق محفوظة لخبراء التحول الرقمي.</p>
+        <p style="color: var(--text-light);">&copy; 2026 Digitally.ly. جميع الحقوق محفوظة لخبراء التحول الرقمي.</p>
     </footer>
 
 </body>
