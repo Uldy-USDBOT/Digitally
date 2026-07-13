@@ -3,52 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitally.ly | التحول الرقمي وحلول الأعمال في ليبيا</title>
-    <script src="https://js.puter.com/v2/"></script>
+    <title>Digitally.ly | محرك بحث عام داخل الموقع</title>
     <style>
-        :root { --bg-soft-blue: #f1f8ff; --primary-blue: #0066cc; --text-dark: #333; --white: #ffffff; }
-        *{box-sizing:border-box} body{font-family:'Segoe UI',Tahoma,sans-serif;margin:0;background:var(--bg-soft-blue);color:var(--text-dark);line-height:1.8}
-        nav{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05);padding:15px 0}
-        .nav-container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
-        .logo{font-weight:800;color:var(--primary-blue);font-size:1.5rem;text-decoration:none}
-        .nav-links{list-style:none;display:flex;gap:30px;margin:0;padding:0}
-        .nav-links a{text-decoration:none;color:#777;font-weight:700}
-        .hero{max-width:1100px;margin:0 auto;padding:80px 20px 40px;text-align:center}
-        .hero h1{font-size:2.6rem} .hero h1 span{color:var(--primary-blue)}
-        .btn-primary{background:var(--primary-blue);color:#fff;padding:13px 30px;border-radius:30px;border:0;cursor:pointer;font-weight:700}
-        .ai-engine-wrap{width:min(720px,100%);margin:28px auto 0;background:#fff;border-radius:20px;padding:8px;box-shadow:0 12px 40px rgba(0,102,204,.12);border:1px solid #e3efff}
-        .ai-search-box{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:6px}
-        .ai-search-box input{flex:1 1 220px;min-width:0;border:0;outline:0;font-size:17px;padding:13px 10px;background:transparent}
-        .ai-badge{background:#eef6ff;color:var(--primary-blue);font-size:.72rem;font-weight:800;padding:6px 10px;border-radius:999px}
-        .ai-chip{background:var(--bg-soft-blue);border:1px solid #dbe9ff;padding:6px 12px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap}
-        .ai-answer{width:min(720px,100%);margin:18px auto 0;display:none;background:#fff;border-radius:16px;padding:22px 20px;box-shadow:0 8px 30px rgba(0,0,0,.06);border:1px solid #e6efff;white-space:pre-wrap;text-align:right}
-        .ai-answer.show{display:block}
-        @media(max-width:640px){.ai-engine-wrap{width:calc(100% - 24px)}.ai-badge{width:100%;justify-content:center;order:1}.ai-search-box input{order:2;flex:1 1 100%;text-align:center}#searchBtn{order:3;width:100%}}
+        :root { --bg:#f1f8ff; --blue:#0066cc; --dark:#222; --w:#fff; }
+        *{box-sizing:border-box} body{font-family:'Segoe UI',Tahoma,sans-serif;margin:0;background:var(--bg);color:var(--dark);line-height:1.8}
+        nav{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:14px 0}
+       .nav-c{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 18px}
+       .logo{font-weight:900;color:var(--blue);font-size:1.45rem;text-decoration:none}
+       .nav-l{list-style:none;display:flex;gap:26px;margin:0;padding:0}.nav-l a{text-decoration:none;color:#6b7d9a;font-weight:700}
+       .nav-t{display:none;background:none;border:0;font-size:1.6rem;color:var(--blue)} @media(max-width:768px){.nav-t{display:block}.nav-l{position:absolute;top:100%;right:0;left:0;background:#fff;flex-direction:column;display:none;padding:18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}.nav-l.open{display:flex}}
+       .hero{max-width:1100px;margin:0 auto;padding:72px 18px 30px;text-align:center}
+       .tag{display:inline-block;background:#fff;color:var(--blue);padding:6px 16px;border-radius:20px;font-weight:800;font-size:.82rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:14px}
+       .hero h1{font-size:2.5rem;margin:0 0 12px;line-height:1.4}.hero h1 span{color:var(--blue)}
+       .hero p{color:#667a98;max-width:640px;margin:0 auto 26px}
+       .btn{background:var(--blue);color:#fff;padding:12px 28px;border-radius:999px;border:0;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(0,102,204,.22)}
+       .wrap{width:min(740px,100%);margin:26px auto 0;background:#fff;border-radius:20px;padding:8px;border:1px solid #dde9ff;box-shadow:0 14px 40px rgba(0,102,204,.12)}
+       .box{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:6px}
+       .box input{flex:1 1 220px;min-width:0;border:0;outline:0;font-size:17px;padding:13px 10px;background:transparent}
+       .badge{background:#eef6ff;color:var(--blue);font-size:.7rem;font-weight:900;padding:6px 10px;border-radius:999px;white-space:nowrap}
+       .chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;padding:6px 10px 12px}
+       .chip{background:#f1f8ff;border:1px solid #dbe9ff;color:#3d5d8a;padding:6px 12px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap;transition:.2s}
+       .chip:hover{background:var(--blue);color:#fff}
+       .ans{width:min(740px,100%);margin:16px auto 0;text-align:right;display:none;background:#fff;border-radius:16px;padding:20px 18px;border:1px solid #dfeaff;box-shadow:0 8px 24px rgba(0,0,0,.05);line-height:1.9;white-space:pre-wrap;word-break:break-word}
+       .ans.show{display:block;animation:up.28s ease} @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+       .load{display:flex;gap:8px;align-items:center;color:#6d86ad}.d{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:b 1.2s infinite}.d:nth-child(2){animation-delay:.15s}.d:nth-child(3){animation-delay:.3s}@keyframes b{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+        @media(max-width:640px){.wrap{width:calc(100% - 22px);border-radius:16px}.badge{width:100%;justify-content:center;order:1}.box input{order:2;flex:1 1 100%;text-align:center}#go{order:3;width:100%;padding:13px}.chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}.chips::-webkit-scrollbar{display:none}.hero h1{font-size:1.95rem}.hero{padding:38px 14px 18px}}
+       .sec{max-width:1100px;margin:0 auto;padding:44px 18px}.sec h2{color:var(--blue);text-align:center;margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}.card{background:#fff;border-radius:14px;padding:20px;border-right:4px solid var(--blue);box-shadow:0 4px 12px rgba(0,0,0,.03)} footer{text-align:center;padding:28px;color:#7e90ad;border-top:1px solid #e2eaff;margin-top:20px}
     </style>
 </head>
 <body>
-<!-- ... نفس كود موقعك كامل مع محرك البحث ... -->
+<nav><div class="nav-c"><a class="logo" href="#">Digitally</a><button class="nav-t" id="t">☰</button><ul class="nav-l" id="m"><li><a href="#">الرئيسية</a></li><li><a href="#s">خدماتنا</a></li><li><a href="#c">تواصل</a></li></ul></div></nav>
+
 <section class="hero">
-    <h1>موقعك أصبح <span>محرك بحث عام</span> مثل جوجل</h1>
-    <div class="ai-engine-wrap">
-        <div class="ai-search-box">
-            <span class="ai-badge">✦ محرك بحث عام</span>
-            <input id="searchInput" placeholder="اسأل أي شيء..." />
-            <button class="btn-primary" id="searchBtn" style="padding:11px 20px;border-radius:999px">بحث</button>
+    <span class="tag">موقعك أصبح محرك بحث عام</span>
+    <h1>ابحث عن أي شيء وستظهر الإجابة <span>داخل موقعك</span></h1>
+    <p>بدون تسجيل دخول، بدون فتح تبويب جديد، بدون التوجه لـ puter أو أي موقع آخر.</p>
+
+    <div class="wrap">
+        <div class="box">
+            <span class="badge">✦ بحث عام ذكي</span>
+            <input id="q" type="text" placeholder="مثال: كيف أبدأ متجر إلكتروني في ليبيا؟" />
+            <button class="btn" id="go" style="border-radius:999px;padding:11px 20px">بحث</button>
         </div>
-    <div id="answerBox" class="ai-answer"></div>
+        <div class="chips">
+            <span class="chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا؟">متجر إلكتروني</span>
+            <span class="chip" data-q="شرح SEO للمبتدئين بطريقة مبسطة">شرح SEO</span>
+            <span class="chip" data-q="تكلفة تصميم موقع احترافي 2026">تكلفة موقع</span>
+            <span class="chip" data-q="خطة تسويق رقمي لشركة ناشئة">خطة تسويق</span>
+        </div>
+    </div>
+    <div id="a" class="ans"></div>
 </section>
+
+<section class="sec" id="s"><h2>خدماتنا</h2><div class="grid"><div class="card"><b>💻 تصميم مواقع</b><p>مواقع سريعة تحول الزوار لعملاء.</p></div><div class="card"><b>🛒 متاجر إلكترونية</b><p>مع دفع وشحن يناسب ليبيا.</p></div><div class="card"><b>📈 تسويق رقمي</b><p>وصول دقيق لجمهورك.</p></div><div class="card"><b>🔍 SEO</b><p>تصدر نتائج جوجل.</p></div></div></section>
+<footer>© 2026 Digitally.ly - جميع الحقوق محفوظة</footer>
+
 <script>
-const SYSTEM_PROMPT=`أنت محرك بحث عام داخل موقع Digitally.ly مثل Google و Meta AI. تجيب على أي سؤال عام من معرفتك الخارجية.`;
-const input=document.getElementById('searchInput'),btn=document.getElementById('searchBtn'),box=document.getElementById('answerBox');
-async function doSearch(q){
- if(!q.trim())return; box.classList.add('show'); box.innerHTML='أبحث لك...';
- const res=await puter.ai.chat([{role:"system",content:SYSTEM_PROMPT},{role:"user",content:q}],{model:"gpt-4o-mini",stream:true});
- let full=""; box.textContent="";
- for await(const p of res){ if(p?.text){ full+=p.text; box.textContent=full; } }
- box.innerHTML=full.replace(/\n/g,"<br>");
+const t=document.getElementById('t'),m=document.getElementById('m');t.onclick=()=>m.classList.toggle('open');
+const SYSTEM="أنت محرك بحث عام داخل موقع Digitally.ly مثل جوجل و Meta AI. خبير في التحول الرقمي في ليبيا (تصميم مواقع، متاجر، تسويق، SEO) لكن تجيب على أي سؤال عام. بالعربية المبسطة، ابدأ بخلاصة سريعة من سطرين ثم شرح منظم بنقاط. لو السؤال عن خدمات رقمية وجه للتواصل tech.co.ly@gmail.com بلطف. لا تذكر أنك نموذج ذكاء.";
+const q=document.getElementById('q'),go=document.getElementById('go'),a=document.getElementById('a');
+async function searchInside(query){
+ if(!query.trim())return;
+ a.classList.add('show');
+ a.innerHTML=`<div class="load"><span class="d"></span><span class="d"></span><span class="d"></span> أجلب لك الإجابة من الويب...</div>`;
+ a.scrollIntoView({behavior:'smooth',block:'center'});
+ try{
+   const res = await fetch('https://text.pollinations.ai/openai', {
+     method:'POST',
+     headers:{'Content-Type':'application/json'},
+     body: JSON.stringify({
+       model:'openai',
+       messages:[{role:'system',content:SYSTEM},{role:'user',content:query}],
+       stream:false
+     })
+   });
+   const data = await res.json();
+   let full = data.choices?.[0]?.message?.content;
+   const safe = full.replace(/</g,'&lt;');
+   a.innerHTML = safe.replace(/\n/g,'<br>') + `<br><br><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="copyBtn" style="background:#eef6ff;border:1px solid #cfe0ff;color:#0066cc;padding:7px 14px;border-radius:999px;cursor:pointer">📋 نسخ</button><button onclick="this.closest('.ans').classList.remove('show')" style="background:#fff;border:1px solid #ddd;padding:7px 14px;border-radius:999px;cursor:pointer">إغلاق</button></div>`;
+   document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(full);
+ }catch(err){
+   a.innerHTML = `تعذر جلب الإجابة الآن<br><small>${err.message}</small>`;
+ }
 }
-btn.onclick=()=>doSearch(input.value); input.onkeydown=e=>{if(e.key==='Enter')doSearch(input.value)};
+go.onclick=()=>searchInside(q.value);
+q.onkeydown=e=>{if(e.key==='Enter')searchInside(q.value)};
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{q.value=c.dataset.q;searchInside(c.dataset.q)});
 </script>
 </body>
 </html>
