@@ -140,100 +140,143 @@
 
         /* ===== Search ===== */
         .search-toggle {
-            background: var(--bg-soft-blue);
-            border: none;
+            background: linear-gradient(135deg, var(--bg-soft-blue), #e2f0ff);
+            border: 1px solid #d9ecff;
             color: var(--primary-blue);
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 0.2s;
+            transition: 0.25s;
         }
-        .search-toggle:hover { background: #dfeeff; }
+        .search-toggle:hover { background: var(--primary-blue); color: var(--white); transform: scale(1.06); box-shadow: 0 6px 16px rgba(0,102,204,0.25); }
 
         .search-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(20, 30, 45, 0.55);
+            background: rgba(15, 25, 40, 0.6);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
             z-index: 2000;
             display: none;
             align-items: flex-start;
             justify-content: center;
-            padding: 80px 20px;
+            padding: 90px 20px;
         }
-        .search-overlay.open { display: flex; }
+        .search-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-16px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
         .search-box {
             background: var(--white);
             width: 100%;
             max-width: 620px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-            padding: 20px;
-            max-height: 80vh;
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0,20,60,0.3);
+            padding: 22px;
+            max-height: 78vh;
             display: flex;
             flex-direction: column;
+            animation: slideDown 0.25s ease;
         }
-        .search-input-row { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg-soft-blue); padding-bottom: 15px; }
-        .search-input-row span.icon { color: var(--primary-blue); font-size: 1.2rem; }
+        .search-input-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-soft-blue);
+            border: 2px solid transparent;
+            border-radius: 14px;
+            padding: 12px 16px;
+            transition: 0.2s;
+        }
+        .search-input-row:focus-within { border-color: var(--primary-blue); background: var(--white); box-shadow: 0 4px 14px rgba(0,102,204,0.12); }
+        .search-input-row span.icon { color: var(--primary-blue); font-size: 1.2rem; flex-shrink: 0; }
         #siteSearchInput {
             flex: 1;
             border: none;
             outline: none;
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             font-family: inherit;
             background: transparent;
             color: var(--text-dark);
         }
-        .search-close {
-            background: none;
-            border: none;
-            font-size: 1.3rem;
+        #siteSearchInput::placeholder { color: #9aa5b1; }
+        .search-kbd {
+            font-size: 0.72rem;
             color: #999;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 2px 7px;
+            flex-shrink: 0;
+        }
+        .search-close {
+            background: #eef2f6;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1rem;
+            color: #888;
             cursor: pointer;
-            line-height: 1;
-        }
-        .search-close:hover { color: var(--primary-blue); }
-
-        .search-results { overflow-y: auto; margin-top: 15px; }
-        .search-hint { color: #999; font-size: 0.9rem; padding: 10px 5px; }
-
-        .search-result-item {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            padding: 14px 12px;
-            border-radius: 10px;
-            transition: 0.2s;
-        }
-        .search-result-item:hover { background: var(--bg-soft-blue); }
-        .search-result-tag { font-size: 0.72rem; color: var(--primary-blue); font-weight: bold; }
-        .search-result-title { font-size: 1rem; font-weight: bold; margin-top: 3px; }
-        .search-result-desc { font-size: 0.85rem; color: #777; margin-top: 4px; }
-
-        .search-external {
+            flex-shrink: 0;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            margin-top: 12px;
-            padding: 14px;
-            background: var(--bg-soft-blue);
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 0.92rem;
+            justify-content: center;
+            transition: 0.2s;
         }
-        .search-external:hover { background: #dfeeff; }
-        .search-external small { display: block; color: #888; font-weight: normal; margin-top: 3px; }
+        .search-close:hover { background: var(--primary-blue); color: var(--white); }
+
+        .search-results { overflow-y: auto; margin-top: 16px; padding-left: 4px; }
+        .search-results::-webkit-scrollbar { width: 6px; }
+        .search-results::-webkit-scrollbar-thumb { background: #dbe6f2; border-radius: 10px; }
+
+        .search-hint, .search-empty {
+            color: #9aa5b1;
+            font-size: 0.92rem;
+            padding: 30px 10px;
+            text-align: center;
+        }
+        .search-empty .icon-big { font-size: 1.8rem; display: block; margin-bottom: 10px; }
+
+        .search-count { font-size: 0.78rem; color: #9aa5b1; padding: 2px 8px 10px; font-weight: bold; }
+
+        .search-result-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+            padding: 13px 10px;
+            border-radius: 12px;
+            transition: 0.15s;
+        }
+        .search-result-item:hover { background: var(--bg-soft-blue); }
+        .search-result-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--bg-soft-blue);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+        }
+        .search-result-item:hover .search-result-icon { background: var(--primary-blue); color: var(--white); }
+        .search-result-tag { font-size: 0.7rem; color: var(--primary-blue); font-weight: bold; }
+        .search-result-title { font-size: 0.98rem; font-weight: bold; margin-top: 2px; color: var(--text-dark); }
+        .search-result-desc { font-size: 0.83rem; color: #888; margin-top: 3px; line-height: 1.5; }
+        .search-result-title mark, .search-result-desc mark { background: #fff1a8; color: inherit; border-radius: 3px; padding: 0 2px; }
 
         @media (max-width: 600px) {
             .search-overlay { padding: 20px 12px; }
+            .search-box { padding: 16px; border-radius: 16px; }
         }
     </style>
 </head>
@@ -276,11 +319,12 @@
     <div class="search-box">
         <div class="search-input-row">
             <span class="icon">🔍</span>
-            <input type="text" id="siteSearchInput" placeholder="ابحث في الموقع... (مثال: تسويق، متجر، SEO)" autocomplete="off">
+            <input type="text" id="siteSearchInput" placeholder="ابحث في الخدمات والمقالات... (مثال: تسويق، متجر، SEO)" autocomplete="off">
+            <span class="search-kbd">Esc</span>
             <button class="search-close" id="searchClose" aria-label="إغلاق">✕</button>
         </div>
         <div class="search-results" id="searchResults">
-            <p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات...</p>
+            <p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات داخل الموقع...</p>
         </div>
     </div>
 </div>
@@ -380,26 +424,22 @@
     });
 
     /* ======================================================
-       محرك البحث - بدون أي مفتاح API أو اشتراك
-       1) بحث فوري داخل فهرس محلي (خدمات + مقالات الموقع)
-       2) رابط احتياطي يفتح نتائج حقيقية من DuckDuckGo
-          مقيدة بـ site:digitally.ly (لا يحتاج مفتاح ولا اشتراك)
+       محرك البحث الداخلي - بحث فوري 100% داخل الموقع
+       بدون أي اتصال خارجي أو مفتاح API أو اشتراك
        ====================================================== */
-    const SITE_DOMAIN = 'digitally.ly';
-
     const searchIndex = [
-        { tag: 'الرئيسية', title: 'تصميم المواقع الإلكترونية', desc: 'مواقع احترافية سريعة ومتجاوبة تحول الزوار إلى عملاء.', url: 'index.html#services', keywords: 'تصميم موقع ويب برمجة واجهة تطوير website design' },
-        { tag: 'الرئيسية', title: 'المتاجر الإلكترونية', desc: 'إطلاق وإدارة متاجر إلكترونية متكاملة مع الدفع والشحن.', url: 'index.html#services', keywords: 'متجر الكتروني تجارة ecommerce shopify سلة زد' },
-        { tag: 'الرئيسية', title: 'التسويق الرقمي', desc: 'استراتيجيات إعلانية على السوشيال ميديا تصل لجمهورك.', url: 'index.html#services', keywords: 'تسويق رقمي اعلانات سوشيال ميديا فيسبوك انستقرام marketing' },
-        { tag: 'الرئيسية', title: 'تحسين محركات البحث SEO', desc: 'رفع ترتيب موقعك في نتائج جوجل لزيادة الزيارات العضوية.', url: 'index.html#services', keywords: 'سيو seo تحسين محركات بحث جوجل ترتيب' },
-        { tag: 'مقال', title: 'مستقبل التحول الرقمي في ليبيا', desc: 'نظرة على مستقبل التقنية والتحول الرقمي في السوق الليبي.', url: 'articles/future-of-tech-libya.html', keywords: 'مستقبل تقنية تحول رقمي ليبيا تكنولوجيا' },
-        { tag: 'مقال', title: 'دليل التسويق الرقمي الشامل', desc: 'دليل شامل للتسويق الرقمي لأصحاب الأعمال في ليبيا.', url: 'articles/digital-marketing-guide-libya.html', keywords: 'تسويق رقمي دليل اعلانات سوشيال ميديا' },
-        { tag: 'مقال', title: 'بناء متجر إلكتروني ناجح', desc: 'خطوات عملية لبناء متجر إلكتروني ناجح خطوة بخطوة.', url: 'articles/ecommerce-store-libya.html', keywords: 'متجر الكتروني تجارة الكترونية بناء متجر' },
-        { tag: 'مقال', title: 'أسرار تصميم المواقع الاحترافية', desc: 'أسرار وتقنيات تصميم المواقع الاحترافية الحديثة.', url: 'articles/website-design-secrets.html', keywords: 'تصميم مواقع واجهة تجربة مستخدم ux ui' },
-        { tag: 'مقال', title: 'تحسين محركات البحث SEO', desc: 'كيف تتصدر نتائج جوجل في السوق الليبي.', url: 'articles/seo-guide-libya.html', keywords: 'سيو seo جوجل ترتيب ظهور كلمات مفتاحية' },
-        { tag: 'مقال', title: 'الذكاء الاصطناعي في خدمة الأعمال', desc: 'كيف تستفيد الشركات الليبية من الذكاء الاصطناعي.', url: 'articles/ai-for-business-libya.html', keywords: 'ذكاء اصطناعي ai اتمتة تقنية' },
-        { tag: 'مقال', title: 'الحوسبة السحابية Cloud Computing', desc: 'فوائد الحوسبة السحابية للشركات الصغيرة والمتوسطة.', url: 'articles/cloud-computing-benefits.html', keywords: 'حوسبة سحابية cloud استضافة سيرفر' },
-        { tag: 'مقال', title: 'إدارة وسائل التواصل الاجتماعي', desc: 'أفضل ممارسات إدارة حسابات التواصل الاجتماعي للأعمال.', url: 'articles/social-media-management.html', keywords: 'سوشيال ميديا تواصل اجتماعي فيسبوك انستقرام ادارة' }
+        { tag: 'الرئيسية', icon: '💻', title: 'تصميم المواقع الإلكترونية', desc: 'مواقع احترافية سريعة ومتجاوبة تحول الزوار إلى عملاء.', url: 'index.html#services', keywords: 'تصميم موقع ويب برمجة واجهة تطوير website design' },
+        { tag: 'الرئيسية', icon: '🛒', title: 'المتاجر الإلكترونية', desc: 'إطلاق وإدارة متاجر إلكترونية متكاملة مع الدفع والشحن.', url: 'index.html#services', keywords: 'متجر الكتروني تجارة ecommerce shopify سلة زد' },
+        { tag: 'الرئيسية', icon: '📈', title: 'التسويق الرقمي', desc: 'استراتيجيات إعلانية على السوشيال ميديا تصل لجمهورك.', url: 'index.html#services', keywords: 'تسويق رقمي اعلانات سوشيال ميديا فيسبوك انستقرام marketing' },
+        { tag: 'الرئيسية', icon: '🔍', title: 'تحسين محركات البحث SEO', desc: 'رفع ترتيب موقعك في نتائج جوجل لزيادة الزيارات العضوية.', url: 'index.html#services', keywords: 'سيو seo تحسين محركات بحث جوجل ترتيب' },
+        { tag: 'مقال', icon: '📰', title: 'مستقبل التحول الرقمي في ليبيا', desc: 'نظرة على مستقبل التقنية والتحول الرقمي في السوق الليبي.', url: 'articles/future-of-tech-libya.html', keywords: 'مستقبل تقنية تحول رقمي ليبيا تكنولوجيا' },
+        { tag: 'مقال', icon: '📰', title: 'دليل التسويق الرقمي الشامل', desc: 'دليل شامل للتسويق الرقمي لأصحاب الأعمال في ليبيا.', url: 'articles/digital-marketing-guide-libya.html', keywords: 'تسويق رقمي دليل اعلانات سوشيال ميديا' },
+        { tag: 'مقال', icon: '📰', title: 'بناء متجر إلكتروني ناجح', desc: 'خطوات عملية لبناء متجر إلكتروني ناجح خطوة بخطوة.', url: 'articles/ecommerce-store-libya.html', keywords: 'متجر الكتروني تجارة الكترونية بناء متجر' },
+        { tag: 'مقال', icon: '📰', title: 'أسرار تصميم المواقع الاحترافية', desc: 'أسرار وتقنيات تصميم المواقع الاحترافية الحديثة.', url: 'articles/website-design-secrets.html', keywords: 'تصميم مواقع واجهة تجربة مستخدم ux ui' },
+        { tag: 'مقال', icon: '📰', title: 'تحسين محركات البحث SEO', desc: 'كيف تتصدر نتائج جوجل في السوق الليبي.', url: 'articles/seo-guide-libya.html', keywords: 'سيو seo جوجل ترتيب ظهور كلمات مفتاحية' },
+        { tag: 'مقال', icon: '📰', title: 'الذكاء الاصطناعي في خدمة الأعمال', desc: 'كيف تستفيد الشركات الليبية من الذكاء الاصطناعي.', url: 'articles/ai-for-business-libya.html', keywords: 'ذكاء اصطناعي ai اتمتة تقنية' },
+        { tag: 'مقال', icon: '📰', title: 'الحوسبة السحابية Cloud Computing', desc: 'فوائد الحوسبة السحابية للشركات الصغيرة والمتوسطة.', url: 'articles/cloud-computing-benefits.html', keywords: 'حوسبة سحابية cloud استضافة سيرفر' },
+        { tag: 'مقال', icon: '📰', title: 'إدارة وسائل التواصل الاجتماعي', desc: 'أفضل ممارسات إدارة حسابات التواصل الاجتماعي للأعمال.', url: 'articles/social-media-management.html', keywords: 'سوشيال ميديا تواصل اجتماعي فيسبوك انستقرام ادارة' }
     ];
 
     const searchOverlay = document.getElementById('searchOverlay');
@@ -435,19 +475,18 @@
         return str.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
     }
 
-    function externalSearchLink(query) {
-        const url = 'https://duckduckgo.com/html/?q=' + encodeURIComponent('site:' + SITE_DOMAIN + ' ' + query);
-        return `<a class="search-external" href="${url}" target="_blank" rel="noopener">
-                    🌐 ابحث عن "${escapeHtml(query)}" في كل الموقع عبر الويب
-                    <small>يفتح نتائج بحث خارجية فورية بدون أي اشتراك أو مفتاح API</small>
-                 </a>`;
+    function highlight(text, query) {
+        const escaped = escapeHtml(text);
+        if (!query) return escaped;
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return escaped.replace(new RegExp('(' + safeQuery + ')', 'gi'), '<mark>$1</mark>');
     }
 
     function renderResults(query) {
         const q = query.trim().toLowerCase();
 
         if (!q) {
-            searchResults.innerHTML = '<p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات...</p>';
+            searchResults.innerHTML = '<p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات داخل الموقع...</p>';
             return;
         }
 
@@ -456,21 +495,28 @@
             return haystack.includes(q);
         });
 
-        let html = '';
-        if (matches.length > 0) {
-            html += matches.map(item => `
-                <a class="search-result-item" href="${item.url}">
-                    <div class="search-result-tag">${escapeHtml(item.tag)}</div>
-                    <div class="search-result-title">${escapeHtml(item.title)}</div>
-                    <div class="search-result-desc">${escapeHtml(item.desc)}</div>
-                </a>
-            `).join('');
-        } else {
-            html += '<p class="search-hint">لا توجد نتائج مطابقة داخل فهرس الموقع.</p>';
+        if (matches.length === 0) {
+            searchResults.innerHTML = `
+                <div class="search-empty">
+                    <span class="icon-big">🔎</span>
+                    لا توجد نتائج مطابقة لـ "${escapeHtml(query)}"
+                </div>`;
+            return;
         }
 
-        html += externalSearchLink(query);
-        searchResults.innerHTML = html;
+        const countLabel = matches.length + (matches.length === 1 ? ' نتيجة' : ' نتائج');
+        const itemsHtml = matches.map(item => `
+            <a class="search-result-item" href="${item.url}">
+                <span class="search-result-icon">${item.icon}</span>
+                <span>
+                    <span class="search-result-tag">${escapeHtml(item.tag)}</span>
+                    <div class="search-result-title">${highlight(item.title, query)}</div>
+                    <div class="search-result-desc">${highlight(item.desc, query)}</div>
+                </span>
+            </a>
+        `).join('');
+
+        searchResults.innerHTML = `<div class="search-count">${countLabel}</div>${itemsHtml}`;
     }
 
     let searchDebounce;
@@ -481,11 +527,9 @@
     });
 
     searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && searchInput.value.trim()) {
-            window.open(
-                'https://duckduckgo.com/html/?q=' + encodeURIComponent('site:' + SITE_DOMAIN + ' ' + searchInput.value.trim()),
-                '_blank'
-            );
+        if (e.key === 'Enter') {
+            const firstResult = searchResults.querySelector('.search-result-item');
+            if (firstResult) firstResult.click();
         }
     });
 </script>
