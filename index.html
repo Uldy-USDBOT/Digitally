@@ -137,6 +137,104 @@
 
         footer { text-align: center; padding: 40px; color: #777; border-top: 1px solid #ddd; }
         footer a { color: var(--primary-blue); text-decoration: none; }
+
+        /* ===== Search ===== */
+        .search-toggle {
+            background: var(--bg-soft-blue);
+            border: none;
+            color: var(--primary-blue);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .search-toggle:hover { background: #dfeeff; }
+
+        .search-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 30, 45, 0.55);
+            z-index: 2000;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 80px 20px;
+        }
+        .search-overlay.open { display: flex; }
+
+        .search-box {
+            background: var(--white);
+            width: 100%;
+            max-width: 620px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            padding: 20px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .search-input-row { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg-soft-blue); padding-bottom: 15px; }
+        .search-input-row span.icon { color: var(--primary-blue); font-size: 1.2rem; }
+        #siteSearchInput {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            font-family: inherit;
+            background: transparent;
+            color: var(--text-dark);
+        }
+        .search-close {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .search-close:hover { color: var(--primary-blue); }
+
+        .search-results { overflow-y: auto; margin-top: 15px; }
+        .search-hint { color: #999; font-size: 0.9rem; padding: 10px 5px; }
+
+        .search-result-item {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 14px 12px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        .search-result-item:hover { background: var(--bg-soft-blue); }
+        .search-result-tag { font-size: 0.72rem; color: var(--primary-blue); font-weight: bold; }
+        .search-result-title { font-size: 1rem; font-weight: bold; margin-top: 3px; }
+        .search-result-desc { font-size: 0.85rem; color: #777; margin-top: 4px; }
+
+        .search-external {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 14px;
+            background: var(--bg-soft-blue);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.92rem;
+        }
+        .search-external:hover { background: #dfeeff; }
+        .search-external small { display: block; color: #888; font-weight: normal; margin-top: 3px; }
+
+        @media (max-width: 600px) {
+            .search-overlay { padding: 20px 12px; }
+        }
     </style>
 </head>
 <body>
@@ -167,9 +265,25 @@
 
             <li><a href="#services">خدماتنا</a></li>
             <li><a href="#contact">تواصل معنا</a></li>
+            <li>
+                <button class="search-toggle" id="searchToggle" aria-label="بحث">🔍</button>
+            </li>
         </ul>
     </div>
 </nav>
+
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <div class="search-input-row">
+            <span class="icon">🔍</span>
+            <input type="text" id="siteSearchInput" placeholder="ابحث في الموقع... (مثال: تسويق، متجر، SEO)" autocomplete="off">
+            <button class="search-close" id="searchClose" aria-label="إغلاق">✕</button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات...</p>
+        </div>
+    </div>
+</div>
 
 <section class="hero">
     <span class="hero-tag">شريكك في التحول الرقمي</span>
@@ -262,6 +376,116 @@
         if (window.innerWidth <= 768) {
             e.preventDefault();
             dropdown.classList.toggle('open');
+        }
+    });
+
+    /* ======================================================
+       محرك البحث - بدون أي مفتاح API أو اشتراك
+       1) بحث فوري داخل فهرس محلي (خدمات + مقالات الموقع)
+       2) رابط احتياطي يفتح نتائج حقيقية من DuckDuckGo
+          مقيدة بـ site:digitally.ly (لا يحتاج مفتاح ولا اشتراك)
+       ====================================================== */
+    const SITE_DOMAIN = 'digitally.ly';
+
+    const searchIndex = [
+        { tag: 'الرئيسية', title: 'تصميم المواقع الإلكترونية', desc: 'مواقع احترافية سريعة ومتجاوبة تحول الزوار إلى عملاء.', url: 'index.html#services', keywords: 'تصميم موقع ويب برمجة واجهة تطوير website design' },
+        { tag: 'الرئيسية', title: 'المتاجر الإلكترونية', desc: 'إطلاق وإدارة متاجر إلكترونية متكاملة مع الدفع والشحن.', url: 'index.html#services', keywords: 'متجر الكتروني تجارة ecommerce shopify سلة زد' },
+        { tag: 'الرئيسية', title: 'التسويق الرقمي', desc: 'استراتيجيات إعلانية على السوشيال ميديا تصل لجمهورك.', url: 'index.html#services', keywords: 'تسويق رقمي اعلانات سوشيال ميديا فيسبوك انستقرام marketing' },
+        { tag: 'الرئيسية', title: 'تحسين محركات البحث SEO', desc: 'رفع ترتيب موقعك في نتائج جوجل لزيادة الزيارات العضوية.', url: 'index.html#services', keywords: 'سيو seo تحسين محركات بحث جوجل ترتيب' },
+        { tag: 'مقال', title: 'مستقبل التحول الرقمي في ليبيا', desc: 'نظرة على مستقبل التقنية والتحول الرقمي في السوق الليبي.', url: 'articles/future-of-tech-libya.html', keywords: 'مستقبل تقنية تحول رقمي ليبيا تكنولوجيا' },
+        { tag: 'مقال', title: 'دليل التسويق الرقمي الشامل', desc: 'دليل شامل للتسويق الرقمي لأصحاب الأعمال في ليبيا.', url: 'articles/digital-marketing-guide-libya.html', keywords: 'تسويق رقمي دليل اعلانات سوشيال ميديا' },
+        { tag: 'مقال', title: 'بناء متجر إلكتروني ناجح', desc: 'خطوات عملية لبناء متجر إلكتروني ناجح خطوة بخطوة.', url: 'articles/ecommerce-store-libya.html', keywords: 'متجر الكتروني تجارة الكترونية بناء متجر' },
+        { tag: 'مقال', title: 'أسرار تصميم المواقع الاحترافية', desc: 'أسرار وتقنيات تصميم المواقع الاحترافية الحديثة.', url: 'articles/website-design-secrets.html', keywords: 'تصميم مواقع واجهة تجربة مستخدم ux ui' },
+        { tag: 'مقال', title: 'تحسين محركات البحث SEO', desc: 'كيف تتصدر نتائج جوجل في السوق الليبي.', url: 'articles/seo-guide-libya.html', keywords: 'سيو seo جوجل ترتيب ظهور كلمات مفتاحية' },
+        { tag: 'مقال', title: 'الذكاء الاصطناعي في خدمة الأعمال', desc: 'كيف تستفيد الشركات الليبية من الذكاء الاصطناعي.', url: 'articles/ai-for-business-libya.html', keywords: 'ذكاء اصطناعي ai اتمتة تقنية' },
+        { tag: 'مقال', title: 'الحوسبة السحابية Cloud Computing', desc: 'فوائد الحوسبة السحابية للشركات الصغيرة والمتوسطة.', url: 'articles/cloud-computing-benefits.html', keywords: 'حوسبة سحابية cloud استضافة سيرفر' },
+        { tag: 'مقال', title: 'إدارة وسائل التواصل الاجتماعي', desc: 'أفضل ممارسات إدارة حسابات التواصل الاجتماعي للأعمال.', url: 'articles/social-media-management.html', keywords: 'سوشيال ميديا تواصل اجتماعي فيسبوك انستقرام ادارة' }
+    ];
+
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchToggle = document.getElementById('searchToggle');
+    const searchClose = document.getElementById('searchClose');
+    const searchInput = document.getElementById('siteSearchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    function openSearch() {
+        searchOverlay.classList.add('open');
+        setTimeout(() => searchInput.focus(), 50);
+    }
+    function closeSearch() {
+        searchOverlay.classList.remove('open');
+        searchInput.value = '';
+        renderResults('');
+    }
+
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) closeSearch();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeSearch();
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
+        }
+    });
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function externalSearchLink(query) {
+        const url = 'https://duckduckgo.com/html/?q=' + encodeURIComponent('site:' + SITE_DOMAIN + ' ' + query);
+        return `<a class="search-external" href="${url}" target="_blank" rel="noopener">
+                    🌐 ابحث عن "${escapeHtml(query)}" في كل الموقع عبر الويب
+                    <small>يفتح نتائج بحث خارجية فورية بدون أي اشتراك أو مفتاح API</small>
+                 </a>`;
+    }
+
+    function renderResults(query) {
+        const q = query.trim().toLowerCase();
+
+        if (!q) {
+            searchResults.innerHTML = '<p class="search-hint">اكتب كلمة للبحث في الخدمات والمقالات...</p>';
+            return;
+        }
+
+        const matches = searchIndex.filter(item => {
+            const haystack = (item.title + ' ' + item.desc + ' ' + item.keywords).toLowerCase();
+            return haystack.includes(q);
+        });
+
+        let html = '';
+        if (matches.length > 0) {
+            html += matches.map(item => `
+                <a class="search-result-item" href="${item.url}">
+                    <div class="search-result-tag">${escapeHtml(item.tag)}</div>
+                    <div class="search-result-title">${escapeHtml(item.title)}</div>
+                    <div class="search-result-desc">${escapeHtml(item.desc)}</div>
+                </a>
+            `).join('');
+        } else {
+            html += '<p class="search-hint">لا توجد نتائج مطابقة داخل فهرس الموقع.</p>';
+        }
+
+        html += externalSearchLink(query);
+        searchResults.innerHTML = html;
+    }
+
+    let searchDebounce;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchDebounce);
+        const value = e.target.value;
+        searchDebounce = setTimeout(() => renderResults(value), 120);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+            window.open(
+                'https://duckduckgo.com/html/?q=' + encodeURIComponent('site:' + SITE_DOMAIN + ' ' + searchInput.value.trim()),
+                '_blank'
+            );
         }
     });
 </script>
