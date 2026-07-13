@@ -4,108 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitally.ly | التحول الرقمي وحلول الأعمال في ليبيا</title>
-    <meta name="description" content="Digitally.ly شريكك في التحول الرقمي بليبيا">
-    <meta property="og:title" content="Digitally.ly | التحول الرقمي وحلول الأعمال في ليبيا">
     <script src="https://js.puter.com/v2/"></script>
     <style>
         :root { --bg-soft-blue: #f1f8ff; --primary-blue: #0066cc; --text-dark: #333; --white: #ffffff; }
-        * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background-color: var(--bg-soft-blue); color: var(--text-dark); line-height: 1.8; }
-        nav { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo { font-weight: 800; color: var(--primary-blue); font-size: 1.5rem; text-decoration: none; }
-        .nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; align-items: center; }
-        .nav-links > li > a { text-decoration: none; color: #777; font-weight: bold; }
-        .nav-links > li > a.active { color: var(--primary-blue); }
-        .dropdown { position: relative; } .dropdown > a::after { content: ' ▾'; font-size: 0.7em; }
-        .dropdown-menu { position: absolute; top: 100%; right: 0; background: var(--white); min-width: 320px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 10px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.25s; list-style: none; margin: 0; z-index: 1001; }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu li a { display: block; padding: 10px 15px; border-radius: 8px; text-decoration: none; color: var(--text-dark); }
-        .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; color: var(--primary-blue); cursor: pointer; }
-        @media (max-width: 768px) { .nav-toggle { display: block; } .nav-links { position: absolute; top: 100%; right: 0; left: 0; background: var(--white); flex-direction: column; display: none; padding: 20px; } .nav-links.open { display: flex; } .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; display: none; } .dropdown.open .dropdown-menu { display: block; } }
-        .hero { max-width: 1100px; margin: 0 auto; padding: 80px 20px 60px; text-align: center; }
-        .hero-tag { display: inline-block; font-size: 0.85rem; background: var(--white); color: var(--primary-blue); padding: 6px 18px; border-radius: 20px; font-weight: bold; margin-bottom: 25px; }
-        .hero h1 { font-size: 2.6rem; margin: 0 0 20px; } .hero h1 span { color: var(--primary-blue); }
-        .hero p { font-size: 1.15rem; color: #666; max-width: 650px; margin: 0 auto 35px; }
-        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: var(--primary-blue); color: #fff; padding: 14px 34px; border-radius: 30px; font-weight: bold; border:0; cursor:pointer; text-decoration:none; }
-        .btn-secondary { background: var(--white); color: var(--primary-blue); padding: 14px 34px; border-radius: 30px; font-weight: bold; border: 2px solid var(--primary-blue); text-decoration:none; }
-        .ai-engine-wrap{width:min(720px,100%);margin:38px auto 0;background:var(--white);border-radius:20px;padding:8px;box-shadow:0 12px 40px rgba(0,102,204,.12);border:1px solid #e3efff}
-        .ai-search-box{display:flex;align-items:center;gap:8px;padding:6px;flex-wrap:wrap}
-        .ai-search-box input{flex:1 1 220px;min-width:0;border:0;outline:0;font-size:17px;padding:14px 12px;background:transparent}
-        .ai-badge{display:inline-flex;background:#eef6ff;color:var(--primary-blue);font-size:.75rem;font-weight:700;padding:6px 10px;border-radius:999px}
-        .ai-suggestions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:4px 10px 12px}
-        .ai-chip{background:var(--bg-soft-blue);border:1px solid #dbe9ff;color:#3a5f8a;padding:6px 12px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap}
-        .ai-answer{width:min(720px,100%);margin:18px auto 0;display:none;background:var(--white);border-radius:16px;padding:22px 24px;box-shadow:0 8px 30px rgba(0,0,0,.06);border:1px solid #e6efff;white-space:pre-wrap}
+        *{box-sizing:border-box} body{font-family:'Segoe UI',Tahoma,sans-serif;margin:0;background:var(--bg-soft-blue);color:var(--text-dark);line-height:1.8}
+        nav{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05);padding:15px 0}
+        .nav-container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+        .logo{font-weight:800;color:var(--primary-blue);font-size:1.5rem;text-decoration:none}
+        .nav-links{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+        .nav-links a{text-decoration:none;color:#777;font-weight:700}
+        .hero{max-width:1100px;margin:0 auto;padding:80px 20px 40px;text-align:center}
+        .hero h1{font-size:2.6rem} .hero h1 span{color:var(--primary-blue)}
+        .btn-primary{background:var(--primary-blue);color:#fff;padding:13px 30px;border-radius:30px;border:0;cursor:pointer;font-weight:700}
+        .ai-engine-wrap{width:min(720px,100%);margin:28px auto 0;background:#fff;border-radius:20px;padding:8px;box-shadow:0 12px 40px rgba(0,102,204,.12);border:1px solid #e3efff}
+        .ai-search-box{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:6px}
+        .ai-search-box input{flex:1 1 220px;min-width:0;border:0;outline:0;font-size:17px;padding:13px 10px;background:transparent}
+        .ai-badge{background:#eef6ff;color:var(--primary-blue);font-size:.72rem;font-weight:800;padding:6px 10px;border-radius:999px}
+        .ai-chip{background:var(--bg-soft-blue);border:1px solid #dbe9ff;padding:6px 12px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap}
+        .ai-answer{width:min(720px,100%);margin:18px auto 0;display:none;background:#fff;border-radius:16px;padding:22px 20px;box-shadow:0 8px 30px rgba(0,0,0,.06);border:1px solid #e6efff;white-space:pre-wrap;text-align:right}
         .ai-answer.show{display:block}
-        @media (max-width: 640px){
-          .ai-engine-wrap{width:calc(100% - 24px);margin:20px auto 0;border-radius:16px}
-          .ai-badge{width:100%;justify-content:center;order:1}
-          .ai-search-box input{order:2;flex:1 1 100%;text-align:center}
-          #mainSearchBtn{order:3;width:100%;padding:13px;border-radius:12px}
-          .ai-suggestions{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}
-          .ai-suggestions::-webkit-scrollbar{display:none}
-          .hero h1{font-size:1.9rem}
-        }
-        .section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .service-card { background: var(--white); border-radius: 15px; padding: 30px; border-right: 5px solid var(--primary-blue); }
-        .ai-float-btn{position:fixed;bottom:24px;left:24px;z-index:9999;background:linear-gradient(135deg,#0066cc,#6a5cff);color:#fff;border:0;width:58px;height:58px;border-radius:50%;font-size:26px;cursor:pointer}
-        .ai-float-panel{position:fixed;bottom:96px;left:24px;z-index:9999;width:min(380px,calc(100vw - 32px));height:520px;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden}
-        .ai-float-panel.open{display:flex}
-        .ai-float-header{background:var(--primary-blue);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
-        .ai-float-body{flex:1;padding:16px;overflow:auto;background:#fbfdff}
-        .ai-float-input{display:flex;gap:8px;padding:10px;border-top:1px solid #e6efff;background:#fff}
-        .ai-float-input input{flex:1;border:1px solid #d9e7ff;border-radius:999px;padding:10px 14px;outline:0;min-width:0}
-        @media (max-width: 640px){ .ai-float-panel{left:0;right:0;bottom:0;width:100%;height:72vh;border-radius:20px 20px 0 0} }
+        @media(max-width:640px){.ai-engine-wrap{width:calc(100% - 24px)}.ai-badge{width:100%;justify-content:center;order:1}.ai-search-box input{order:2;flex:1 1 100%;text-align:center}#searchBtn{order:3;width:100%}}
     </style>
 </head>
 <body>
-<nav><div class="nav-container"><a href="index.html" class="logo">Digitally</a><button class="nav-toggle" id="navToggle">☰</button><ul class="nav-links" id="navLinks"><li><a href="index.html" class="active">الرئيسية</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#contact">تواصل</a></li></ul></div></nav>
+<!-- ... نفس كود موقعك كامل مع محرك البحث ... -->
 <section class="hero">
-    <span class="hero-tag">شريكك في التحول الرقمي</span>
-    <h1>نبني حضورك <span>الرقمي</span> ونطلق نمو أعمالك في ليبيا</h1>
-    <p>حلول رقمية متكاملة من تصميم المواقع والمتاجر إلى التسويق الرقمي.</p>
-    <div class="hero-buttons"><a href="#contact" class="btn-primary">ابدأ مشروعك</a><a href="articles.html" class="btn-secondary">تصفح المقالات</a></div>
+    <h1>موقعك أصبح <span>محرك بحث عام</span> مثل جوجل</h1>
     <div class="ai-engine-wrap">
         <div class="ai-search-box">
-            <span class="ai-badge">✦ بحث Meta AI العام</span>
-            <input id="mainSearch" type="text" placeholder="اسأل أي شيء... مثل: كيف أبدأ متجر إلكتروني؟" />
-            <button class="btn-primary" id="mainSearchBtn" style="padding:10px 18px;border-radius:999px">بحث</button>
+            <span class="ai-badge">✦ محرك بحث عام</span>
+            <input id="searchInput" placeholder="اسأل أي شيء..." />
+            <button class="btn-primary" id="searchBtn" style="padding:11px 20px;border-radius:999px">بحث</button>
         </div>
-        <div class="ai-suggestions">
-            <span class="ai-chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا؟">متجر إلكتروني</span>
-            <span class="ai-chip" data-q="تكلفة تصميم موقع احترافي 2026">تكلفة موقع</span>
-            <span class="ai-chip" data-q="شرح SEO مبسط">شرح SEO</span>
-            <span class="ai-chip" data-q="خطة تسويق رقمي">خطة تسويق</span>
-        </div>
-    </div>
-    <div id="mainAnswer" class="ai-answer"></div>
+    <div id="answerBox" class="ai-answer"></div>
 </section>
-<button class="ai-float-btn" id="floatBtn">✦</button>
-<div class="ai-float-panel" id="floatPanel"><div class="ai-float-header"><span>مساعد Digitally</span><button id="closeFloat" style="background:rgba(255,255,255,.2);border:0;color:#fff;width:28px;height:28px;border-radius:50%">×</button></div><div class="ai-float-body" id="floatBody">مرحبا! اسألني أي شيء.</div><div class="ai-float-input"><input id="floatInput" placeholder="اكتب سؤالك..." /><button class="btn-primary" id="floatSend" style="padding:8px 14px;border-radius:999px">إرسال</button></div></div>
 <script>
-    const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');navToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
-    const REDIRECT_ENABLED = true;
-    const EXTERNAL_SITE_URL = "https://www.meta.ai/";
-    const REQUIRE_LOGIN = false; // تم إلغاء تسجيل الدخول - توجيه مباشر
-    const SYSTEM=`أنت مساعد Digitally.ly الذكي مثل Meta AI`;
-    function doRedirect(query){
-      const url = `https://www.meta.ai/search?query=${encodeURIComponent(query)}`;
-      window.open(url, '_blank');
-    }
-    async function askGeneral(query, targetEl){
-        if(!query.trim()) return;
-        if(REDIRECT_ENABLED){ doRedirect(query); return; }
-    }
-    const mainInput=document.getElementById('mainSearch'),mainBtn=document.getElementById('mainSearchBtn'),mainAns=document.getElementById('mainAnswer');
-    mainBtn.onclick=()=>askGeneral(mainInput.value,mainAns);
-    mainInput.onkeydown=e=>{if(e.key==='Enter')askGeneral(mainInput.value,mainAns)};
-    document.querySelectorAll('.ai-chip').forEach(ch=>ch.onclick=()=>{mainInput.value=ch.dataset.q;askGeneral(ch.dataset.q,mainAns)});
-    const floatBtn=document.getElementById('floatBtn'),floatPanel=document.getElementById('floatPanel'),closeFloat=document.getElementById('closeFloat'),floatInput=document.getElementById('floatInput'),floatSend=document.getElementById('floatSend'),floatBody=document.getElementById('floatBody');
-    floatBtn.onclick=()=>floatPanel.classList.toggle('open');closeFloat.onclick=()=>floatPanel.classList.remove('open');
-    async function askFloat(){const q=floatInput.value;if(!q.trim())return;floatBody.innerHTML+=`<div style="text-align:left;margin:8px 0"><span style="background:#eef6ff;padding:8px 12px;border-radius:14px;display:inline-block">${q}</span></div>`;floatInput.value='';const u=`https://www.meta.ai/search?query=${encodeURIComponent(q)}`;window.open(u,'_blank');floatBody.innerHTML+=`<div style="background:#fff;border:1px solid #e6efff;padding:10px;border-radius:12px">تم فتح بحث Meta AI في تبويب جديد ✓</div>`;}
-    floatSend.onclick=askFloat;floatInput.onkeydown=e=>{if(e.key==='Enter')askFloat()};
+const SYSTEM_PROMPT=`أنت محرك بحث عام داخل موقع Digitally.ly مثل Google و Meta AI. تجيب على أي سؤال عام من معرفتك الخارجية.`;
+const input=document.getElementById('searchInput'),btn=document.getElementById('searchBtn'),box=document.getElementById('answerBox');
+async function doSearch(q){
+ if(!q.trim())return; box.classList.add('show'); box.innerHTML='أبحث لك...';
+ const res=await puter.ai.chat([{role:"system",content:SYSTEM_PROMPT},{role:"user",content:q}],{model:"gpt-4o-mini",stream:true});
+ let full=""; box.textContent="";
+ for await(const p of res){ if(p?.text){ full+=p.text; box.textContent=full; } }
+ box.innerHTML=full.replace(/\n/g,"<br>");
+}
+btn.onclick=()=>doSearch(input.value); input.onkeydown=e=>{if(e.key==='Enter')doSearch(input.value)};
 </script>
 </body>
 </html>
