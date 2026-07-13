@@ -1,46 +1,305 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digitally.ly | بحث سريع</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digitally.ly | محرك بحث عام ذكي</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.11/dist/purify.min.js"></script>
 <style>
-:root{--bg:#f4f7fe;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--blue:#0a66ff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui;line-height:1.8}
-.search{width:min(760px,100%);margin:16px auto;background:#fff;border:1px solid var(--border);border-radius:18px;padding:8px}
-.row{display:flex;gap:8px}.row input{flex:1;border:0;outline:0;font-size:17px;padding:12px}
-.btn{background:#0a66ff;color:#fff;border:0;padding:11px 18px;border-radius:999px;font-weight:800;cursor:pointer}
-.results{width:min(760px,100%);margin:16px auto;display:none}.results.show{display:block}
-.card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.body{padding:16px}.body pre{background:#0b1220;color:#dbeafe;padding:12px;border-radius:10px;overflow:auto;direction:ltr}
+:root{--bg:#f4f7fe;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--blue:#0a66ff;--blue-dark:#0842c2;--green:#22c55e;--red:#ef4444;--shadow:0 8px 30px rgba(10,102,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh}
+
+/* Nav */
+nav{background:var(--card);position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06);padding:14px 0}
+.nav-c{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+.logo{font-weight:900;color:var(--blue);font-size:1.45rem;text-decoration:none}
+.nav-l{list-style:none;display:flex;gap:26px}
+.nav-l a{text-decoration:none;color:#6b7d9a;font-weight:700;font-size:.95rem;transition:.2s}
+.nav-l a:hover{color:var(--blue)}
+.nav-t{display:none;background:none;border:0;font-size:1.6rem;color:var(--blue);cursor:pointer}
+@media(max-width:768px){.nav-t{display:block}.nav-l{position:absolute;top:100%;right:0;left:0;background:#fff;flex-direction:column;display:none;padding:18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}.nav-l.open{display:flex}}
+
+/* Hero */
+.hero{max-width:1100px;margin:0 auto;padding:60px 20px 30px;text-align:center}
+.tag{display:inline-block;background:#fff;color:var(--blue);padding:6px 16px;border-radius:20px;font-weight:800;font-size:.82rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:14px}
+.hero h1{font-size:2.4rem;margin:0 0 12px;line-height:1.4}.hero h1 span{color:var(--blue)}
+.hero p{color:var(--muted);max-width:640px;margin:0 auto 26px;font-size:1.05rem}
+
+/* Search Box */
+.search-wrap{width:min(760px,100%);margin:24px auto 0;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:10px;box-shadow:var(--shadow);transition:.3s}
+.search-wrap:focus-within{box-shadow:0 12px 40px rgba(10,102,255,.18);border-color:#b8d4ff}
+.row{display:flex;gap:10px;align-items:center;padding:4px}
+.row input{flex:1;border:0;outline:0;font-size:17px;padding:12px 10px;font-family:inherit;color:var(--text)}
+.row input::placeholder{color:#a0aec0}
+.btn{background:var(--blue);color:#fff;border:0;padding:12px 24px;border-radius:999px;font-weight:800;cursor:pointer;font-size:1rem;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn .spin{width:16px;height:16px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite;display:none}
+.btn.loading .spin{display:inline-block}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px 6px 4px}
+.chip{background:#f1f5ff;border:1px solid #d4e0ff;color:#3d5d8a;padding:6px 14px;border-radius:999px;font-size:.85rem;cursor:pointer;transition:.2s;font-family:inherit;white-space:nowrap}
+.chip:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Results */
+.results{width:min(760px,100%);margin:20px auto 0;display:none}
+.results.show{display:block;animation:up .4s ease}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.result-header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);background:#fafbff}
+.result-label{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--blue);font-size:.92rem}
+.pulse{width:9px;height:9px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.result-actions{display:flex;gap:6px}
+.result-actions button{background:var(--bg);border:1px solid var(--border);color:#475569;padding:5px 12px;border-radius:999px;cursor:pointer;font-size:.8rem;font-weight:700;font-family:inherit;transition:.2s}
+.result-actions button:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.result-actions button.copied{background:#dcfce7;color:#16a34a;border-color:#86efac}
+
+.result-body{padding:20px 22px;line-height:2;color:#334155;font-size:1.02rem;text-align:right}
+.result-body h1,.result-body h2,.result-body h3,.result-body h4{color:var(--blue);margin:18px 0 10px;font-weight:800}
+.result-body h2{font-size:1.25rem;border-bottom:2px solid #e2e8f0;padding-bottom:6px}
+.result-body h3{font-size:1.1rem}
+.result-body p{margin:10px 0}
+.result-body ul,.result-body ol{margin:10px 24px 10px 0;padding-right:16px}
+.result-body li{margin:6px 0}
+.result-body strong{color:var(--text);font-weight:800}
+.result-body a{color:var(--blue);text-decoration:none;border-bottom:1px dashed var(--blue)}
+.result-body a:hover{border-bottom-style:solid}
+.result-body blockquote{background:#f1f5ff;border-right:4px solid var(--blue);padding:12px 16px;margin:14px 0;border-radius:0 12px 12px 0;color:#475569}
+.result-body pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:12px;overflow:auto;direction:ltr;text-align:left;font-family:'Fira Code','Courier New',monospace;font-size:.88rem;margin:14px 0;line-height:1.7}
+.result-body code{background:#e2e8f0;color:#334155;padding:2px 8px;border-radius:6px;font-family:'Fira Code','Courier New',monospace;font-size:.9em}
+.result-body pre code{background:transparent;color:inherit;padding:0;border-radius:0}
+.result-body hr{border:0;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:20px 0}
+.result-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.result-body th,.result-body td{border:1px solid var(--border);padding:10px 14px;text-align:right}
+.result-body th{background:#f1f5ff;color:var(--blue);font-weight:800}
+.result-body tr:nth-child(even){background:#f8fafc}
+
+.result-footer{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-top:1px solid var(--border);background:#fafbff;flex-wrap:wrap;gap:8px}
+.result-meta{font-size:.78rem;color:#94a3b8}
+.result-cta{background:var(--blue);color:#fff;text-decoration:none;padding:8px 18px;border-radius:999px;font-weight:700;font-size:.85rem;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.result-cta:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(10,102,255,.25)}
+
+/* Error */
+.error-card{background:#fef2f2;border:1px solid #fecaca;border-radius:16px;padding:20px;text-align:center;color:#991b1b}
+.error-card .icon{font-size:2rem;margin-bottom:8px}
+.error-card .title{font-weight:800;margin-bottom:6px}
+.error-card small{color:#b91c1c;opacity:.8}
+.error-card .retry-btn{background:var(--blue);color:#fff;border:0;padding:10px 24px;border-radius:999px;font-weight:800;cursor:pointer;margin-top:12px;font-family:inherit}
+
+/* Services */
+.sec{max-width:1100px;margin:0 auto;padding:50px 20px}
+.sec h2{color:var(--blue);text-align:center;margin:0 0 8px;font-size:1.6rem}
+.sec > p{color:var(--muted);text-align:center;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.s-card{background:var(--card);border-radius:16px;padding:22px;border-right:4px solid var(--blue);box-shadow:0 4px 16px rgba(0,0,0,.04);transition:.3s}
+.s-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(10,102,255,.1)}
+.s-card b{display:block;margin-bottom:6px;font-size:1.05rem;color:var(--text)}
+.s-card p{color:var(--muted);font-size:.95rem}
+
+/* Footer */
+footer{text-align:center;padding:28px;color:#7e90ad;border-top:1px solid #e2eaff;margin-top:20px;font-size:.9rem}
+
+/* Mobile */
+@media(max-width:640px){
+ .search-wrap{width:calc(100% - 24px);border-radius:16px}
+ .row{flex-wrap:wrap}
+ .row input{width:100%;text-align:center}
+ .btn{width:100%;justify-content:center}
+ .chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding:8px 4px}
+ .chips::-webkit-scrollbar{display:none}
+ .hero h1{font-size:1.9rem}
+ .hero{padding:40px 14px 20px}
+ .result-body{padding:14px 16px;font-size:.95rem}
+ .result-body pre{padding:10px;font-size:.8rem}
+ .result-header,.result-footer{flex-wrap:wrap}
+ .result-footer{flex-direction:column;align-items:stretch;text-align:center}
+}
 </style>
 </head>
 <body>
-<div class="search">
-<div class="row"><input id="q" placeholder="اكتب سؤالك..."><button class="btn" id="go">بحث</button></div>
+
+<!-- Nav -->
+<nav><div class="nav-c"><a class="logo" href="#">Digitally</a><button class="nav-t" id="t">☰</button><ul class="nav-l" id="m"><li><a href="#">الرئيسية</a></li><li><a href="#s">خدماتنا</a></li><li><a href="mailto:tech.co.ly@gmail.com">تواصل</a></li></ul></div></nav>
+
+<!-- Hero -->
+<section class="hero">
+<span class="tag">✦ موقعك أصبح محرك بحث عام</span>
+<h1>ابحث عن أي شيء وستظهر الإجابة <span>داخل موقعك</span></h1>
+<p>بدون تسجيل دخول، بدون فتح تبويب جديد، بدون التوجه لـ puter أو أي موقع آخر.</p>
+
+<div class="search-wrap">
+ <div class="row">
+  <input id="q" type="text" placeholder="مثال: كيف أبدأ متجر إلكتروني في ليبيا؟" />
+  <button class="btn" id="go"><span class="spin"></span>بحث</button>
+ </div>
+ <div class="chips">
+  <span class="chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا؟">متجر إلكتروني</span>
+  <span class="chip" data-q="شرح SEO للمبتدئين بطريقة مبسطة">شرح SEO</span>
+  <span class="chip" data-q="تكلفة تصميم موقع احترافي 2026">تكلفة موقع</span>
+  <span class="chip" data-q="خطة تسويق رقمي لشركة ناشئة">خطة تسويق</span>
+ </div>
 </div>
-<div class="results" id="res"><div class="card"><div class="body" id="body"></div></div></div>
+
+<div class="results" id="res">
+ <div class="result-card" id="card">
+  <div class="result-header" id="header">
+   <div class="result-label"><span class="pulse"></span>إجابة ذكية</div>
+   <div class="result-actions">
+    <button id="copyBtn">📋 نسخ</button>
+    <button onclick="regenerate()">🔄 إعادة</button>
+    <button onclick="closeResult()">✕ إغلاق</button>
+   </div>
+  </div>
+  <div class="result-body" id="body"></div>
+  <div class="result-footer" id="footer">
+   <span class="result-meta" id="meta"></span>
+   <a href="mailto:tech.co.ly@gmail.com" class="result-cta">📧 تواصل لتنفيذ الفكرة</a>
+  </div>
+ </div>
+</div>
+</section>
+
+<!-- Services -->
+<section class="sec" id="s">
+<h2>خدماتنا</h2>
+<p>حلول رقمية شاملة مصممة خصيصاً لاحتياجات السوق الليبي</p>
+<div class="grid">
+ <div class="s-card"><b>💻 تصميم مواقع</b><p>مواقع احترافية سريعة ومتجاوبة مع جميع الأجهزة.</p></div>
+ <div class="s-card"><b>🛒 متاجر إلكترونية</b><p>إطلاق متاجر متكاملة مع دفع وشحن يناسب ليبيا.</p></div>
+ <div class="s-card"><b>📈 تسويق رقمي</b><p>استراتيجيات إعلانية مدروسة على السوشيال ميديا.</p></div>
+ <div class="s-card"><b>🔍 SEO</b><p>نرفع ترتيبك في نتائج جوجل لزيادة الزيارات.</p></div>
+</div>
+</section>
+
+<footer>© 2026 Digitally.ly - جميع الحقوق محفوظة</footer>
 
 <script>
-const SYSTEM=`أنت محرك Digitally.ly. جاوب بالعربية منسق: خلاصة ثم عناوين ## و ### ونقاط.`;
+// ===== Navigation =====
+document.getElementById('t').onclick=()=>document.getElementById('m').classList.toggle('open');
+
+// ===== Config =====
+const SYSTEM = `أنت محرك بحث عام ذكي داخل موقع Digitally.ly مثل Google AI و Meta AI.
+خبير في التحول الرقمي في ليبيا (تصميم مواقع، متاجر، تسويق، SEO) لكن تجيب على أي سؤال عام في العالم.
+قواعد الرد:
+- بالعربية الفصحى المبسطة
+- ابدأ بخلاصة سريعة من سطرين
+- استخدم عناوين (##) وقوائم (-) وتنسيق Markdown
+- لو السؤال عن خدمات رقمية وجه للتواصل tech.co.ly@gmail.com بلطف
+- لا تذكر أنك نموذج ذكاء اصطناعي`;
+
+const q = document.getElementById('q');
+const go = document.getElementById('go');
+const res = document.getElementById('res');
+const card = document.getElementById('card');
+const body = document.getElementById('body');
+const meta = document.getElementById('meta');
+const copyBtn = document.getElementById('copyBtn');
+
+let lastAnswer = '';
+let lastQuery = '';
+
+// ===== Search =====
 async function fastSearch(query){
- if(!query.trim())return;
- const body=document.getElementById('body'); const res=document.getElementById('res');
- res.classList.add('show'); body.innerHTML='أبحث لك الآن...';
- const prompt=`${SYSTEM}\n\nسؤال: ${query}`;
- const url=`https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai&seed=${Date.now()}`;
- const controller=new AbortController(); setTimeout(()=>controller.abort(),15000);
+ if(!query.trim()) return;
+ lastQuery = query;
+
+ // UI state
+ q.value = query;
+ go.disabled = true;
+ go.classList.add('loading');
+ res.classList.add('show');
+
+ // Reset card
+ card.className = 'result-card';
+ document.getElementById('header').style.display = 'flex';
+ document.getElementById('footer').style.display = 'flex';
+ body.innerHTML = '<div style="display:flex;align-items:center;gap:10px;color:#6d86ad;padding:20px 0"><span style="width:20px;height:20px;border:2px solid var(--blue);border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite;display:inline-block"></span> أجلب لك الإجابة...</div>';
+ meta.textContent = '';
+
+ // Scroll
+ setTimeout(()=>res.scrollIntoView({behavior:'smooth',block:'start'}), 100);
+
+ const prompt = SYSTEM + "\n\nسؤال المستخدم: " + query;
+ const url = `https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai&seed=${Date.now()}&json=false`;
+
+ const controller = new AbortController();
+ const timeout = setTimeout(()=>controller.abort(), 20000);
+
  try{
-  const r=await fetch(url,{signal:controller.signal});
-  let text=await r.text();
-  body.innerHTML=DOMPurify.sanitize(marked.parse(text));
+  const r = await fetch(url, {signal: controller.signal});
+  clearTimeout(timeout);
+
+  if(!r.ok) throw new Error('خطأ في الاتصال: ' + r.status);
+
+  let text = await r.text();
+  if(!text || !text.trim()) throw new Error('لم يتم استلام إجابة');
+
+  lastAnswer = text;
+
+  // Render markdown
+  const rawHtml = marked.parse(text);
+  const cleanHtml = DOMPurify.sanitize(rawHtml);
+  body.innerHTML = cleanHtml;
+
+  // Meta
+  const now = new Date().toLocaleTimeString('ar-LY', {hour:'2-digit',minute:'2-digit'});
+  meta.innerHTML = `🕐 ${now} · "${query.substring(0,35)}${query.length>35?'...':''}"`;
+
  }catch(err){
-  body.innerHTML=`فشل، <button onclick="location.reload()">إعادة المحاولة</button><br><small>${err.message}</small>`;
+  card.className = 'error-card';
+  document.getElementById('header').style.display = 'none';
+  document.getElementById('footer').style.display = 'none';
+  body.innerHTML = `
+   <div class="icon">⚠️</div>
+   <div class="title">تعذر جلب الإجابة</div>
+   <small>${err.message || 'يرجى التحقق من اتصالك والمحاولة لاحقاً'}</small>
+   <br><button class="retry-btn" onclick="regenerate()">إعادة المحاولة</button>
+  `;
+ }finally{
+  go.disabled = false;
+  go.classList.remove('loading');
  }
 }
-document.getElementById('go').onclick=()=>fastSearch(document.getElementById('q').value);
-document.getElementById('q').onkeydown=e=>{if(e.key==='Enter')fastSearch(e.target.value)};
+
+// ===== Actions =====
+function copyAnswer(){
+ if(!lastAnswer) return;
+ navigator.clipboard.writeText(lastAnswer).then(()=>{
+  copyBtn.textContent = '✓ تم النسخ';
+  copyBtn.classList.add('copied');
+  setTimeout(()=>{copyBtn.textContent='📋 نسخ';copyBtn.classList.remove('copied');}, 2000);
+ });
+}
+
+copyBtn.onclick = copyAnswer;
+
+function regenerate(){
+ if(lastQuery) fastSearch(lastQuery);
+}
+
+function closeResult(){
+ res.classList.remove('show');
+ setTimeout(()=>{
+  body.innerHTML = '';
+  meta.textContent = '';
+  lastAnswer = '';
+  lastQuery = '';
+ }, 300);
+}
+
+// ===== Events =====
+go.onclick = () => fastSearch(q.value);
+q.onkeydown = e => { if(e.key === 'Enter') fastSearch(e.target.value); };
+
+document.querySelectorAll('.chip').forEach(c => {
+ c.onclick = () => { q.value = c.dataset.q; fastSearch(c.dataset.q); };
+});
+
+// Focus on load
+q.focus();
 </script>
 </body>
 </html>
