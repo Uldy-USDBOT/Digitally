@@ -2,86 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digitally.ly | محرك ذكي احترافي</title>
+<title>Digitally.ly | بحث سريع</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.11/dist/purify.min.js"></script>
 <style>
-:root{--bg:#f4f7fe;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--blue:#0a66ff;--code:#0b1220;--chip:#eef4ff}
-[data-theme="dark"]{--bg:#070b14;--card:#10172a;--text:#e2e8f0;--muted:#94a3b8;--border:#1e293b;--chip:#14203a;--code:#000}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui;line-height:1.8;transition:.25s}
-nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--card) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.nav{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}.logo{font-weight:900;color:var(--blue);text-decoration:none;font-size:1.35rem}
-.icon-btn{width:36px;height:36px;border-radius:999px;border:1px solid var(--border);background:var(--card);cursor:pointer;display:grid;place-items:center}
-.hero{max-width:1120px;margin:0 auto;padding:54px 16px 20px;text-align:center}
-.hero h1{font-size:2.55rem;line-height:1.25;margin:6px 0}.hero h1 span{background:linear-gradient(90deg,#0a66ff,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--muted);max-width:620px;margin:0 auto 18px}
-.search{width:min(760px,100%);margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 12px 36px rgba(2,24,80,.08);padding:8px}
-.row{display:flex;gap:8px;align-items:center;padding:4px}.row input{flex:1;border:0;outline:0;background:transparent;font-size:17px;padding:12px 6px;color:var(--text)}
-.btn{background:var(--blue);color:#fff;border:0;padding:11px 18px;border-radius:999px;font-weight:800;cursor:pointer}
-.chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;padding:0 8px 10px}.chip{font-size:.8rem;padding:6px 12px;border-radius:999px;background:var(--chip);border:1px solid var(--border);cursor:pointer;color:var(--text)}.chip:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
-.results{width:min(760px,100%);margin:18px auto 0;display:none;text-align:right}.results.show{display:block}
-.meta{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);padding:6px 4px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07)}
-.head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border)}.ai{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#0a66ff,#7c3aed);display:grid;place-items:center;color:#fff;font-weight:900}
-.body{padding:18px}.body h2{font-size:1.28rem;margin:18px 0 8px}.body h3{font-size:1.05rem;margin:14px 0 6px}.body p{margin:8px 0}.body ul,.body ol{margin:8px 18px 12px 0}.body li{margin:5px 0}.body blockquote{border-right:3px solid var(--blue);background:color-mix(in srgb,var(--blue) 7%,var(--card));margin:12px 0;padding:10px 14px;border-radius:8px}.body pre{position:relative;background:var(--code);color:#dbeafe;padding:14px;border-radius:12px;overflow:auto;direction:ltr;text-align:left}.body code:not(pre code){background:var(--chip);border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-size:.88em}
-.foot{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-top:1px solid var(--border);background:color-mix(in srgb,var(--bg) 60%,var(--card))}
-.act{border:1px solid var(--border);background:var(--card);color:var(--text);padding:7px 12px;border-radius:999px;font-size:.82rem;cursor:pointer}.act.p{background:var(--blue);color:#fff;border-color:var(--blue)}
-.related{margin-top:14px;display:none}.related.show{display:block}.related h4{margin:0 0 8px;font-size:.9rem;color:var(--muted)}.rq{display:flex;gap:8px;flex-wrap:wrap}.rq button{padding:7px 12px;border-radius:999px;border:1px dashed var(--border);background:transparent;color:var(--text);cursor:pointer;font-size:.84rem}
-.skel{padding:16px}.sk{height:13px;background:linear-gradient(90deg,var(--chip) 25%,var(--border) 37%,var(--chip) 63%);background-size:400% 100%;border-radius:8px;margin:10px 0;animation:sh 1.2s infinite} @keyframes sh{0%{background-position:100% 0}100%{background-position:-100% 0}}
-@media(max-width:640px){.hero{padding:26px 12px 10px}.hero h1{font-size:1.9rem}.search{width:calc(100% - 16px)}.row{flex-wrap:wrap}.row input{flex:1 1 100%;text-align:center;order:2}#go{width:100%;order:3}.chips{flex-wrap:nowrap;overflow:auto;justify-content:flex-start}.chips::-webkit-scrollbar{display:none}}
+:root{--bg:#f4f7fe;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--blue:#0a66ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui;line-height:1.8}
+.search{width:min(760px,100%);margin:16px auto;background:#fff;border:1px solid var(--border);border-radius:18px;padding:8px}
+.row{display:flex;gap:8px}.row input{flex:1;border:0;outline:0;font-size:17px;padding:12px}
+.btn{background:#0a66ff;color:#fff;border:0;padding:11px 18px;border-radius:999px;font-weight:800;cursor:pointer}
+.results{width:min(760px,100%);margin:16px auto;display:none}.results.show{display:block}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.body{padding:16px}.body pre{background:#0b1220;color:#dbeafe;padding:12px;border-radius:10px;overflow:auto;direction:ltr}
 </style>
 </head>
 <body>
-<nav><div class="nav"><a class="logo" href="#">Digitally</a><div><button class="icon-btn" id="theme">🌙</button></div></div></nav>
-
-<section class="hero">
-<h1>محرك بحث <span>يشبه أداة ذكاء حقيقية</span></h1>
-<p>إجابات منسقة، أكواد ملونة، وأسئلة مقترحة — كلها داخل موقعك بدون خروج.</p>
-
 <div class="search">
-<div class="row"><input id="q" placeholder="اسأل أي شيء... مثال: خطة تسويق لمتجر إلكتروني"><button class="btn" id="go">بحث ذكي</button></div>
-<div class="chips">
-<button class="chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا خطوة بخطوة مع التكاليف؟">🛒 متجر إلكتروني</button>
-<button class="chip" data-q="اشرح SEO للمبتدئين مع checklist عملي">🔍 SEO احترافي</button>
-<button class="chip" data-q="خطة تسويق رقمي 30 يوم لشركة ناشئة">📈 خطة تسويق</button>
+<div class="row"><input id="q" placeholder="اكتب سؤالك..."><button class="btn" id="go">بحث</button></div>
 </div>
-</div>
-
-<div class="results" id="res">
-<div class="meta"><span id="mq">—</span><span id="tm">—</span></div>
-<div class="card">
-<div class="head"><div class="ai">AI</div><div><b>Digitally AI</b><div style="font-size:.76rem;color:var(--muted)">إجابة منسقة • بدون خروج</div></div><span style="margin-right:auto;color:#22c55e;font-size:.75rem">● مباشر</span></div>
-<div class="body" id="body"></div>
-<div class="foot"><button class="act p" id="copy">📋 نسخ</button><button class="act" id="share">🔗 مشاركة</button><button class="act" onclick="res.classList.remove('show')">إغلاق</button><a class="act" href="mailto:tech.co.ly@gmail.com" style="text-decoration:none">نفذها لي ←</a></div>
-</div>
-<div class="related" id="rel"><h4>أسئلة مقترحة</h4><div class="rq" id="rq"></div></div>
-</div>
-</section>
+<div class="results" id="res"><div class="card"><div class="body" id="body"></div></div></div>
 
 <script>
-const SYSTEM=`أنت محرك بحث عام احترافي داخل موقع Digitally.ly مثل Google AI Overviews و Perplexity.
-قواعد التنسيق الصارمة:
-- ابدأ ب > خلاصة سريعة من سطرين
-- استخدم ## للعنوان و ### للعناوين الفرعية
-- استخدم قوائم - و 1. 2. 3.
-- استخدم جداول Markdown لو فيه مقارنة
-- استخدم \`\`\`js للأكواد
-- بالعربية المبسطة`;
-const q=document.getElementById('q'),go=document.getElementById('go'),res=document.getElementById('res'),body=document.getElementById('body'),mq=document.getElementById('mq'),tm=document.getElementById('tm'),rqBox=document.getElementById('rq'),rel=document.getElementById('rel');
-let last='';
-function skel(){body.innerHTML=`<div class=skel><div class=sk style="width:68%"></div><div class=sk style="width:90%"></div><div class=sk style="width:86%"></div></div>`}
-async function search(query){
- if(!query.trim())return; const t0=Date.now(); mq.textContent=`نتائج: "${query}"`; res.classList.add('show'); skel(); rel.classList.remove('show');
- const r=await fetch('https://text.pollinations.ai/openai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'openai',messages:[{role:'system',content:SYSTEM},{role:'user',content:query}],stream:false})});
- const j=await r.json(); let md=j.choices?.[0]?.message?.content||''; last=md;
- body.innerHTML=DOMPurify.sanitize(marked.parse(md));
- body.querySelectorAll('pre').forEach(pre=>{const w=document.createElement('div');w.style.position='relative';pre.parentNode.insertBefore(w,pre);w.appendChild(pre);const b=document.createElement('button');b.textContent='نسخ الكود';b.className='act';b.style.cssText='position:absolute;left:8px;top:8px;font-size:.7rem';b.onclick=()=>navigator.clipboard.writeText(pre.innerText);w.appendChild(b);});
- tm.textContent=`تم في ${((Date.now()-t0)/1000).toFixed(1)}ث`;
- try{const r2=await fetch('https://text.pollinations.ai/openai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'openai',messages:[{role:'system',content:'أعط 3 أسئلة قصيرة مقترحة فقط، كل سؤال في سطر، بدون ترقيم، بالعربية، متعلقة بـ:'+query}],stream:false})});const j2=await r2.json();const txt=j2.choices?.[0]?.message?.content||'';const qs=txt.split('\n').filter(s=>s.trim().length>6).slice(0,3);rqBox.innerHTML='';qs.forEach(t=>{const b=document.createElement('button');b.textContent=t.replace(/^[-\d.\s]+/,'').trim();b.onclick=()=>{q.value=b.textContent;search(b.textContent)};rqBox.appendChild(b)});if(qs.length)rel.classList.add('show');}catch{}
+const SYSTEM=`أنت محرك Digitally.ly. جاوب بالعربية منسق: خلاصة ثم عناوين ## و ### ونقاط.`;
+async function fastSearch(query){
+ if(!query.trim())return;
+ const body=document.getElementById('body'); const res=document.getElementById('res');
+ res.classList.add('show'); body.innerHTML='أبحث لك الآن...';
+ const prompt=`${SYSTEM}\n\nسؤال: ${query}`;
+ const url=`https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai&seed=${Date.now()}`;
+ const controller=new AbortController(); setTimeout(()=>controller.abort(),15000);
+ try{
+  const r=await fetch(url,{signal:controller.signal});
+  let text=await r.text();
+  body.innerHTML=DOMPurify.sanitize(marked.parse(text));
+ }catch(err){
+  body.innerHTML=`فشل، <button onclick="location.reload()">إعادة المحاولة</button><br><small>${err.message}</small>`;
+ }
 }
-go.onclick=()=>search(q.value); q.onkeydown=e=>{if(e.key==='Enter')search(q.value)};
-document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{q.value=c.dataset.q;search(c.dataset.q)});
-document.getElementById('copy').onclick=()=>{if(last)navigator.clipboard.writeText(last)};
-document.getElementById('theme').onclick=()=>{const d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',d);localStorage.setItem('th',d);document.getElementById('theme').textContent=d==='dark'?'☀️':'🌙'}
+document.getElementById('go').onclick=()=>fastSearch(document.getElementById('q').value);
+document.getElementById('q').onkeydown=e=>{if(e.key==='Enter')fastSearch(e.target.value)};
 </script>
 </body>
 </html>
