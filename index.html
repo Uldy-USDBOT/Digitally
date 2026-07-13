@@ -5,90 +5,856 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitally.ly | محرك بحث عام داخل الموقع</title>
     <style>
-        :root { --bg:#f1f8ff; --blue:#0066cc; --dark:#222; --w:#fff; }
-        *{box-sizing:border-box} body{font-family:'Segoe UI',Tahoma,sans-serif;margin:0;background:var(--bg);color:var(--dark);line-height:1.8}
-        nav{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:14px 0}
-       .nav-c{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 18px}
-       .logo{font-weight:900;color:var(--blue);font-size:1.45rem;text-decoration:none}
-       .nav-l{list-style:none;display:flex;gap:26px;margin:0;padding:0}.nav-l a{text-decoration:none;color:#6b7d9a;font-weight:700}
-       .nav-t{display:none;background:none;border:0;font-size:1.6rem;color:var(--blue)} @media(max-width:768px){.nav-t{display:block}.nav-l{position:absolute;top:100%;right:0;left:0;background:#fff;flex-direction:column;display:none;padding:18px;box-shadow:0 10px 20px rgba(0,0,0,.08)}.nav-l.open{display:flex}}
-       .hero{max-width:1100px;margin:0 auto;padding:72px 18px 30px;text-align:center}
-       .tag{display:inline-block;background:#fff;color:var(--blue);padding:6px 16px;border-radius:20px;font-weight:800;font-size:.82rem;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:14px}
-       .hero h1{font-size:2.5rem;margin:0 0 12px;line-height:1.4}.hero h1 span{color:var(--blue)}
-       .hero p{color:#667a98;max-width:640px;margin:0 auto 26px}
-       .btn{background:var(--blue);color:#fff;padding:12px 28px;border-radius:999px;border:0;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(0,102,204,.22)}
-       .wrap{width:min(740px,100%);margin:26px auto 0;background:#fff;border-radius:20px;padding:8px;border:1px solid #dde9ff;box-shadow:0 14px 40px rgba(0,102,204,.12)}
-       .box{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:6px}
-       .box input{flex:1 1 220px;min-width:0;border:0;outline:0;font-size:17px;padding:13px 10px;background:transparent}
-       .badge{background:#eef6ff;color:var(--blue);font-size:.7rem;font-weight:900;padding:6px 10px;border-radius:999px;white-space:nowrap}
-       .chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;padding:6px 10px 12px}
-       .chip{background:#f1f8ff;border:1px solid #dbe9ff;color:#3d5d8a;padding:6px 12px;border-radius:999px;font-size:.82rem;cursor:pointer;white-space:nowrap;transition:.2s}
-       .chip:hover{background:var(--blue);color:#fff}
-       .ans{width:min(740px,100%);margin:16px auto 0;text-align:right;display:none;background:#fff;border-radius:16px;padding:20px 18px;border:1px solid #dfeaff;box-shadow:0 8px 24px rgba(0,0,0,.05);line-height:1.9;white-space:pre-wrap;word-break:break-word}
-       .ans.show{display:block;animation:up.28s ease} @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-       .load{display:flex;gap:8px;align-items:center;color:#6d86ad}.d{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:b 1.2s infinite}.d:nth-child(2){animation-delay:.15s}.d:nth-child(3){animation-delay:.3s}@keyframes b{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-        @media(max-width:640px){.wrap{width:calc(100% - 22px);border-radius:16px}.badge{width:100%;justify-content:center;order:1}.box input{order:2;flex:1 1 100%;text-align:center}#go{order:3;width:100%;padding:13px}.chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}.chips::-webkit-scrollbar{display:none}.hero h1{font-size:1.95rem}.hero{padding:38px 14px 18px}}
-       .sec{max-width:1100px;margin:0 auto;padding:44px 18px}.sec h2{color:var(--blue);text-align:center;margin:0 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}.card{background:#fff;border-radius:14px;padding:20px;border-right:4px solid var(--blue);box-shadow:0 4px 12px rgba(0,0,0,.03)} footer{text-align:center;padding:28px;color:#7e90ad;border-top:1px solid #e2eaff;margin-top:20px}
+        :root {
+            --bg: #f1f8ff;
+            --blue: #0066cc;
+            --dark: #222;
+            --w: #fff;
+            --gray: #667a98;
+            --light-blue: #eef6ff;
+            --border: #dde9ff;
+            --code-bg: #1e293b;
+            --code-text: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,.06);
+            padding: 14px 0;
+        }
+
+        .nav-c {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 18px;
+        }
+
+        .logo {
+            font-weight: 900;
+            color: var(--blue);
+            font-size: 1.45rem;
+            text-decoration: none;
+        }
+
+        .nav-l {
+            list-style: none;
+            display: flex;
+            gap: 26px;
+        }
+
+        .nav-l a {
+            text-decoration: none;
+            color: #6b7d9a;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .nav-l a:hover { color: var(--blue); }
+
+        .nav-t {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 1.6rem;
+            color: var(--blue);
+            cursor: pointer;
+        }
+
+        @media(max-width:768px) {
+            .nav-t { display: block; }
+            .nav-l {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: #fff;
+                flex-direction: column;
+                display: none;
+                padding: 18px;
+                box-shadow: 0 10px 20px rgba(0,0,0,.08);
+            }
+            .nav-l.open { display: flex; }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 72px 18px 30px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #fff;
+            color: var(--blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: .82rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,.05);
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 12px;
+            line-height: 1.4;
+        }
+
+        .hero h1 span { color: var(--blue); }
+
+        .hero p {
+            color: var(--gray);
+            max-width: 640px;
+            margin: 0 auto 26px;
+        }
+
+        .btn {
+            background: var(--blue);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 999px;
+            border: 0;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0,102,204,.22);
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0,102,204,.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ========== SEARCH BOX ========== */
+        .wrap {
+            width: min(740px, 100%);
+            margin: 26px auto 0;
+            background: #fff;
+            border-radius: 20px;
+            padding: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 40px rgba(0,102,204,.12);
+            transition: box-shadow 0.3s;
+        }
+
+        .wrap:focus-within {
+            box-shadow: 0 14px 50px rgba(0,102,204,.2);
+            border-color: #b8d4ff;
+        }
+
+        .box {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 6px;
+        }
+
+        .box input {
+            flex: 1 1 220px;
+            min-width: 0;
+            border: 0;
+            outline: 0;
+            font-size: 17px;
+            padding: 13px 10px;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .badge {
+            background: var(--light-blue);
+            color: var(--blue);
+            font-size: .7rem;
+            font-weight: 900;
+            padding: 6px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .chips {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 6px 10px 12px;
+        }
+
+        .chip {
+            background: #f1f8ff;
+            border: 1px solid #dbe9ff;
+            color: #3d5d8a;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: .82rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: .2s;
+            font-family: inherit;
+        }
+
+        .chip:hover {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+            transform: translateY(-1px);
+        }
+
+        .chip:active { transform: translateY(0); }
+
+        /* ========== ANSWER PANEL ========== */
+        .ans-wrap {
+            width: min(740px, 100%);
+            margin: 16px auto 0;
+            display: none;
+        }
+
+        .ans-wrap.show { display: block; animation: up 0.35s ease; }
+
+        @keyframes up {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ans-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid #dfeaff;
+            box-shadow: 0 8px 30px rgba(0,0,0,.06);
+            text-align: right;
+        }
+
+        /* Loading */
+        .load {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            color: #6d86ad;
+            padding: 16px 0;
+        }
+
+        .d {
+            width: 7px;
+            height: 7px;
+            background: var(--blue);
+            border-radius: 50%;
+            animation: b 1.2s infinite ease-in-out;
+        }
+
+        .d:nth-child(2) { animation-delay: .15s; }
+        .d:nth-child(3) { animation-delay: .3s; }
+
+        @keyframes b {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Answer Content */
+        .ans-content {
+            line-height: 2;
+            color: #334155;
+            font-size: 1.02rem;
+        }
+
+        .ans-content h2, .ans-content h3, .ans-content h4 {
+            color: var(--blue);
+            margin: 20px 0 10px;
+            font-weight: 800;
+        }
+
+        .ans-content h2 { font-size: 1.3rem; border-bottom: 2px solid var(--light-blue); padding-bottom: 6px; }
+        .ans-content h3 { font-size: 1.15rem; }
+        .ans-content h4 { font-size: 1.05rem; }
+
+        .ans-content p { margin: 10px 0; }
+
+        .ans-content ul, .ans-content ol {
+            margin: 10px 20px 10px 0;
+            padding-right: 20px;
+        }
+
+        .ans-content li { margin: 6px 0; }
+
+        .ans-content strong { color: var(--dark); font-weight: 800; }
+
+        .ans-content a {
+            color: var(--blue);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--blue);
+            transition: 0.2s;
+        }
+
+        .ans-content a:hover { border-bottom-style: solid; }
+
+        .ans-content blockquote {
+            background: var(--light-blue);
+            border-right: 4px solid var(--blue);
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 12px 12px 0;
+            color: #475569;
+        }
+
+        .ans-content pre {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 16px;
+            border-radius: 12px;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 14px 0;
+            line-height: 1.6;
+        }
+
+        .ans-content code {
+            background: #e2e8f0;
+            color: #334155;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .ans-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .ans-content hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 20px 0;
+        }
+
+        .ans-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.95rem;
+        }
+
+        .ans-content th, .ans-content td {
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            text-align: right;
+        }
+
+        .ans-content th {
+            background: var(--light-blue);
+            color: var(--blue);
+            font-weight: 800;
+        }
+
+        .ans-content tr:nth-child(even) { background: #f8fafc; }
+
+        /* Answer Header */
+        .ans-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ans-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            color: var(--blue);
+            font-size: 0.95rem;
+        }
+
+        .ans-label .pulse {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+        }
+
+        .ans-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .ans-actions button {
+            background: var(--light-blue);
+            border: 1px solid var(--border);
+            color: var(--blue);
+            padding: 6px 12px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: inherit;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .ans-actions button:hover {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+        }
+
+        .ans-actions button.copied {
+            background: #dcfce7;
+            color: #16a34a;
+            border-color: #86efac;
+        }
+
+        /* Answer Footer */
+        .ans-footer {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .ans-meta {
+            font-size: 0.78rem;
+            color: #94a3b8;
+        }
+
+        .ans-cta {
+            background: var(--blue);
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ans-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0,102,204,.25);
+        }
+
+        /* Error State */
+        .ans-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .ans-error small {
+            color: #b91c1c;
+            opacity: 0.8;
+        }
+
+        /* ========== SERVICES ========== */
+        .sec {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 44px 18px;
+        }
+
+        .sec h2 {
+            color: var(--blue);
+            text-align: center;
+            margin: 0 0 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            border-right: 4px solid var(--blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,.03);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,102,204,.1);
+        }
+
+        .card b {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .card p { color: var(--gray); font-size: 0.95rem; }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 28px;
+            color: #7e90ad;
+            border-top: 1px solid #e2eaff;
+            margin-top: 20px;
+        }
+
+        /* ========== MOBILE ========== */
+        @media(max-width:640px) {
+            .wrap { width: calc(100% - 22px); border-radius: 16px; }
+            .badge { width: 100%; justify-content: center; order: 1; }
+            .box input { order: 2; flex: 1 1 100%; text-align: center; }
+            #go { order: 3; width: 100%; padding: 13px; }
+            .chips { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; }
+            .chips::-webkit-scrollbar { display: none; }
+            .hero h1 { font-size: 1.95rem; }
+            .hero { padding: 38px 14px 18px; }
+            .ans-card { padding: 16px; border-radius: 16px; }
+            .ans-content { font-size: 0.95rem; }
+            .ans-content pre { padding: 12px; font-size: 0.82rem; }
+            .ans-header { flex-wrap: wrap; gap: 8px; }
+            .ans-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
     </style>
 </head>
 <body>
-<nav><div class="nav-c"><a class="logo" href="#">Digitally</a><button class="nav-t" id="t">☰</button><ul class="nav-l" id="m"><li><a href="#">الرئيسية</a></li><li><a href="#s">خدماتنا</a></li><li><a href="#c">تواصل</a></li></ul></div></nav>
 
-<section class="hero">
-    <span class="tag">موقعك أصبح محرك بحث عام</span>
-    <h1>ابحث عن أي شيء وستظهر الإجابة <span>داخل موقعك</span></h1>
-    <p>بدون تسجيل دخول، بدون فتح تبويب جديد، بدون التوجه لـ puter أو أي موقع آخر.</p>
-
-    <div class="wrap">
-        <div class="box">
-            <span class="badge">✦ بحث عام ذكي</span>
-            <input id="q" type="text" placeholder="مثال: كيف أبدأ متجر إلكتروني في ليبيا؟" />
-            <button class="btn" id="go" style="border-radius:999px;padding:11px 20px">بحث</button>
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <div class="nav-c">
+            <a class="logo" href="#">Digitally</a>
+            <button class="nav-t" id="t">☰</button>
+            <ul class="nav-l" id="m">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#s">خدماتنا</a></li>
+                <li><a href="#c">تواصل</a></li>
+            </ul>
         </div>
-        <div class="chips">
-            <span class="chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا؟">متجر إلكتروني</span>
-            <span class="chip" data-q="شرح SEO للمبتدئين بطريقة مبسطة">شرح SEO</span>
-            <span class="chip" data-q="تكلفة تصميم موقع احترافي 2026">تكلفة موقع</span>
-            <span class="chip" data-q="خطة تسويق رقمي لشركة ناشئة">خطة تسويق</span>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <span class="tag">✦ موقعك أصبح محرك بحث عام</span>
+        <h1>ابحث عن أي شيء وستظهر الإجابة <span>داخل موقعك</span></h1>
+        <p>بدون تسجيل دخول، بدون فتح تبويب جديد، بدون التوجه لـ puter أو أي موقع آخر.</p>
+
+        <div class="wrap">
+            <div class="box">
+                <span class="badge">✦ بحث عام ذكي</span>
+                <input id="q" type="text" placeholder="مثال: كيف أبدأ متجر إلكتروني في ليبيا؟" />
+                <button class="btn" id="go">بحث</button>
+            </div>
+            <div class="chips">
+                <span class="chip" data-q="كيف أبدأ متجر إلكتروني ناجح في ليبيا؟">متجر إلكتروني</span>
+                <span class="chip" data-q="شرح SEO للمبتدئين بطريقة مبسطة">شرح SEO</span>
+                <span class="chip" data-q="تكلفة تصميم موقع احترافي 2026">تكلفة موقع</span>
+                <span class="chip" data-q="خطة تسويق رقمي لشركة ناشئة">خطة تسويق</span>
+            </div>
         </div>
-    </div>
-    <div id="a" class="ans"></div>
-</section>
 
-<section class="sec" id="s"><h2>خدماتنا</h2><div class="grid"><div class="card"><b>💻 تصميم مواقع</b><p>مواقع سريعة تحول الزوار لعملاء.</p></div><div class="card"><b>🛒 متاجر إلكترونية</b><p>مع دفع وشحن يناسب ليبيا.</p></div><div class="card"><b>📈 تسويق رقمي</b><p>وصول دقيق لجمهورك.</p></div><div class="card"><b>🔍 SEO</b><p>تصدر نتائج جوجل.</p></div></div></section>
-<footer>© 2026 Digitally.ly - جميع الحقوق محفوظة</footer>
+        <!-- Answer Panel -->
+        <div id="a" class="ans-wrap">
+            <div class="ans-card" id="ansCard">
+                <div class="load" id="loader">
+                    <span class="d"></span>
+                    <span class="d"></span>
+                    <span class="d"></span>
+                    <span>أجلب لك الإجابة...</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-const t=document.getElementById('t'),m=document.getElementById('m');t.onclick=()=>m.classList.toggle('open');
-const SYSTEM="أنت محرك بحث عام داخل موقع Digitally.ly مثل جوجل و Meta AI. خبير في التحول الرقمي في ليبيا (تصميم مواقع، متاجر، تسويق، SEO) لكن تجيب على أي سؤال عام. بالعربية المبسطة، ابدأ بخلاصة سريعة من سطرين ثم شرح منظم بنقاط. لو السؤال عن خدمات رقمية وجه للتواصل tech.co.ly@gmail.com بلطف. لا تذكر أنك نموذج ذكاء.";
-const q=document.getElementById('q'),go=document.getElementById('go'),a=document.getElementById('a');
-async function searchInside(query){
- if(!query.trim())return;
- a.classList.add('show');
- a.innerHTML=`<div class="load"><span class="d"></span><span class="d"></span><span class="d"></span> أجلب لك الإجابة من الويب...</div>`;
- a.scrollIntoView({behavior:'smooth',block:'center'});
- try{
-   const res = await fetch('https://text.pollinations.ai/openai', {
-     method:'POST',
-     headers:{'Content-Type':'application/json'},
-     body: JSON.stringify({
-       model:'openai',
-       messages:[{role:'system',content:SYSTEM},{role:'user',content:query}],
-       stream:false
-     })
-   });
-   const data = await res.json();
-   let full = data.choices?.[0]?.message?.content;
-   const safe = full.replace(/</g,'&lt;');
-   a.innerHTML = safe.replace(/\n/g,'<br>') + `<br><br><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="copyBtn" style="background:#eef6ff;border:1px solid #cfe0ff;color:#0066cc;padding:7px 14px;border-radius:999px;cursor:pointer">📋 نسخ</button><button onclick="this.closest('.ans').classList.remove('show')" style="background:#fff;border:1px solid #ddd;padding:7px 14px;border-radius:999px;cursor:pointer">إغلاق</button></div>`;
-   document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(full);
- }catch(err){
-   a.innerHTML = `تعذر جلب الإجابة الآن<br><small>${err.message}</small>`;
- }
-}
-go.onclick=()=>searchInside(q.value);
-q.onkeydown=e=>{if(e.key==='Enter')searchInside(q.value)};
-document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{q.value=c.dataset.q;searchInside(c.dataset.q)});
-</script>
+    <!-- ========== SERVICES ========== -->
+    <section class="sec" id="s">
+        <h2>خدماتنا</h2>
+        <div class="grid">
+            <div class="card"><b>💻 تصميم مواقع</b><p>مواقع سريعة تحول الزوار لعملاء.</p></div>
+            <div class="card"><b>🛒 متاجر إلكترونية</b><p>مع دفع وشحن يناسب ليبيا.</p></div>
+            <div class="card"><b>📈 تسويق رقمي</b><p>وصول دقيق لجمهورك.</p></div>
+            <div class="card"><b>🔍 SEO</b><p>تصدر نتائج جوجل.</p></div>
+        </div>
+    </section>
+
+    <footer>© 2026 Digitally.ly - جميع الحقوق محفوظة</footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Navigation
+        const t = document.getElementById('t'), m = document.getElementById('m');
+        t.onclick = () => m.classList.toggle('open');
+
+        // System Prompt
+        const SYSTEM = `أنت محرك بحث عام داخل موقع Digitally.ly مثل جوجل و Meta AI. 
+خبير في التحول الرقمي في ليبيا (تصميم مواقع، متاجر، تسويق، SEO) لكن تجيب على أي سؤال عام.
+قواعد الرد:
+- بالعربية الفصحى المبسطة
+- ابدأ بخلاصة سريعة من سطرين ثم شرح منظم
+- استخدم عناوين (##) وقوائم مرقمة (-) لتنظيم المعلومات
+- لو السؤال عن خدمات رقمية وجه للتواصل tech.co.ly@gmail.com بلطف
+- لا تذكر أنك نموذج ذكاء اصطناعي`;
+
+        // Elements
+        const q = document.getElementById('q');
+        const go = document.getElementById('go');
+        const a = document.getElementById('a');
+        const ansCard = document.getElementById('ansCard');
+        const loader = document.getElementById('loader');
+
+        // Markdown to HTML converter
+        function mdToHtml(text) {
+            // Escape HTML first
+            let html = text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+
+            // Code blocks (```code```)
+            html = html.replace(/```(\w*)
+?([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+
+            // Inline code (`code`)
+            html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+            // Headers (##, ###, ####)
+            html = html.replace(/^### (.*$)/gim, '<h4>$1</h4>');
+            html = html.replace(/^## (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
+
+            // Bold (**text**)
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            // Italic (*text*)
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+            // Links [text](url)
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+            // Blockquote (> text)
+            html = html.replace(/^&gt; (.*$)/gim, '<blockquote>$1</blockquote>');
+
+            // Horizontal rule (---)
+            html = html.replace(/^---$/gim, '<hr>');
+
+            // Unordered lists (- item)
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>
+?)+/g, '<ul>$&</ul>');
+
+            // Ordered lists (1. item)
+            html = html.replace(/^\d+\. (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>
+?)+/g, '<ol>$&</ol>');
+
+            // Fix nested lists
+            html = html.replace(/<ul>(.*?)<\/ul>/gs, (match) => {
+                return match.replace(/<ol>(.*?)<\/ol>/gs, '$1').replace(/<ul>(.*?)<\/ul>/gs, '$1');
+            });
+
+            // Paragraphs (double newline)
+            html = html.replace(/
+
+/g, '</p><p>');
+            html = html.replace(/^(.+)$/gim, '<p>$1</p>');
+
+            // Clean up empty paragraphs
+            html = html.replace(/<p><\/p>/g, '');
+            html = html.replace(/<p>(<h[234]>.*?<\/h[234]>)<\/p>/g, '$1');
+            html = html.replace(/<p>(<blockquote>.*?<\/blockquote>)<\/p>/g, '$1');
+            html = html.replace(/<p>(<pre>.*?<\/pre>)<\/p>/gs, '$1');
+            html = html.replace(/<p>(<ul>.*?<\/ul>)<\/p>/gs, '$1');
+            html = html.replace(/<p>(<ol>.*?<\/ol>)<\/p>/gs, '$1');
+            html = html.replace(/<p>(<hr>)<\/p>/g, '$1');
+
+            // Single newlines to <br> within paragraphs
+            html = html.replace(/
+/g, '<br>');
+
+            return html;
+        }
+
+        // Format answer with header and actions
+        function formatAnswer(text, query) {
+            const now = new Date().toLocaleTimeString('ar-LY', { hour: '2-digit', minute: '2-digit' });
+            const htmlContent = mdToHtml(text);
+
+            return `
+                <div class="ans-header">
+                    <div class="ans-label">
+                        <span class="pulse"></span>
+                        إجابة ذكية
+                    </div>
+                    <div class="ans-actions">
+                        <button onclick="copyAnswer(this)" data-text="${text.replace(/"/g, '&quot;').replace(/`/g, '\`')}">
+                            📋 نسخ
+                        </button>
+                        <button onclick="regenerate()">🔄 إعادة</button>
+                        <button onclick="closeAnswer()">✕ إغلاق</button>
+                    </div>
+                </div>
+                <div class="ans-content">${htmlContent}</div>
+                <div class="ans-footer">
+                    <span class="ans-meta">🕐 ${now} · استفسار: "${query.substring(0, 40)}${query.length > 40 ? '...' : ''}"</span>
+                    <a href="mailto:tech.co.ly@gmail.com" class="ans-cta">📧 تواصل لتنفيذ الفكرة</a>
+                </div>
+            `;
+        }
+
+        // Copy answer
+        function copyAnswer(btn) {
+            const text = btn.getAttribute('data-text');
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ تم النسخ';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 نسخ';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Regenerate
+        function regenerate() {
+            const currentQuery = q.value;
+            if (currentQuery.trim()) {
+                searchInside(currentQuery);
+            }
+        }
+
+        // Close answer
+        function closeAnswer() {
+            a.classList.remove('show');
+            setTimeout(() => {
+                ansCard.innerHTML = loader.outerHTML;
+            }, 300);
+        }
+
+        // Show error
+        function showError(err) {
+            ansCard.innerHTML = `
+                <div class="ans-error">
+                    <div style="font-size:1.2rem;margin-bottom:8px">⚠️</div>
+                    <div style="font-weight:800;margin-bottom:6px">تعذر جلب الإجابة</div>
+                    <small>${err.message || 'يرجى التحقق من اتصالك والمحاولة لاحقاً'}</small>
+                    <br><br>
+                    <button onclick="regenerate()" class="btn" style="padding:8px 20px;font-size:0.85rem">إعادة المحاولة</button>
+                </div>
+            `;
+        }
+
+        // Main search function
+        async function searchInside(query) {
+            if (!query.trim()) return;
+
+            // Update UI
+            q.value = query;
+            go.disabled = true;
+            go.textContent = '...';
+            a.classList.add('show');
+            ansCard.innerHTML = loader.outerHTML;
+            loader.style.display = 'flex';
+
+            // Scroll to answer
+            setTimeout(() => {
+                a.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+
+            try {
+                const res = await fetch('https://text.pollinations.ai/openai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        model: 'openai',
+                        messages: [
+                            { role: 'system', content: SYSTEM },
+                            { role: 'user', content: query }
+                        ],
+                        stream: false
+                    })
+                });
+
+                if (!res.ok) throw new Error(`خطأ في الاتصال: ${res.status}`);
+
+                const data = await res.json();
+                let full = data.choices?.[0]?.message?.content;
+
+                if (!full) throw new Error('لم يتم استلام إجابة');
+
+                ansCard.innerHTML = formatAnswer(full, query);
+
+            } catch (err) {
+                showError(err);
+            } finally {
+                go.disabled = false;
+                go.textContent = 'بحث';
+            }
+        }
+
+        // Event listeners
+        go.addEventListener('click', () => searchInside(q.value));
+
+        q.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') searchInside(q.value);
+        });
+
+        document.querySelectorAll('.chip').forEach(c => {
+            c.addEventListener('click', () => {
+                q.value = c.dataset.q;
+                searchInside(c.dataset.q);
+            });
+        });
+
+        // Focus input on load
+        q.focus();
+    </script>
 </body>
 </html>
