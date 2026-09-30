@@ -27,6 +27,7 @@
                 <a href="#domains" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="النطاقات المتاحة" data-en="Available Domains">النطاقات المتاحة</a>
                 <a href="#about" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="قصة .ly" data-en="The .ly Story">قصة .ly</a>
                 <a href="#why" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="لماذا نحن؟" data-en="Why Us?">لماذا نحن؟</a>
+                <a href="articles.html" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="المقالات" data-en="Articles">المقالات</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
             </nav>
 
@@ -163,12 +164,61 @@
 
     <!-- Domains Grid -->
     <section id="domains" class="py-16 container mx-auto px-6">
-        <h2 class="text-3xl font-black text-center text-gray-900 mb-12" data-ar="جميع النطاقات المتاحة للاستثمار" data-en="All Available Domains for Investment">جميع النطاقات المتاحة للاستثمار</h2>
+        <div class="flex justify-center mb-6">
+            <a href="articles.html" class="inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-800 transition shadow">
+                <span>📰</span>
+                <span data-ar="تصفّح المقالات" data-en="Browse Articles">تصفّح المقالات</span>
+            </a>
+        </div>
+
+        <h2 class="text-3xl font-black text-center text-gray-900 mb-6" data-ar="جميع النطاقات المتاحة للاستثمار" data-en="All Available Domains for Investment">جميع النطاقات المتاحة للاستثمار</h2>
+
+        <div class="flex justify-center mb-10">
+            <div class="w-full max-w-xs">
+                <label for="category-filter" class="block text-center text-gray-600 text-sm font-bold mb-2" data-ar="تصفية حسب القسم" data-en="Filter by Category">تصفية حسب القسم</label>
+                <select id="category-filter" onchange="filterDomains(this.value)" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition font-semibold text-gray-700 bg-white">
+                    <option value="all" data-ar="جميع الأقسام" data-en="All Categories">جميع الأقسام</option>
+                    <option value="finance" data-ar="مالي" data-en="Finance">مالي</option>
+                    <option value="business" data-ar="أعمال" data-en="Business">أعمال</option>
+                    <option value="tech" data-ar="تقني" data-en="Tech">تقني</option>
+                    <option value="charity" data-ar="خيري" data-en="Charity">خيري</option>
+                    <option value="media" data-ar="إعلام" data-en="Media">إعلام</option>
+                    <option value="tool" data-ar="أداة" data-en="Tool">أداة</option>
+                    <option value="data" data-ar="بيانات" data-en="Data">بيانات</option>
+                    <option value="security" data-ar="أمان" data-en="Security">أمان</option>
+                    <option value="speed" data-ar="سرعة" data-en="Speed">سرعة</option>
+                    <option value="power" data-ar="طاقة / قوة" data-en="Power">طاقة / قوة</option>
+                    <option value="brand" data-ar="علامة" data-en="Brand">علامة</option>
+                    <option value="protection" data-ar="حماية" data-en="Protection">حماية</option>
+                    <option value="opportunity" data-ar="فرص" data-en="Opportunity">فرص</option>
+                    <option value="search" data-ar="بحث" data-en="Search">بحث</option>
+                    <option value="entertainment" data-ar="ترفيه" data-en="Entertainment">ترفيه</option>
+                    <option value="luxury" data-ar="فاخر" data-en="Luxury">فاخر</option>
+                    <option value="logistics" data-ar="لوجستي" data-en="Logistics">لوجستي</option>
+                    <option value="nature" data-ar="طبيعة" data-en="Nature">طبيعة</option>
+                    <option value="farm" data-ar="مزرعة" data-en="Farm">مزرعة</option>
+                    <option value="game" data-ar="لعبة" data-en="Game">لعبة</option>
+                    <option value="health" data-ar="صحة" data-en="Health">صحة</option>
+                    <option value="oil" data-ar="نفط" data-en="Oil">نفط</option>
+                    <option value="meditation" data-ar="تأمل" data-en="Meditation">تأمل</option>
+                    <option value="standards" data-ar="معايير" data-en="Standards">معايير</option>
+                    <option value="sports" data-ar="رياضة" data-en="Sports">رياضة</option>
+                    <option value="wellness" data-ar="عافية" data-en="Wellness">عافية</option>
+                    <option value="urban" data-ar="عمراني" data-en="Urban">عمراني</option>
+                    <option value="mining" data-ar="تعدين" data-en="Mining">تعدين</option>
+                    <option value="marine" data-ar="بحري" data-en="Marine">بحري</option>
+                    <option value="energy" data-ar="طاقة (كهربائية)" data-en="Energy">طاقة (كهربائية)</option>
+                    <option value="premium" data-ar="فاخر (Premium)" data-en="Premium">فاخر (Premium)</option>
+                    <option value="design" data-ar="تصميم" data-en="Design">تصميم</option>
+                </select>
+                <p id="no-results-msg" class="hidden text-center text-gray-500 text-sm mt-4" data-ar="لا توجد نطاقات في هذا القسم حاليًا" data-en="No domains in this category right now">لا توجد نطاقات في هذا القسم حاليًا</p>
+            </div>
+        </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- Fintech.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-600 domain-card" data-category="finance">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Fintech.ly</h3>
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
@@ -178,7 +228,7 @@
             </div>
 
             <!-- Company.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-600 domain-card" data-category="business">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Company.ly</h3>
                     <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أعمال" data-en="Business">أعمال</span>
@@ -188,7 +238,7 @@
             </div>
 
             <!-- Protocol.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Protocol.ly</h3>
                     <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
@@ -198,7 +248,7 @@
             </div>
 
             <!-- Charity.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-600 domain-card" data-category="charity">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Charity.ly</h3>
                     <span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="خيري" data-en="Charity">خيري</span>
@@ -208,7 +258,7 @@
             </div>
 
             <!-- Vlog.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-600 domain-card" data-category="media">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Vlog.ly</h3>
                     <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="إعلام" data-en="Media">إعلام</span>
@@ -218,7 +268,7 @@
             </div>
 
             <!-- Downloader.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-600 domain-card" data-category="tool">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Downloader.ly</h3>
                     <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أداة" data-en="Tool">أداة</span>
@@ -228,7 +278,7 @@
             </div>
 
             <!-- Crunch.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-600 domain-card" data-category="data">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Crunch.ly</h3>
                     <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بيانات" data-en="Data">بيانات</span>
@@ -238,7 +288,7 @@
             </div>
 
             <!-- Bunker.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-gray-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-gray-700 domain-card" data-category="security">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Bunker.ly</h3>
                     <span class="bg-gray-200 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أمان" data-en="Security">أمان</span>
@@ -248,7 +298,7 @@
             </div>
 
             <!-- Haste.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-600 domain-card" data-category="speed">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Haste.ly</h3>
                     <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="سرعة" data-en="Speed">سرعة</span>
@@ -258,7 +308,7 @@
             </div>
 
             <!-- Thunder.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-500">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-500 domain-card" data-category="power">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Thunder.ly</h3>
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Power">طاقة</span>
@@ -268,7 +318,7 @@
             </div>
 
             <!-- Cobra.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-700 domain-card" data-category="brand">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Cobra.ly</h3>
                     <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="علامة" data-en="Brand">علامة</span>
@@ -278,7 +328,7 @@
             </div>
 
             <!-- Anti.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-600 domain-card" data-category="protection">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Anti.ly</h3>
                     <span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="حماية" data-en="Protection">حماية</span>
@@ -288,7 +338,7 @@
             </div>
 
             <!-- Cent.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-emerald-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-emerald-600 domain-card" data-category="finance">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Cent.ly</h3>
                     <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
@@ -298,7 +348,7 @@
             </div>
 
             <!-- Chance.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-teal-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-teal-600 domain-card" data-category="opportunity">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Chance.ly</h3>
                     <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فرص" data-en="Opportunity">فرص</span>
@@ -308,7 +358,7 @@
             </div>
 
             <!-- What.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-violet-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-violet-600 domain-card" data-category="search">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">What.ly</h3>
                     <span class="bg-violet-100 text-violet-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحث" data-en="Search">بحث</span>
@@ -318,7 +368,7 @@
             </div>
 
             <!-- Joker.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-600 domain-card" data-category="entertainment">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Joker.ly</h3>
                     <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
@@ -328,7 +378,7 @@
             </div>
 
             <!-- Lion.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-600 domain-card" data-category="power">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Lion.ly</h3>
                     <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="قوة" data-en="Power">قوة</span>
@@ -338,7 +388,7 @@
             </div>
 
             <!-- Severus.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-800">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-800 domain-card" data-category="luxury">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Severus.ly</h3>
                     <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Luxury">فاخر</span>
@@ -348,7 +398,7 @@
             </div>
 
             <!-- Vessel.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-600 domain-card" data-category="logistics">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Vessel.ly</h3>
                     <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لوجستي" data-en="Logistics">لوجستي</span>
@@ -358,7 +408,7 @@
             </div>
 
             <!-- Twig.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-lime-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-lime-600 domain-card" data-category="nature">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Twig.ly</h3>
                     <span class="bg-lime-100 text-lime-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طبيعة" data-en="Nature">طبيعة</span>
@@ -368,7 +418,7 @@
             </div>
 
             <!-- Sheep.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-sky-400">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-sky-400 domain-card" data-category="farm">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Sheep.ly</h3>
                     <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مزرعة" data-en="Farm">مزرعة</span>
@@ -378,7 +428,7 @@
             </div>
 
             <!-- Snake.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-700 domain-card" data-category="game">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Snake.ly</h3>
                     <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لعبة" data-en="Game">لعبة</span>
@@ -388,7 +438,7 @@
             </div>
 
             <!-- Teeth.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-white">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-white domain-card" data-category="health">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Teeth.ly</h3>
                     <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="صحة" data-en="Health">صحة</span>
@@ -398,7 +448,7 @@
             </div>
 
             <!-- Crude.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-stone-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-stone-700 domain-card" data-category="oil">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Crude.ly</h3>
                     <span class="bg-stone-200 text-stone-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
@@ -408,7 +458,7 @@
             </div>
 
             <!-- Still.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-400">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-400 domain-card" data-category="meditation">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Still.ly</h3>
                     <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تأمل" data-en="Meditation">تأمل</span>
@@ -418,7 +468,7 @@
             </div>
 
             <!-- Norm.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-400">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-400 domain-card" data-category="standards">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Norm.ly</h3>
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="معايير" data-en="Standards">معايير</span>
@@ -428,7 +478,7 @@
             </div>
 
             <!-- Banking.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-700 domain-card" data-category="finance">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Banking.ly</h3>
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
@@ -438,7 +488,7 @@
             </div>
 
             <!-- Oils.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-700 domain-card" data-category="oil">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Oils.ly</h3>
                     <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
@@ -448,7 +498,7 @@
             </div>
 
             <!-- Vamos.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-500">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-500 domain-card" data-category="sports">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Vamos.ly</h3>
                     <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="رياضة" data-en="Sports">رياضة</span>
@@ -458,7 +508,7 @@
             </div>
 
             <!-- Dawn.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-400">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-400 domain-card" data-category="wellness">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Dawn.ly</h3>
                     <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عافية" data-en="Wellness">عافية</span>
@@ -468,7 +518,7 @@
             </div>
 
             <!-- Cities.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-500">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-500 domain-card" data-category="urban">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Cities.ly</h3>
                     <span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عمراني" data-en="Urban">عمراني</span>
@@ -478,7 +528,7 @@
             </div>
 
             <!-- Serial.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-500">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-500 domain-card" data-category="entertainment">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Serial.ly</h3>
                     <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
@@ -488,7 +538,7 @@
             </div>
 
             <!-- Mining.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-zinc-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-zinc-600 domain-card" data-category="mining">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Mining.ly</h3>
                     <span class="bg-zinc-200 text-zinc-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تعدين" data-en="Mining">تعدين</span>
@@ -498,7 +548,7 @@
             </div>
 
             <!-- Apis.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Apis.ly</h3>
                     <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
@@ -508,7 +558,7 @@
             </div>
 
             <!-- Marine.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-700 domain-card" data-category="marine">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Marine.ly</h3>
                     <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحري" data-en="Marine">بحري</span>
@@ -518,7 +568,7 @@
             </div>
 
             <!-- Plasma.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-fuchsia-600">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-fuchsia-600 domain-card" data-category="energy">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Plasma.ly</h3>
                     <span class="bg-fuchsia-100 text-fuchsia-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Energy">طاقة</span>
@@ -528,13 +578,23 @@
             </div>
 
             <!-- Superior.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-700">
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-700 domain-card" data-category="premium">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="text-2xl font-black text-gray-900">Superior.ly</h3>
                     <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Premium">فاخر</span>
                 </div>
                 <p class="text-gray-600 mb-4 text-sm" data-ar="علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة" data-en="A premium luxury brand, a product-quality ranking & comparison platform, or a top-tier consultancy">علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة</p>
                 <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Superior.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
+            </div>
+
+            <!-- Dots.ly -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-500 domain-card" data-category="design">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-black text-gray-900">Dots.ly</h3>
+                    <span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تصميم" data-en="Design">تصميم</span>
+                </div>
+                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»" data-en="An interactive UI/UX design platform, a data-points & connections analytics tool, or a creative 'connect the dots' brand">منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»</p>
+                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Dots.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
             </div>
 
         </div>
@@ -619,6 +679,7 @@
                         <option value="Marine.ly">Marine.ly</option>
                         <option value="Plasma.ly">Plasma.ly</option>
                         <option value="Superior.ly">Superior.ly</option>
+                        <option value="Dots.ly">Dots.ly</option>
                         <option value="other" data-ar="نطاق آخر / استفسار عام" data-en="Other Domain / General Inquiry">نطاق آخر / استفسار عام</option>
                     </select>
                 </div>
@@ -656,6 +717,17 @@
 
     <script>
         let currentLang = 'en';
+
+        function filterDomains(category) {
+            const cards = document.querySelectorAll('.domain-card');
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const matches = category === 'all' || card.getAttribute('data-category') === category;
+                card.style.display = matches ? '' : 'none';
+                if (matches) visibleCount++;
+            });
+            document.getElementById('no-results-msg').classList.toggle('hidden', visibleCount > 0);
+        }
 
         function setLanguage(lang) {
             currentLang = lang;
