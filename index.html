@@ -1,759 +1,940 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" translate="no" class="notranslate">
+
+<html class="notranslate" dir="rtl" lang="ar" translate="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>digitally.ly | Premium .ly Domains for Sale</title>
-    <meta name="description" content="Premium short .ly domains for sale - Short, memorable, brandable domains for startups and businesses">
-    <meta name="google" content="notranslate">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digitally.ly — Premium .ly Domains</title>
+<meta content="Explore premium .ly domains for brands, startups, technology, finance, maritime, energy and more. Discover short, memorable domain names from Digitally.ly." name="description"/>
+<meta content="notranslate" name="google"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
         body { font-family: 'Cairo', sans-serif; }
         body.en { font-family: 'Inter', sans-serif; direction: ltr; }
         .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
         .lang-btn { transition: all 0.3s; }
         .lang-btn.active { background: #1e3a8a; color: white; }
-    </style>
-</head>
+    
+:root{--navy:#0b1f3a;--blue:#2563eb;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:#fff;color:var(--ink);overflow-x:hidden}
+body.en{font-family:'Inter',sans-serif;direction:ltr}
+.container{width:min(1180px,calc(100% - 32px))}
+@media(max-width:640px){.container{width:calc(100% - 24px)}}
+.site-header{background:rgba(255,255,255,.94)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,232,240,.9);box-shadow:0 4px 24px rgba(15,23,42,.05)!important}
+.brand-mark{letter-spacing:-.04em}
+.mobile-menu{display:none}
+.mobile-menu-panel{display:none}
+.mobile-menu-panel.open{display:block}
+@media(max-width:767px){.desktop-nav{display:none!important}.mobile-menu{display:block}}
+.hero-v2{background:radial-gradient(circle at 80% 10%,rgba(59,130,246,.25),transparent 35%),linear-gradient(135deg,#081a33 0%,#12366b 52%,#2563eb 100%);position:relative;overflow:hidden}
+.hero-content{position:relative;z-index:1}.hero-title{letter-spacing:-.045em;line-height:1.03}
+.eyebrow{letter-spacing:.14em}.stat-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(10px)}
+.section-kicker{color:#2563eb;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.section-title{letter-spacing:-.035em}
+.feature-card{border:1px solid var(--line);background:#fff;box-shadow:0 12px 35px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s,border-color .25s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(15,23,42,.11);border-color:#bfdbfe}
+.domain-card{border:1px solid var(--line)!important;border-top-width:4px!important;box-shadow:0 8px 25px rgba(15,23,42,.05)!important}
+.domain-card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(15,23,42,.10)!important}
+.domain-card h3{letter-spacing:-.03em}
+.domain-toolbar{background:#f8fafc;border:1px solid var(--line);border-radius:20px;padding:16px}
+#domain-search{height:48px}.filter-wrap{overflow-x:auto;scrollbar-width:none}.filter-wrap::-webkit-scrollbar{display:none}
+.filter-chip{white-space:nowrap;border:1px solid var(--line);background:#fff;color:#334155;padding:9px 14px;border-radius:999px;font-size:.82rem;font-weight:800;transition:.2s}
+.filter-chip:hover,.filter-chip.active{background:#0f2d55;color:#fff;border-color:#0f2d55}
+.why-card,.how-card{border:1px solid var(--line);background:#fff;border-radius:18px;padding:24px;height:100%}
+.step-num{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#eff6ff;color:#1d4ed8;font-weight:900}
+.cta-v2{background:linear-gradient(135deg,#0b1f3a,#1d4ed8);border-radius:26px}
+footer a:hover{color:#fff}
+@media(max-width:640px){.hero-v2{padding-top:64px!important;padding-bottom:54px!important}.hero-title{font-size:2.55rem!important}.stat-card{padding:12px!important}.domain-card{padding:18px!important}.domain-card h3{font-size:1.35rem!important}.feature-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:390px){.feature-grid{grid-template-columns:1fr!important}}
+
+/* =========================================================
+   DIGITALLY.LY — PREMIUM DOMAIN CARD SYSTEM
+   Replaces the old generic card appearance
+   ========================================================= */
+.domain-card{
+  position:relative!important;
+  overflow:hidden!important;
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:292px!important;
+  padding:0!important;
+  border:1px solid #e2e8f0!important;
+  border-top:0!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(37,99,235,.07),transparent 34%),
+    #fff!important;
+  box-shadow:0 10px 35px rgba(15,23,42,.055)!important;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease!important;
+}
+.domain-card::before{
+  content:"";
+  display:block;
+  height:4px;
+  width:100%;
+  background:linear-gradient(90deg,#0f172a,#2563eb);
+}
+.domain-card::after{
+  content:".LY";
+  position:absolute;
+  right:20px;
+  top:25px;
+  font:900 11px/1 Inter,sans-serif;
+  letter-spacing:.18em;
+  color:#94a3b8;
+}
+.domain-card:hover{
+  transform:translateY(-7px)!important;
+  border-color:#bfdbfe!important;
+  box-shadow:0 24px 55px rgba(15,23,42,.12)!important;
+}
+.domain-card > .flex{
+  margin:0!important;
+  padding:25px 24px 0!important;
+  align-items:center!important;
+}
+.domain-card h3{
+  margin:0!important;
+  font-family:Inter,Cairo,sans-serif!important;
+  font-size:clamp(1.65rem,2.5vw,2.15rem)!important;
+  line-height:1!important;
+  letter-spacing:-.055em!important;
+  color:#0f172a!important;
+}
+.domain-card > p{
+  flex:1!important;
+  margin:0!important;
+  padding:18px 24px 20px!important;
+  color:#64748b!important;
+  font-size:.9rem!important;
+  line-height:1.75!important;
+  max-width:95%!important;
+}
+.domain-card > .flex > span{
+  background:#f1f5f9!important;
+  color:#334155!important;
+  border:1px solid #e2e8f0!important;
+  padding:7px 11px!important;
+  border-radius:999px!important;
+  font-size:.68rem!important;
+  letter-spacing:.02em!important;
+  white-space:nowrap!important;
+}
+.domain-card > a{
+  margin:0 18px 18px!important;
+  width:auto!important;
+  border:1px solid #0f172a!important;
+  border-radius:14px!important;
+  background:#0f172a!important;
+  color:#fff!important;
+  padding:13px 16px!important;
+  font-size:.86rem!important;
+  letter-spacing:.01em!important;
+  box-shadow:none!important;
+  transition:all .22s ease!important;
+}
+.domain-card > a:hover{
+  background:#2563eb!important;
+  border-color:#2563eb!important;
+  transform:none!important;
+}
+.domain-card > a::after{
+  content:"  →";
+  opacity:.65;
+}
+.domain-card:nth-child(3n+2)::before{
+  background:linear-gradient(90deg,#334155,#64748b);
+}
+.domain-card:nth-child(3n)::before{
+  background:linear-gradient(90deg,#1d4ed8,#60a5fa);
+}
+
+/* Premium featured tiles */
+.feature-card{
+  position:relative;
+  overflow:hidden;
+  min-height:145px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid #e2e8f0!important;
+  border-radius:22px!important;
+  background:#fff!important;
+  box-shadow:0 8px 28px rgba(15,23,42,.045)!important;
+}
+.feature-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:3px;
+  background:#0f172a;
+}
+.feature-card:hover{
+  transform:translateY(-5px)!important;
+  border-color:#bfdbfe!important;
+  box-shadow:0 20px 45px rgba(15,23,42,.10)!important;
+}
+.feature-card .text-xl,.feature-card .md\:text-2xl{
+  font-family:Inter,Cairo,sans-serif!important;
+  letter-spacing:-.045em;
+}
+
+/* Toolbar */
+.domain-toolbar{
+  border-radius:24px!important;
+  background:#fff!important;
+  box-shadow:0 10px 30px rgba(15,23,42,.045);
+  padding:20px!important;
+}
+#domain-search{
+  height:54px!important;
+  border-radius:15px!important;
+  border:1px solid #e2e8f0!important;
+  box-shadow:none!important;
+}
+#domain-search:focus{
+  border-color:#2563eb!important;
+  box-shadow:0 0 0 4px rgba(37,99,235,.08)!important;
+}
+.filter-chip{
+  padding:10px 15px!important;
+  border-radius:12px!important;
+  font-size:.78rem!important;
+}
+.filter-chip.active,.filter-chip:hover{
+  background:#0f172a!important;
+  border-color:#0f172a!important;
+}
+
+/* Mobile */
+@media(max-width:640px){
+  .domain-card{
+    min-height:270px!important;
+    border-radius:20px!important;
+  }
+  .domain-card > .flex{
+    padding:22px 20px 0!important;
+  }
+  .domain-card h3{
+    font-size:1.65rem!important;
+  }
+  .domain-card > p{
+    padding:16px 20px 18px!important;
+    font-size:.84rem!important;
+    line-height:1.7!important;
+  }
+  .domain-card > a{
+    margin:0 15px 15px!important;
+    padding:12px 14px!important;
+  }
+  .domain-card::after{
+    right:17px;
+    top:22px;
+  }
+}
+
+/* ===== Digitally.ly mobile navigation v4 ===== */
+.mobile-menu-panel{display:none!important;width:100%;max-width:100%;margin:0!important;padding:8px 0 12px!important;border-top:1px solid #eef2f7;background:rgba(255,255,255,.98);box-sizing:border-box}
+.mobile-menu-panel.open{display:block!important}
+.mobile-menu-panel a{display:flex!important;align-items:center;min-height:48px;margin:2px 12px;padding:0 14px!important;border:0!important;border-radius:12px;color:#334155!important;font-size:14px;font-weight:700;line-height:1.2;transition:background .2s,color .2s}
+.mobile-menu-panel a:hover,.mobile-menu-panel a:active{background:#f1f5f9;color:#2563eb!important}
+@media(max-width:767px){
+  .desktop-nav{display:none!important}
+  .mobile-menu{display:flex!important;align-items:center;justify-content:center;width:42px;height:42px;padding:0!important;flex:0 0 42px;border-radius:12px!important;background:#fff}
+  .site-header .container{width:calc(100% - 20px)}
+  .site-header .flex.items-center.justify-between{min-height:64px;gap:8px}
+  .site-header .brand-mark{font-size:1.35rem!important;white-space:nowrap}
+  .site-header .lang-btn{min-width:38px;height:34px;padding:0 8px!important}
+  .mobile-menu-panel{box-shadow:0 12px 22px rgba(15,23,42,.07)}
+  .mobile-menu-panel a::after{content:'›';margin-inline-start:auto;color:#94a3b8;font-size:18px;line-height:1}
+}
+@media(min-width:768px){.mobile-menu-panel{display:none!important}}
+
+</style>
+<link href="https://digitally.ly/" rel="canonical"/><meta content="Digitally.ly — Premium .ly Domains" property="og:title"/><meta content="Premium .ly domains selected for memorable brands, businesses and digital products." property="og:description"/><meta content="website" property="og:type"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Digitally.ly","url":"https://digitally.ly/","description":"Premium .ly domains for sale."}</script></head>
 <body class="bg-gray-50 text-gray-800">
-
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black text-blue-900">Digitally<span class="text-blue-500">.ly</span></div>
-            
-            <nav class="hidden md:flex space-x-6 space-x-reverse" id="nav-menu">
-                <a href="#domains" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="النطاقات المتاحة" data-en="Available Domains">النطاقات المتاحة</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="قصة .ly" data-en="The .ly Story">قصة .ly</a>
-                <a href="#why" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="لماذا نحن؟" data-en="Why Us?">لماذا نحن؟</a>
-                <a href="articles.html" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="المقالات" data-en="Articles">المقالات</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
-            </nav>
-
-            <div class="flex items-center gap-3">
-                <div class="flex bg-gray-100 rounded-lg p-1">
-                    <button onclick="setLanguage('ar')" id="btn-ar" class="lang-btn px-3 py-1 rounded-md text-sm font-bold">عربي</button>
-                    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active px-3 py-1 rounded-md text-sm font-bold">EN</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20 text-center">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-black mb-6" data-ar="امتلك اسم النطاق الذي سيصنع علامتك التجارية" data-en="Own the Domain That Will Build Your Brand">امتلك اسم النطاق الذي سيصنع علامتك التجارية</h1>
-            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto" data-ar="مجموعة حصرية من نطاقات .ly القصيرة، سهلة الحفظ، والمثالية للشركات الناشئة والمشاريع الطموحة" data-en="An exclusive collection of short, memorable .ly domains — perfect for startups and ambitious ventures">مجموعة حصرية من نطاقات <span class="font-bold text-yellow-300">.ly</span> القصيرة، سهلة الحفظ، والمثالية للشركات الناشئة والمشاريع الطموحة</p>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <a href="#domains" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg" data-ar="تصفح النطاقات" data-en="Browse Domains">تصفح النطاقات</a>
-                <a href="mailto:Tech.co.ly@gmail.com" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition" data-ar="راسلنا عبر الإيميل" data-en="Email Us">راسلنا عبر الإيميل</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About .ly Section: story, bit.ly / musical.ly, famous .ly domains, advantages -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-6 max-w-5xl">
-
-            <div class="text-center mb-12">
-                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4" data-ar="تعرّف على الامتداد" data-en="Know the Extension">تعرّف على الامتداد</span>
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4" data-ar="لماذا نطاقات .ly؟ القصة وراء أشهر اختصار في تاريخ الإنترنت" data-en="Why .ly Domains? The Story Behind the Internet's Most Famous Domain Hack">لماذا نطاقات .ly؟ القصة وراء أشهر اختصار في تاريخ الإنترنت</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed" data-ar="امتداد .ly هو الرمز الرسمي لدولة ليبيا على الإنترنت، لكنه تحوّل على مدى العقدين الماضيين إلى واحد من أشهر «اختصارات النطاقات» (Domain Hacks) في العالم. فكرة الاختصار بسيطة: نهاية «-ly» هي لاحقة إنجليزية شائعة (مثل quickly أو easily)، فحين تُدمج مع امتداد .ly تتحول أي كلمة عادية إلى اسم نطاق كامل قصير وسهل الحفظ، دون الحاجة لدفع ثمن نطاق .com المكلف." data-en="The .ly extension is Libya's official country-code domain, but over the past two decades it has become one of the world's best-known 'domain hacks.' The idea is simple: '-ly' is a common English suffix (as in quickly or easily), so pairing it with the .ly extension turns an ordinary word into a short, memorable, complete domain name, without paying for an expensive .com equivalent.">امتداد .ly هو الرمز الرسمي لدولة ليبيا على الإنترنت، لكنه تحوّل على مدى العقدين الماضيين إلى واحد من أشهر «اختصارات النطاقات» (Domain Hacks) في العالم. فكرة الاختصار بسيطة: نهاية «-ly» هي لاحقة إنجليزية شائعة (مثل quickly أو easily)، فحين تُدمج مع امتداد .ly تتحول أي كلمة عادية إلى اسم نطاق كامل قصير وسهل الحفظ، دون الحاجة لدفع ثمن نطاق .com المكلف.</p>
-            </div>
-
-            <!-- bit.ly & musical.ly stories -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                    <div class="text-3xl mb-3">🔗</div>
-                    <h3 class="text-xl font-black text-gray-900 mb-2">bit.ly</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed" data-ar="في عام 2008 أطلقت شركة Bitly خدمة اختصار الروابط الأشهر في العالم على نطاق bit.ly. سرعان ما أصبح الاسم مرادفًا لفكرة «تقصير الرابط» نفسها، واستخدمته منصات عملاقة مثل تويتر (X) وملايين المسوّقين حول العالم يوميًا، مما أثبت أن نطاقًا ليبيًا بسيطًا يمكنه حمل حركة مرور عالمية بمليارات النقرات." data-en="In 2008, Bitly launched the world's most recognized link-shortening service on the domain bit.ly. The name quickly became synonymous with the very idea of 'shortening a link,' and was adopted by platforms like Twitter (X) and millions of marketers worldwide, proving that a simple Libyan domain could carry billions of clicks of truly global traffic.">في عام 2008 أطلقت شركة Bitly خدمة اختصار الروابط الأشهر في العالم على نطاق bit.ly. سرعان ما أصبح الاسم مرادفًا لفكرة «تقصير الرابط» نفسها، واستخدمته منصات عملاقة مثل تويتر (X) وملايين المسوّقين حول العالم يوميًا، مما أثبت أن نطاقًا ليبيًا بسيطًا يمكنه حمل حركة مرور عالمية بمليارات النقرات.</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                    <div class="text-3xl mb-3">🎵</div>
-                    <h3 class="text-xl font-black text-gray-900 mb-2">musical.ly</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed" data-ar="قصة musical.ly ربما تكون الأشهر على الإطلاق: تطبيق صيني لمقاطع الفيديو القصيرة بُني بالكامل على نطاق .ly (مع منصة بث مباشر شقيقة باسم live.ly)، وحقق نجاحًا هائلاً بأكثر من 60 مليون مستخدم شهريًا. في نوفمبر 2017 استحوذت عملاقة التقنية الصينية ByteDance على musical.ly بصفقة تُقدَّر بنحو مليار دولار أمريكي، ثم دمجت المنصة لاحقًا في تطبيق TikTok الذي نعرفه اليوم. رسوم تسجيل نطاق .ly لا تتجاوز عادة 100 دولار سنويًا فقط، وهو ما يلخّص القيمة الهائلة التي يمكن أن يصنعها اسم نطاق ذكي." data-en="The musical.ly story may be the most famous of all: a Chinese short-video app built entirely on a .ly domain (with a sister live-streaming platform called live.ly), which grew to more than 60 million monthly users. In November 2017, Chinese tech giant ByteDance acquired musical.ly in a deal reportedly worth about $1 billion, later merging the platform into what we now know as TikTok. A .ly domain typically costs no more than about $100 a year to register, a striking illustration of how much value a smart domain name can create.">قصة musical.ly ربما تكون الأشهر على الإطلاق: تطبيق صيني لمقاطع الفيديو القصيرة بُني بالكامل على نطاق .ly (مع منصة بث مباشر شقيقة باسم live.ly)، وحقق نجاحًا هائلاً بأكثر من 60 مليون مستخدم شهريًا. في نوفمبر 2017 استحوذت عملاقة التقنية الصينية ByteDance على musical.ly بصفقة تُقدَّر بنحو مليار دولار أمريكي، ثم دمجت المنصة لاحقًا في تطبيق TikTok الذي نعرفه اليوم. رسوم تسجيل نطاق .ly لا تتجاوز عادة 100 دولار سنويًا فقط، وهو ما يلخّص القيمة الهائلة التي يمكن أن يصنعها اسم نطاق ذكي.</p>
-                </div>
-            </div>
-
-            <!-- How global companies use .ly -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-black text-gray-900 mb-6 text-center" data-ar="كيف تستخدم الشركات العالمية امتداد .ly؟" data-en="How Do Global Companies Use the .ly Extension?">كيف تستخدم الشركات العالمية امتداد .ly؟</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-blue-50 rounded-lg p-4 text-center">
-                        <div class="font-black text-blue-900 mb-1">bit.ly</div>
-                        <p class="text-xs text-gray-600" data-ar="اختصار الروابط عالميًا" data-en="Global link shortening">اختصار الروابط عالميًا</p>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4 text-center">
-                        <div class="font-black text-blue-900 mb-1">ow.ly</div>
-                        <p class="text-xs text-gray-600" data-ar="اختصار الروابط داخل منصة Hootsuite" data-en="Link shortening inside Hootsuite">اختصار الروابط داخل منصة Hootsuite</p>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4 text-center">
-                        <div class="font-black text-blue-900 mb-1">parse.ly</div>
-                        <p class="text-xs text-gray-600" data-ar="تحليلات محتوى للناشرين الكبار" data-en="Content analytics for major publishers">تحليلات محتوى للناشرين الكبار</p>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-4 text-center">
-                        <div class="font-black text-blue-900 mb-1">live.ly</div>
-                        <p class="text-xs text-gray-600" data-ar="بث مباشر من فريق musical.ly" data-en="Live streaming from the musical.ly team">بث مباشر من فريق musical.ly</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Top 3 famous .ly domains -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-black text-gray-900 mb-2 text-center" data-ar="أشهر 3 نطاقات .ly في العالم" data-en="The 3 Most Famous .ly Domains in the World">أشهر 3 نطاقات .ly في العالم</h3>
-                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-8 text-sm" data-ar="على عكس نطاقات .com الفاخرة، لا تُباع أغلب نطاقات .ly في مزادات علنية، بل تكتسب قيمتها من العلامات التجارية العالمية المبنية عليها. إليك أبرز 3 قصص نجاح:" data-en="Unlike premium .com domains, most .ly domains aren't traded on public auction markets — instead, they become globally valuable through the brands built on top of them. Here are the three most famous success stories:">على عكس نطاقات .com الفاخرة، لا تُباع أغلب نطاقات .ly في مزادات علنية، بل تكتسب قيمتها من العلامات التجارية العالمية المبنية عليها. إليك أبرز 3 قصص نجاح:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-600 text-center">
-                        <div class="text-4xl mb-3">🥇</div>
-                        <h4 class="text-xl font-black text-gray-900 mb-2">musical.ly</h4>
-                        <p class="text-gray-600 text-sm" data-ar="استحواذ ByteDance بصفقة تُقدَّر بنحو مليار دولار (2017)، ثم اندماجها لاحقًا في TikTok" data-en="Acquired by ByteDance in a deal reportedly worth about $1 billion (2017), later merged into TikTok">استحواذ ByteDance بصفقة تُقدَّر بنحو مليار دولار (2017)، ثم اندماجها لاحقًا في TikTok</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-indigo-600 text-center">
-                        <div class="text-4xl mb-3">🥈</div>
-                        <h4 class="text-xl font-black text-gray-900 mb-2">bit.ly</h4>
-                        <p class="text-gray-600 text-sm" data-ar="الاسم المرادف لاختصار الروابط عالميًا، تستخدمه ملايين الشركات والمسوّقين يوميًا" data-en="The name synonymous with link-shortening worldwide, used by millions of businesses and marketers every day">الاسم المرادف لاختصار الروابط عالميًا، تستخدمه ملايين الشركات والمسوّقين يوميًا</p>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-600 text-center">
-                        <div class="text-4xl mb-3">🥉</div>
-                        <h4 class="text-xl font-black text-gray-900 mb-2">ow.ly</h4>
-                        <p class="text-gray-600 text-sm" data-ar="نطاق اختصار الروابط الرسمي لمنصة Hootsuite، إحدى أكبر أدوات إدارة السوشيال ميديا عالميًا" data-en="The official link-shortening domain for Hootsuite, one of the world's leading social media management platforms">نطاق اختصار الروابط الرسمي لمنصة Hootsuite، إحدى أكبر أدوات إدارة السوشيال ميديا عالميًا</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Advantages of .ly -->
-            <div>
-                <h3 class="text-2xl font-black text-gray-900 mb-6 text-center" data-ar="مميزات امتلاك نطاق .ly" data-en="Advantages of Owning a .ly Domain">مميزات امتلاك نطاق .ly</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">✂️</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="اختصار ذكي وقصير" data-en="Smart, Short Domain Hack">اختصار ذكي وقصير</h4>
-                        <p class="text-sm text-gray-600" data-ar="يمكن دمجه مع أي كلمة إنجليزية تنتهي بـ -ly لصنع اسم نطاق كامل يُقرأ ككلمة واحدة" data-en="Combine it with almost any English word ending in '-ly' to create a full domain that reads as a single word">يمكن دمجه مع أي كلمة إنجليزية تنتهي بـ -ly لصنع اسم نطاق كامل يُقرأ ككلمة واحدة</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">💰</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="تكلفة أقل بكثير من .com" data-en="Far Cheaper Than Premium .com">تكلفة أقل بكثير من .com</h4>
-                        <p class="text-sm text-gray-600" data-ar="تحصل على اسم قصير ومميز بجزء يسير من تكلفة نطاق .com المكافئ" data-en="Get a short, distinctive name for a fraction of the cost of the equivalent .com">تحصل على اسم قصير ومميز بجزء يسير من تكلفة نطاق .com المكافئ</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">✨</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="أسماء مميزة لا تزال متاحة" data-en="Strong Names Still Available">أسماء مميزة لا تزال متاحة</h4>
-                        <p class="text-sm text-gray-600" data-ar="بينما امتلأت أغلب أسماء .com الجيدة، لا تزال العديد من كلمات -ly القوية متاحة للتسجيل" data-en="While most good .com names are taken, many strong '-ly' words are still available to register">بينما امتلأت أغلب أسماء .com الجيدة، لا تزال العديد من كلمات -ly القوية متاحة للتسجيل</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">🌍</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="إثبات عالمي على نطاق واسع" data-en="Proven at Global Scale">إثبات عالمي على نطاق واسع</h4>
-                        <p class="text-sm text-gray-600" data-ar="أثبتت قصص bit.ly وmusical.ly أن نطاق .ly قادر على دعم منصات بمليارات المستخدمين" data-en="The bit.ly and musical.ly stories prove a .ly domain can support platforms with billions of users">أثبتت قصص bit.ly وmusical.ly أن نطاق .ly قادر على دعم منصات بمليارات المستخدمين</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">🏛️</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="إدارة رسمية محدثة" data-en="Modernized Governance">إدارة رسمية محدثة</h4>
-                        <p class="text-sm text-gray-600" data-ar="أصبحت إدارة الامتداد على أساس قانوني أوضح بعد نقل الإشراف من IANA إلى GACI عام 2025" data-en="Oversight of the extension is now on clearer legal footing following the 2025 IANA transfer to GACI">أصبحت إدارة الامتداد على أساس قانوني أوضح بعد نقل الإشراف من IANA إلى GACI عام 2025</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="text-2xl mb-2">🤝</div>
-                        <h4 class="font-bold text-gray-900 mb-1" data-ar="هوية مزدوجة: عالمية ومحلية" data-en="Dual Identity: Global & Local">هوية مزدوجة: عالمية ومحلية</h4>
-                        <p class="text-sm text-gray-600" data-ar="مثالي لعلامة تجارية عالمية بأسلوب -ly، وفي الوقت نفسه هوية رقمية أصيلة للسوق الليبي والمحلي" data-en="Ideal for a global '-ly' style brand, while also serving as an authentic digital identity for the Libyan and regional market">مثالي لعلامة تجارية عالمية بأسلوب -ly، وفي الوقت نفسه هوية رقمية أصيلة للسوق الليبي والمحلي</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Domains Grid -->
-    <section id="domains" class="py-16 container mx-auto px-6">
-        <div class="flex justify-center mb-6">
-            <a href="articles.html" class="inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-800 transition shadow">
-                <span>📰</span>
-                <span data-ar="تصفّح المقالات" data-en="Browse Articles">تصفّح المقالات</span>
-            </a>
-        </div>
-
-        <h2 class="text-3xl font-black text-center text-gray-900 mb-6" data-ar="جميع النطاقات المتاحة للاستثمار" data-en="All Available Domains for Investment">جميع النطاقات المتاحة للاستثمار</h2>
-
-        <div class="flex justify-center mb-10">
-            <div class="w-full max-w-xs">
-                <label for="category-filter" class="block text-center text-gray-600 text-sm font-bold mb-2" data-ar="تصفية حسب القسم" data-en="Filter by Category">تصفية حسب القسم</label>
-                <select id="category-filter" onchange="filterDomains(this.value)" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition font-semibold text-gray-700 bg-white">
-                    <option value="all" data-ar="جميع الأقسام" data-en="All Categories">جميع الأقسام</option>
-                    <option value="finance" data-ar="مالي" data-en="Finance">مالي</option>
-                    <option value="business" data-ar="أعمال" data-en="Business">أعمال</option>
-                    <option value="tech" data-ar="تقني" data-en="Tech">تقني</option>
-                    <option value="charity" data-ar="خيري" data-en="Charity">خيري</option>
-                    <option value="media" data-ar="إعلام" data-en="Media">إعلام</option>
-                    <option value="tool" data-ar="أداة" data-en="Tool">أداة</option>
-                    <option value="data" data-ar="بيانات" data-en="Data">بيانات</option>
-                    <option value="security" data-ar="أمان" data-en="Security">أمان</option>
-                    <option value="speed" data-ar="سرعة" data-en="Speed">سرعة</option>
-                    <option value="power" data-ar="طاقة / قوة" data-en="Power">طاقة / قوة</option>
-                    <option value="brand" data-ar="علامة" data-en="Brand">علامة</option>
-                    <option value="protection" data-ar="حماية" data-en="Protection">حماية</option>
-                    <option value="opportunity" data-ar="فرص" data-en="Opportunity">فرص</option>
-                    <option value="search" data-ar="بحث" data-en="Search">بحث</option>
-                    <option value="entertainment" data-ar="ترفيه" data-en="Entertainment">ترفيه</option>
-                    <option value="luxury" data-ar="فاخر" data-en="Luxury">فاخر</option>
-                    <option value="logistics" data-ar="لوجستي" data-en="Logistics">لوجستي</option>
-                    <option value="nature" data-ar="طبيعة" data-en="Nature">طبيعة</option>
-                    <option value="farm" data-ar="مزرعة" data-en="Farm">مزرعة</option>
-                    <option value="game" data-ar="لعبة" data-en="Game">لعبة</option>
-                    <option value="health" data-ar="صحة" data-en="Health">صحة</option>
-                    <option value="oil" data-ar="نفط" data-en="Oil">نفط</option>
-                    <option value="meditation" data-ar="تأمل" data-en="Meditation">تأمل</option>
-                    <option value="standards" data-ar="معايير" data-en="Standards">معايير</option>
-                    <option value="sports" data-ar="رياضة" data-en="Sports">رياضة</option>
-                    <option value="wellness" data-ar="عافية" data-en="Wellness">عافية</option>
-                    <option value="urban" data-ar="عمراني" data-en="Urban">عمراني</option>
-                    <option value="mining" data-ar="تعدين" data-en="Mining">تعدين</option>
-                    <option value="marine" data-ar="بحري" data-en="Marine">بحري</option>
-                    <option value="energy" data-ar="طاقة (كهربائية)" data-en="Energy">طاقة (كهربائية)</option>
-                    <option value="premium" data-ar="فاخر (Premium)" data-en="Premium">فاخر (Premium)</option>
-                    <option value="design" data-ar="تصميم" data-en="Design">تصميم</option>
-                </select>
-                <p id="no-results-msg" class="hidden text-center text-gray-500 text-sm mt-4" data-ar="لا توجد نطاقات في هذا القسم حاليًا" data-en="No domains in this category right now">لا توجد نطاقات في هذا القسم حاليًا</p>
-            </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- Fintech.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-600 domain-card" data-category="finance">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Fintech.ly</h3>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة التكنولوجيا المالية، أخبار Fintech، أو دليل الشركات المالية الناشئة" data-en="Fintech platform, financial news, or startup directory">منصة التكنولوجيا المالية، أخبار Fintech، أو دليل الشركات المالية الناشئة</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Fintech.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Company.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-600 domain-card" data-category="business">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Company.ly</h3>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أعمال" data-en="Business">أعمال</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="دليل الشركات، منصة B2B، أو أداة إدارة الأعمال" data-en="Company directory, B2B platform, or business tool">دليل الشركات، منصة B2B، أو أداة إدارة الأعمال</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Company.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Protocol.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Protocol.ly</h3>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="توثيق APIs، إدارة بروتوكولات الشبكات، أو منصة blockchain" data-en="API documentation, network protocols, or blockchain platform">توثيق APIs، إدارة بروتوكولات الشبكات، أو منصة blockchain</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Protocol.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Charity.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-600 domain-card" data-category="charity">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Charity.ly</h3>
-                    <span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="خيري" data-en="Charity">خيري</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة تبرعات شفافة، دليل الجمعيات الخيرية" data-en="Transparent donation platform, charity directory">منصة تبرعات شفافة، دليل الجمعيات الخيرية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Charity.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Vlog.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-600 domain-card" data-category="media">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Vlog.ly</h3>
-                    <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="إعلام" data-en="Media">إعلام</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة فيديوهات Vlog، أداة تحليل يوتيوب" data-en="Vlog platform, YouTube analytics tool">منصة فيديوهات Vlog، أداة تحليل يوتيوب</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vlog.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Downloader.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-600 domain-card" data-category="tool">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Downloader.ly</h3>
-                    <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أداة" data-en="Tool">أداة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="أداة تحميل ملفات/فيديوهات، مدير التحميلات" data-en="File/video downloader, download manager">أداة تحميل ملفات/فيديوهات، مدير التحميلات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Downloader.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Crunch.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-600 domain-card" data-category="data">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Crunch.ly</h3>
-                    <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بيانات" data-en="Data">بيانات</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="أداة ضغط ملفات، منصة أخبار تقنية" data-en="File compression tool, tech news platform">أداة ضغط ملفات، منصة أخبار تقنية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Crunch.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Bunker.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-gray-700 domain-card" data-category="security">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Bunker.ly</h3>
-                    <span class="bg-gray-200 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أمان" data-en="Security">أمان</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="استضافة آمنة، تخزين مشفر، حماية البيانات" data-en="Secure hosting, encrypted storage, data protection">استضافة آمنة، تخزين مشفر، حماية البيانات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Bunker.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Haste.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-600 domain-card" data-category="speed">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Haste.ly</h3>
-                    <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="سرعة" data-en="Speed">سرعة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تسريع المواقع، توصيل سريع، تحسين الأداء" data-en="Website acceleration, fast delivery, performance">تسريع المواقع، توصيل سريع، تحسين الأداء</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Haste.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Thunder.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-500 domain-card" data-category="power">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Thunder.ly</h3>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Power">طاقة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="ألعاب سحابية، بريد جماعي سريع" data-en="Cloud gaming, fast bulk email">ألعاب سحابية، بريد جماعي سريع</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Thunder.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Cobra.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-700 domain-card" data-category="brand">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Cobra.ly</h3>
-                    <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="علامة" data-en="Brand">علامة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="أمن سيبراني، أحذية رياضية، علامة تجارية قوية" data-en="Cybersecurity, sports shoes, strong brand">أمن سيبراني، أحذية رياضية، علامة تجارية قوية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cobra.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Anti.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-600 domain-card" data-category="protection">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Anti.ly</h3>
-                    <span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="حماية" data-en="Protection">حماية</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="مكافحة الفيروسات، حظر الإعلانات" data-en="Antivirus, ad blocking">مكافحة الفيروسات، حظر الإعلانات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Anti.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Cent.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-emerald-600 domain-card" data-category="finance">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Cent.ly</h3>
-                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="إدارة المصروفات، Micro-investing" data-en="Expense management, micro-investing">إدارة المصروفات، Micro-investing</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cent.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Chance.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-teal-600 domain-card" data-category="opportunity">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Chance.ly</h3>
-                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فرص" data-en="Opportunity">فرص</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="يانصيب خيرية، تحليل احتمالات" data-en="Charity lottery, probability analysis">يانصيب خيرية، تحليل احتمالات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Chance.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- What.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-violet-600 domain-card" data-category="search">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">What.ly</h3>
-                    <span class="bg-violet-100 text-violet-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحث" data-en="Search">بحث</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="محرك بحث ذكي AI، أسئلة وأجوبة" data-en="AI search engine, Q&A platform">محرك بحث ذكي AI، أسئلة وأجوبة</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20What.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Joker.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-600 domain-card" data-category="entertainment">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Joker.ly</h3>
-                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="ألعاب ترفيهية، تطبيق نكت، محتوى فكاهي" data-en="Fun games, jokes app, comedy content">ألعاب ترفيهية، تطبيق نكت، محتوى فكاهي</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Joker.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Lion.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-600 domain-card" data-category="power">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Lion.ly</h3>
-                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="قوة" data-en="Power">قوة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منتجات فاخرة، ريادة أعمال" data-en="Luxury products, entrepreneurship">منتجات فاخرة، ريادة أعمال</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Lion.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Severus.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-800 domain-card" data-category="luxury">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Severus.ly</h3>
-                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Luxury">فاخر</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="عطور فاخرة، استوديو تصميم" data-en="Luxury perfumes, design studio">عطور فاخرة، استوديو تصميم</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Severus.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Vessel.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-600 domain-card" data-category="logistics">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Vessel.ly</h3>
-                    <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لوجستي" data-en="Logistics">لوجستي</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="شحن ولوجستيات، نقل بحري" data-en="Shipping, logistics, maritime transport">شحن ولوجستيات، نقل بحري</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vessel.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Twig.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-lime-600 domain-card" data-category="nature">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Twig.ly</h3>
-                    <span class="bg-lime-100 text-lime-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طبيعة" data-en="Nature">طبيعة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="أزياء مستدامة، محتوى عن الطبيعة" data-en="Sustainable fashion, nature content">أزياء مستدامة، محتوى عن الطبيعة</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Twig.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Sheep.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-sky-400 domain-card" data-category="farm">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Sheep.ly</h3>
-                    <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مزرعة" data-en="Farm">مزرعة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تطبيق تأمل/نوم، إدارة قطعان" data-en="Meditation/sleep app, herd management">تطبيق تأمل/نوم، إدارة قطعان</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Sheep.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Snake.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-700 domain-card" data-category="game">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Snake.ly</h3>
-                    <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لعبة" data-en="Game">لعبة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="لعبة موبايل، تعليم برمجة Python" data-en="Mobile game, Python programming education">لعبة موبايل، تعليم برمجة Python</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Snake.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Teeth.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-white domain-card" data-category="health">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Teeth.ly</h3>
-                    <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="صحة" data-en="Health">صحة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="عيادة أسنان افتراضية، حجز مواعيد" data-en="Virtual dental clinic, appointment booking">عيادة أسنان افتراضية، حجز مواعيد</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Teeth.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Crude.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-stone-700 domain-card" data-category="oil">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Crude.ly</h3>
-                    <span class="bg-stone-200 text-stone-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تحليل أسعار النفط، محتوى صناعي" data-en="Oil price analysis, industrial content">تحليل أسعار النفط، محتوى صناعي</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Crude.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Still.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-400 domain-card" data-category="meditation">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Still.ly</h3>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تأمل" data-en="Meditation">تأمل</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تأمل وMindfulness، تصوير فوتوغرافي" data-en="Meditation & mindfulness, photography">تأمل وMindfulness، تصوير فوتوغرافي</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Still.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Norm.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-400 domain-card" data-category="standards">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Norm.ly</h3>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="معايير" data-en="Standards">معايير</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="معايير ومقارنات المنتجات" data-en="Product standards and comparisons">معايير ومقارنات المنتجات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Norm.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Banking.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-700 domain-card" data-category="finance">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Banking.ly</h3>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة خدمات مصرفية رقمية، تطبيق بنكي، أو دليل مقارنة بنوك" data-en="Digital banking platform, neobank app, or bank comparison directory">منصة خدمات مصرفية رقمية، تطبيق بنكي، أو دليل مقارنة بنوك</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Banking.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Oils.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-700 domain-card" data-category="oil">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Oils.ly</h3>
-                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تجارة الزيوت والنفط، منتجات الزيوت العطرية، أو منصة صناعية للطاقة" data-en="Oil and petroleum trading, essential oils products, or an energy-industry platform">تجارة الزيوت والنفط، منتجات الزيوت العطرية، أو منصة صناعية للطاقة</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Oils.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Vamos.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-500 domain-card" data-category="sports">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Vamos.ly</h3>
-                    <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="رياضة" data-en="Sports">رياضة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="علامة رياضية تحفيزية، منصة حجوزات سفر ومغامرات، أو تطبيق لياقة بدنية" data-en="A motivational sports brand, a travel & adventure booking platform, or a fitness app">علامة رياضية تحفيزية، منصة حجوزات سفر ومغامرات، أو تطبيق لياقة بدنية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vamos.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Dawn.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-400 domain-card" data-category="wellness">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Dawn.ly</h3>
-                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عافية" data-en="Wellness">عافية</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="تطبيق روتين صباحي وعادات صحية، منصة تصوير الفجر، أو علامة تجارية لـ«بداية جديدة»" data-en="A morning-routine & healthy-habits app, a sunrise photography platform, or a 'fresh start' brand">تطبيق روتين صباحي وعادات صحية، منصة تصوير الفجر، أو علامة تجارية لـ«بداية جديدة»</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Dawn.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Cities.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-500 domain-card" data-category="urban">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Cities.ly</h3>
-                    <span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عمراني" data-en="Urban">عمراني</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="دليل المدن والمدن الذكية، منصة استكشاف وجهات سياحية، أو أداة تحليل بيانات حضرية" data-en="A city & smart-city directory, a destination-discovery platform, or an urban data-analytics tool">دليل المدن والمدن الذكية، منصة استكشاف وجهات سياحية، أو أداة تحليل بيانات حضرية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cities.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Serial.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-500 domain-card" data-category="entertainment">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Serial.ly</h3>
-                    <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة مسلسلات وأفلام، تطبيق قصص متسلسلة (Serialized Fiction)، أو أداة تتبّع أرقام تسلسلية للمنتجات" data-en="A TV series & movies platform, a serialized-fiction reading app, or a product serial-number tracking tool">منصة مسلسلات وأفلام، تطبيق قصص متسلسلة (Serialized Fiction)، أو أداة تتبّع أرقام تسلسلية للمنتجات</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Serial.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Mining.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-zinc-600 domain-card" data-category="mining">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Mining.ly</h3>
-                    <span class="bg-zinc-200 text-zinc-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تعدين" data-en="Mining">تعدين</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة تعدين عملات رقمية، شركة تعدين معادن، أو محتوى عن صناعة التعدين" data-en="A crypto-mining platform, a minerals & mining company, or industry content about the mining sector">منصة تعدين عملات رقمية، شركة تعدين معادن، أو محتوى عن صناعة التعدين</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Mining.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Apis.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Apis.ly</h3>
-                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="سوق أو توثيق APIs للمطورين، منصة تكامل بيانات، أو أداة إدارة واجهات برمجية" data-en="An API marketplace or developer documentation hub, a data-integration platform, or an API management tool">سوق أو توثيق APIs للمطورين، منصة تكامل بيانات، أو أداة إدارة واجهات برمجية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Apis.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Marine.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-700 domain-card" data-category="marine">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Marine.ly</h3>
-                    <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحري" data-en="Marine">بحري</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="خدمات بحرية ونقل بحري، منصة حجز يخوت وقوارب، أو محتوى عن الحياة البحرية" data-en="Maritime & shipping services, a yacht/boat booking platform, or marine-life content">خدمات بحرية ونقل بحري، منصة حجز يخوت وقوارب، أو محتوى عن الحياة البحرية</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Marine.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Plasma.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-fuchsia-600 domain-card" data-category="energy">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Plasma.ly</h3>
-                    <span class="bg-fuchsia-100 text-fuchsia-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Energy">طاقة</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="شركة تقنية طاقة أو بلازما، مصنّع شاشات وإلكترونيات، أو محتوى علمي متخصص" data-en="A plasma/energy technology company, a display & electronics manufacturer, or specialized science content">شركة تقنية طاقة أو بلازما، مصنّع شاشات وإلكترونيات، أو محتوى علمي متخصص</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Plasma.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Superior.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-700 domain-card" data-category="premium">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Superior.ly</h3>
-                    <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Premium">فاخر</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة" data-en="A premium luxury brand, a product-quality ranking & comparison platform, or a top-tier consultancy">علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Superior.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-            <!-- Dots.ly -->
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-500 domain-card" data-category="design">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-2xl font-black text-gray-900">Dots.ly</h3>
-                    <span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تصميم" data-en="Design">تصميم</span>
-                </div>
-                <p class="text-gray-600 mb-4 text-sm" data-ar="منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»" data-en="An interactive UI/UX design platform, a data-points & connections analytics tool, or a creative 'connect the dots' brand">منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»</p>
-                <a href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Dots.ly" target="_blank" class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now">استفسر الآن</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Why Buy Section -->
-    <section id="why" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black text-gray-900 mb-12" data-ar="لماذا تشتري من digitally.ly؟" data-en="Why Buy from digitally.ly?">لماذا تشتري من digitally.ly؟</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6">
-                    <div class="text-4xl mb-4">🔒</div>
-                    <h3 class="text-xl font-bold mb-2" data-ar="نقل آمن ومضمون" data-en="Secure & Guaranteed Transfer">نقل آمن ومضمون</h3>
-                    <p class="text-gray-600" data-ar="نستخدم خدمات الضمان المعتمدة (مثل Escrow.com) لضمان نقل ملكية النطاق بأمان كامل" data-en="We use trusted escrow services (like Escrow.com) to ensure safe domain transfer">نستخدم خدمات الضمان المعتمدة (مثل Escrow.com) لضمان نقل ملكية النطاق بأمان كامل</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl mb-4">💎</div>
-                    <h3 class="text-xl font-bold mb-2" data-ar="نطاقات مختارة بعناية" data-en="Carefully Selected Domains">نطاقات مختارة بعناية</h3>
-                    <p class="text-gray-600" data-ar="جميع النطاقات قصيرة، سهلة النطق، ولها قيمة علامة تجارية عالية" data-en="All domains are short, easy to pronounce, and have high brand value">جميع النطاقات قصيرة، سهلة النطق، ولها قيمة علامة تجارية عالية</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold mb-2" data-ar="تفاوض مرن" data-en="Flexible Negotiation">تفاوض مرن</h3>
-                    <p class="text-gray-600" data-ar="نحن منفتحون على العروض المعقولة وخيارات الدفع المرنة" data-en="We're open to reasonable offers and flexible payment options">نحن منفتحون على العروض المعقولة وخيارات الدفع المرنة</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-16 container mx-auto px-6 max-w-2xl">
-        <div class="bg-white rounded-2xl shadow-xl p-8">
-            <h2 class="text-3xl font-black text-center text-gray-900 mb-2" data-ar="هل وجدت النطاق المثالي؟" data-en="Found Your Perfect Domain?">هل وجدت النطاق المثالي؟</h2>
-            <p class="text-center text-gray-600 mb-8" data-ar="املأ النموذج أدناه أو تواصل معنا مباشرة" data-en="Fill the form below or contact us directly">املأ النموذج أدناه أو تواصل معنا مباشرة</p>
-            
-            <form action="https://formspree.io/f/meaovrjb" method="POST" class="space-y-4">
-                <div>
-                    <label class="block text-gray-700 font-bold mb-2" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
-                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
-                </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-2" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
-                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
-                </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-2" data-ar="النطاق المهتم به" data-en="Domain Interested In">النطاق المهتم به</label>
-                    <select name="domain" id="domain-select" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
-                        <option value="Fintech.ly">Fintech.ly</option>
-                        <option value="Company.ly">Company.ly</option>
-                        <option value="Protocol.ly">Protocol.ly</option>
-                        <option value="Charity.ly">Charity.ly</option>
-                        <option value="Vlog.ly">Vlog.ly</option>
-                        <option value="Downloader.ly">Downloader.ly</option>
-                        <option value="Crunch.ly">Crunch.ly</option>
-                        <option value="Bunker.ly">Bunker.ly</option>
-                        <option value="Haste.ly">Haste.ly</option>
-                        <option value="Thunder.ly">Thunder.ly</option>
-                        <option value="Cobra.ly">Cobra.ly</option>
-                        <option value="Anti.ly">Anti.ly</option>
-                        <option value="Cent.ly">Cent.ly</option>
-                        <option value="Chance.ly">Chance.ly</option>
-                        <option value="What.ly">What.ly</option>
-                        <option value="Joker.ly">Joker.ly</option>
-                        <option value="Lion.ly">Lion.ly</option>
-                        <option value="Severus.ly">Severus.ly</option>
-                        <option value="Vessel.ly">Vessel.ly</option>
-                        <option value="Twig.ly">Twig.ly</option>
-                        <option value="Sheep.ly">Sheep.ly</option>
-                        <option value="Snake.ly">Snake.ly</option>
-                        <option value="Teeth.ly">Teeth.ly</option>
-                        <option value="Crude.ly">Crude.ly</option>
-                        <option value="Still.ly">Still.ly</option>
-                        <option value="Norm.ly">Norm.ly</option>
-                        <option value="Banking.ly">Banking.ly</option>
-                        <option value="Oils.ly">Oils.ly</option>
-                        <option value="Vamos.ly">Vamos.ly</option>
-                        <option value="Dawn.ly">Dawn.ly</option>
-                        <option value="Cities.ly">Cities.ly</option>
-                        <option value="Serial.ly">Serial.ly</option>
-                        <option value="Mining.ly">Mining.ly</option>
-                        <option value="Apis.ly">Apis.ly</option>
-                        <option value="Marine.ly">Marine.ly</option>
-                        <option value="Plasma.ly">Plasma.ly</option>
-                        <option value="Superior.ly">Superior.ly</option>
-                        <option value="Dots.ly">Dots.ly</option>
-                        <option value="other" data-ar="نطاق آخر / استفسار عام" data-en="Other Domain / General Inquiry">نطاق آخر / استفسار عام</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-2" data-ar="رسالتك أو عرضك المبدئي" data-en="Your Message or Initial Offer">رسالتك أو عرضك المبدئي</label>
-                    <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-blue-800 transition shadow-lg" data-ar="إرسال الاستفسار" data-en="Send Inquiry">إرسال الاستفسار</button>
-            </form>
-
-            <div class="mt-8 pt-8 border-t border-gray-200 text-center">
-                <p class="text-gray-600 mb-2" data-ar="أو تواصل معنا مباشرة:" data-en="Or contact us directly:">أو تواصل معنا مباشرة:</p>
-                <a href="mailto:Tech.co.ly@gmail.com" class="text-blue-600 font-bold hover:underline">Tech.co.ly@gmail.com</a>
-                <span class="mx-2 text-gray-400">|</span>
-                <a href="https://wa.me/218918883918" class="text-green-600 font-bold hover:underline" dir="ltr">+218 91 888 3918</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Also Listed On -->
-    <section class="bg-blue-50 py-8 text-center border-t border-blue-100">
-        <div class="container mx-auto px-6">
-            <p class="text-gray-700 font-semibold" data-ar="جميع نطاقاتنا متوفرة أيضًا للشراء عبر منصة" data-en="All our domains are also available for purchase on">جميع نطاقاتنا متوفرة أيضًا للشراء عبر منصة</p>
-            <a href="https://atom.com" target="_blank" class="inline-block mt-2 text-blue-700 font-black text-lg hover:underline" dir="ltr">Atom.com</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <div class="container mx-auto px-6">
-            <p>&copy; 2026 digitally.ly. <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span>.</p>
-            <p class="text-sm mt-2" data-ar="نضمن نقل ملكية آمن عبر خدمات الطرف الثالث الموثوقة" data-en="We guarantee secure transfer through trusted third-party services">نضمن نقل ملكية آمن عبر خدمات الطرف الثالث الموثوقة</p>
-        </div>
-    </footer>
-
-    <script>
-        let currentLang = 'en';
-
-        function filterDomains(category) {
-            const cards = document.querySelectorAll('.domain-card');
-            let visibleCount = 0;
-            cards.forEach(card => {
-                const matches = category === 'all' || card.getAttribute('data-category') === category;
-                card.style.display = matches ? '' : 'none';
-                if (matches) visibleCount++;
-            });
-            document.getElementById('no-results-msg').classList.toggle('hidden', visibleCount > 0);
-        }
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
-            if (lang === 'en') {
-                document.body.classList.add('en');
-            } else {
-                document.body.classList.remove('en');
-            }
-
-            document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-            document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            });
-
-            localStorage.setItem('preferredLang', lang);
-        }
-
-        // Initialize — defaults to English on first visit; remembers the user's later choice
-        const savedLang = localStorage.getItem('preferredLang') || 'en';
-        setLanguage(savedLang);
-    </script>
-
+<!-- Header -->
+<header class="site-header sticky top-0 z-50">
+<div class="container mx-auto px-0 py-3 flex justify-between items-center gap-4">
+<div class="brand-mark text-2xl md:text-3xl font-black text-slate-900">Digitally<span class="text-blue-500">.ly</span></div>
+<nav class="desktop-nav hidden md:flex items-center gap-7" id="nav-menu">
+<a class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="النطاقات المتاحة" data-en="Available Domains" href="#domains">النطاقات المتاحة</a>
+<a class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="قصة .ly" data-en="The .ly Story" href="#about">قصة .ly</a>
+<a class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="لماذا نحن؟" data-en="Why Us?" href="#why">لماذا نحن؟</a>
+<a class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="المقالات" data-en="Articles" href="articles.html">المقالات</a>
+<a class="text-gray-600 hover:text-blue-600 font-semibold" data-ar="تواصل معنا" data-en="Contact Us" href="#contact">تواصل معنا</a>
+</nav>
+<div class="flex items-center gap-3"><button aria-label="Open menu" aria-expanded="false" class="mobile-menu p-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold" id="mobile-menu-btn" type="button">☰</button>
+<div class="flex bg-gray-100 rounded-lg p-1">
+<button class="lang-btn px-3 py-1 rounded-md text-sm font-bold" id="btn-ar" onclick="setLanguage('ar')">عربي</button>
+<button class="lang-btn active px-3 py-1 rounded-md text-sm font-bold" id="btn-en" onclick="setLanguage('en')">EN</button>
+</div>
+</div>
+</div>
+<div class="mobile-menu-panel" id="mobile-menu-panel"><a class="mobile-nav-link" data-ar="النطاقات المتاحة" data-en="Available Domains" href="#domains">النطاقات المتاحة</a><a class="mobile-nav-link" data-ar="قصة .ly" data-en="The .ly Story" href="#about">قصة .ly</a><a class="mobile-nav-link" data-ar="لماذا نحن؟" data-en="Why Us?" href="#why">لماذا نحن؟</a><a class="mobile-nav-link" data-ar="المقالات" data-en="Articles" href="articles.html">المقالات</a><a class="mobile-nav-link" data-ar="تواصل معنا" data-en="Contact Us" href="#contact">تواصل معنا</a></div></header>
+<!-- Hero Section -->
+<section class="hero-v2 text-white py-20 md:py-28 text-center"><p class="eyebrow text-xs md:text-sm font-black text-blue-100 mb-4" data-ar="DIGITALLY.LY • نطاقات مميزة" data-en="DIGITALLY.LY • PREMIUM .LY DOMAINS">DIGITALLY.LY • PREMIUM .LY DOMAINS</p>
+<div class="container mx-auto px-6">
+<h1 class="hero-title text-4xl md:text-6xl font-black mb-6 max-w-4xl mx-auto" data-ar="امتلك اسم النطاق الذي سيصنع علامتك التجارية" data-en="Own the Domain That Will Build Your Brand">امتلك اسم النطاق الذي سيصنع علامتك التجارية</h1>
+<p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto" data-ar="مجموعة حصرية من نطاقات .ly القصيرة، سهلة الحفظ، والمثالية للشركات الناشئة والمشاريع الطموحة" data-en="An exclusive collection of short, memorable .ly domains — perfect for startups and ambitious ventures">مجموعة حصرية من نطاقات <span class="font-bold text-yellow-300">.ly</span> القصيرة، سهلة الحفظ، والمثالية للشركات الناشئة والمشاريع الطموحة</p>
+<div class="flex justify-center gap-4 flex-wrap">
+<a class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg" data-ar="تصفح النطاقات" data-en="Browse Domains" href="#domains">تصفح النطاقات</a>
+<a class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition" data-ar="راسلنا عبر الإيميل" data-en="Email Us" href="mailto:Tech.co.ly@gmail.com">راسلنا عبر الإيميل</a>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 max-w-xl mx-auto mt-10 relative z-10"><div class="stat-card rounded-2xl p-3 md:p-4"><div class="text-xl md:text-2xl font-black">38</div><div class="text-[10px] md:text-xs text-blue-100 font-bold" data-ar="نطاقًا" data-en="Domains">Domains</div></div><div class="stat-card rounded-2xl p-3 md:p-4"><div class="text-xl md:text-2xl font-black">.LY</div><div class="text-[10px] md:text-xs text-blue-100 font-bold" data-ar=".ly" data-en=".ly">.ly</div></div><div class="stat-card rounded-2xl p-3 md:p-4"><div class="text-xl md:text-2xl font-black">24/7</div><div class="text-[10px] md:text-xs text-blue-100 font-bold" data-ar="استفسارات" data-en="Inquiries">Inquiries</div></div></div></section>
+<!-- About .ly Section: story, bit.ly / musical.ly, famous .ly domains, advantages -->
+<section class="py-14 md:py-18 bg-slate-50" id="featured"><div class="container mx-auto px-0"><div class="section-kicker text-center mb-2" data-ar="مختارات Digitally.ly" data-en="DIGITALLY.LY PICKS">DIGITALLY.LY PICKS</div><h2 class="section-title text-3xl md:text-4xl font-black text-center mb-3" data-ar="نطاقات مميزة لعلامات قوية" data-en="Featured domains for strong brands">Featured domains for strong brands</h2><p class="text-center text-slate-500 max-w-2xl mx-auto mb-8" data-ar="مجموعة مختارة من أقوى الأسماء الموجودة حاليًا في المحفظة." data-en="A curated selection of standout names currently in the portfolio.">A curated selection of standout names currently in the portfolio.</p><div class="feature-grid grid grid-cols-2 md:grid-cols-4 gap-4"><a class="feature-card rounded-2xl p-5" href="#domain-fintech"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Fintech.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-banking"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Banking.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-dots"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Dots.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-vessel"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Vessel.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-marine"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Marine.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-mining"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Mining.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-plasma"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Plasma.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a><a class="feature-card rounded-2xl p-5" href="#domain-superior"><span class="text-[11px] font-black text-blue-600 uppercase">.LY DOMAIN</span><div class="text-xl md:text-2xl font-black text-slate-900 mt-2">Superior.ly</div><div class="text-xs font-bold text-slate-500 mt-3" data-ar="عرض النطاق ←" data-en="View domain →">View domain →</div></a></div></div></section><section class="py-16 bg-white" id="about">
+<div class="container mx-auto px-6 max-w-5xl">
+<div class="text-center mb-12">
+<span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4" data-ar="تعرّف على الامتداد" data-en="Know the Extension">تعرّف على الامتداد</span>
+<h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4" data-ar="لماذا نطاقات .ly؟ القصة وراء أشهر اختصار في تاريخ الإنترنت" data-en="Why .ly Domains? The Story Behind the Internet's Most Famous Domain Hack">لماذا نطاقات .ly؟ القصة وراء أشهر اختصار في تاريخ الإنترنت</h2>
+<p class="text-gray-600 max-w-3xl mx-auto leading-relaxed" data-ar="امتداد .ly هو الرمز الرسمي لدولة ليبيا على الإنترنت، لكنه تحوّل على مدى العقدين الماضيين إلى واحد من أشهر «اختصارات النطاقات» (Domain Hacks) في العالم. فكرة الاختصار بسيطة: نهاية «-ly» هي لاحقة إنجليزية شائعة (مثل quickly أو easily)، فحين تُدمج مع امتداد .ly تتحول أي كلمة عادية إلى اسم نطاق كامل قصير وسهل الحفظ، دون الحاجة لدفع ثمن نطاق .com المكلف." data-en="The .ly extension is Libya's official country-code domain, but over the past two decades it has become one of the world's best-known 'domain hacks.' The idea is simple: '-ly' is a common English suffix (as in quickly or easily), so pairing it with the .ly extension turns an ordinary word into a short, memorable, complete domain name, without paying for an expensive .com equivalent.">امتداد .ly هو الرمز الرسمي لدولة ليبيا على الإنترنت، لكنه تحوّل على مدى العقدين الماضيين إلى واحد من أشهر «اختصارات النطاقات» (Domain Hacks) في العالم. فكرة الاختصار بسيطة: نهاية «-ly» هي لاحقة إنجليزية شائعة (مثل quickly أو easily)، فحين تُدمج مع امتداد .ly تتحول أي كلمة عادية إلى اسم نطاق كامل قصير وسهل الحفظ، دون الحاجة لدفع ثمن نطاق .com المكلف.</p>
+</div>
+<!-- bit.ly & musical.ly stories -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+<div class="text-3xl mb-3">🔗</div>
+<h3 class="text-xl font-black text-gray-900 mb-2">bit.ly</h3>
+<p class="text-gray-600 text-sm leading-relaxed" data-ar="في عام 2008 أطلقت شركة Bitly خدمة اختصار الروابط الأشهر في العالم على نطاق bit.ly. سرعان ما أصبح الاسم مرادفًا لفكرة «تقصير الرابط» نفسها، واستخدمته منصات عملاقة مثل تويتر (X) وملايين المسوّقين حول العالم يوميًا، مما أثبت أن نطاقًا ليبيًا بسيطًا يمكنه حمل حركة مرور عالمية بمليارات النقرات." data-en="In 2008, Bitly launched the world's most recognized link-shortening service on the domain bit.ly. The name quickly became synonymous with the very idea of 'shortening a link,' and was adopted by platforms like Twitter (X) and millions of marketers worldwide, proving that a simple Libyan domain could carry billions of clicks of truly global traffic.">في عام 2008 أطلقت شركة Bitly خدمة اختصار الروابط الأشهر في العالم على نطاق bit.ly. سرعان ما أصبح الاسم مرادفًا لفكرة «تقصير الرابط» نفسها، واستخدمته منصات عملاقة مثل تويتر (X) وملايين المسوّقين حول العالم يوميًا، مما أثبت أن نطاقًا ليبيًا بسيطًا يمكنه حمل حركة مرور عالمية بمليارات النقرات.</p>
+</div>
+<div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+<div class="text-3xl mb-3">🎵</div>
+<h3 class="text-xl font-black text-gray-900 mb-2">musical.ly</h3>
+<p class="text-gray-600 text-sm leading-relaxed" data-ar="قصة musical.ly ربما تكون الأشهر على الإطلاق: تطبيق صيني لمقاطع الفيديو القصيرة بُني بالكامل على نطاق .ly (مع منصة بث مباشر شقيقة باسم live.ly)، وحقق نجاحًا هائلاً بأكثر من 60 مليون مستخدم شهريًا. في نوفمبر 2017 استحوذت عملاقة التقنية الصينية ByteDance على musical.ly بصفقة تُقدَّر بنحو مليار دولار أمريكي، ثم دمجت المنصة لاحقًا في تطبيق TikTok الذي نعرفه اليوم. رسوم تسجيل نطاق .ly لا تتجاوز عادة 100 دولار سنويًا فقط، وهو ما يلخّص القيمة الهائلة التي يمكن أن يصنعها اسم نطاق ذكي." data-en="The musical.ly story may be the most famous of all: a Chinese short-video app built entirely on a .ly domain (with a sister live-streaming platform called live.ly), which grew to more than 60 million monthly users. In November 2017, Chinese tech giant ByteDance acquired musical.ly in a deal reportedly worth about $1 billion, later merging the platform into what we now know as TikTok. A .ly domain typically costs no more than about $100 a year to register, a striking illustration of how much value a smart domain name can create.">قصة musical.ly ربما تكون الأشهر على الإطلاق: تطبيق صيني لمقاطع الفيديو القصيرة بُني بالكامل على نطاق .ly (مع منصة بث مباشر شقيقة باسم live.ly)، وحقق نجاحًا هائلاً بأكثر من 60 مليون مستخدم شهريًا. في نوفمبر 2017 استحوذت عملاقة التقنية الصينية ByteDance على musical.ly بصفقة تُقدَّر بنحو مليار دولار أمريكي، ثم دمجت المنصة لاحقًا في تطبيق TikTok الذي نعرفه اليوم. رسوم تسجيل نطاق .ly لا تتجاوز عادة 100 دولار سنويًا فقط، وهو ما يلخّص القيمة الهائلة التي يمكن أن يصنعها اسم نطاق ذكي.</p>
+</div>
+</div>
+<!-- How global companies use .ly -->
+<div class="mb-12">
+<h3 class="text-2xl font-black text-gray-900 mb-6 text-center" data-ar="كيف تستخدم الشركات العالمية امتداد .ly؟" data-en="How Do Global Companies Use the .ly Extension?">كيف تستخدم الشركات العالمية امتداد .ly؟</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-blue-50 rounded-lg p-4 text-center">
+<div class="font-black text-blue-900 mb-1">bit.ly</div>
+<p class="text-xs text-gray-600" data-ar="اختصار الروابط عالميًا" data-en="Global link shortening">اختصار الروابط عالميًا</p>
+</div>
+<div class="bg-blue-50 rounded-lg p-4 text-center">
+<div class="font-black text-blue-900 mb-1">ow.ly</div>
+<p class="text-xs text-gray-600" data-ar="اختصار الروابط داخل منصة Hootsuite" data-en="Link shortening inside Hootsuite">اختصار الروابط داخل منصة Hootsuite</p>
+</div>
+<div class="bg-blue-50 rounded-lg p-4 text-center">
+<div class="font-black text-blue-900 mb-1">parse.ly</div>
+<p class="text-xs text-gray-600" data-ar="تحليلات محتوى للناشرين الكبار" data-en="Content analytics for major publishers">تحليلات محتوى للناشرين الكبار</p>
+</div>
+<div class="bg-blue-50 rounded-lg p-4 text-center">
+<div class="font-black text-blue-900 mb-1">live.ly</div>
+<p class="text-xs text-gray-600" data-ar="بث مباشر من فريق musical.ly" data-en="Live streaming from the musical.ly team">بث مباشر من فريق musical.ly</p>
+</div>
+</div>
+</div>
+<!-- Top 3 famous .ly domains -->
+<div class="mb-12">
+<h3 class="text-2xl font-black text-gray-900 mb-2 text-center" data-ar="أشهر 3 نطاقات .ly في العالم" data-en="The 3 Most Famous .ly Domains in the World">أشهر 3 نطاقات .ly في العالم</h3>
+<p class="text-gray-600 text-center max-w-2xl mx-auto mb-8 text-sm" data-ar="على عكس نطاقات .com الفاخرة، لا تُباع أغلب نطاقات .ly في مزادات علنية، بل تكتسب قيمتها من العلامات التجارية العالمية المبنية عليها. إليك أبرز 3 قصص نجاح:" data-en="Unlike premium .com domains, most .ly domains aren't traded on public auction markets — instead, they become globally valuable through the brands built on top of them. Here are the three most famous success stories:">على عكس نطاقات .com الفاخرة، لا تُباع أغلب نطاقات .ly في مزادات علنية، بل تكتسب قيمتها من العلامات التجارية العالمية المبنية عليها. إليك أبرز 3 قصص نجاح:</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-600 text-center">
+<div class="text-4xl mb-3">🥇</div>
+<h4 class="text-xl font-black text-gray-900 mb-2">musical.ly</h4>
+<p class="text-gray-600 text-sm" data-ar="استحواذ ByteDance بصفقة تُقدَّر بنحو مليار دولار (2017)، ثم اندماجها لاحقًا في TikTok" data-en="Acquired by ByteDance in a deal reportedly worth about $1 billion (2017), later merged into TikTok">استحواذ ByteDance بصفقة تُقدَّر بنحو مليار دولار (2017)، ثم اندماجها لاحقًا في TikTok</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-indigo-600 text-center">
+<div class="text-4xl mb-3">🥈</div>
+<h4 class="text-xl font-black text-gray-900 mb-2">bit.ly</h4>
+<p class="text-gray-600 text-sm" data-ar="الاسم المرادف لاختصار الروابط عالميًا، تستخدمه ملايين الشركات والمسوّقين يوميًا" data-en="The name synonymous with link-shortening worldwide, used by millions of businesses and marketers every day">الاسم المرادف لاختصار الروابط عالميًا، تستخدمه ملايين الشركات والمسوّقين يوميًا</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-600 text-center">
+<div class="text-4xl mb-3">🥉</div>
+<h4 class="text-xl font-black text-gray-900 mb-2">ow.ly</h4>
+<p class="text-gray-600 text-sm" data-ar="نطاق اختصار الروابط الرسمي لمنصة Hootsuite، إحدى أكبر أدوات إدارة السوشيال ميديا عالميًا" data-en="The official link-shortening domain for Hootsuite, one of the world's leading social media management platforms">نطاق اختصار الروابط الرسمي لمنصة Hootsuite، إحدى أكبر أدوات إدارة السوشيال ميديا عالميًا</p>
+</div>
+</div>
+</div>
+<!-- Advantages of .ly -->
+<div>
+<h3 class="text-2xl font-black text-gray-900 mb-6 text-center" data-ar="مميزات امتلاك نطاق .ly" data-en="Advantages of Owning a .ly Domain">مميزات امتلاك نطاق .ly</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">✂️</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="اختصار ذكي وقصير" data-en="Smart, Short Domain Hack">اختصار ذكي وقصير</h4>
+<p class="text-sm text-gray-600" data-ar="يمكن دمجه مع أي كلمة إنجليزية تنتهي بـ -ly لصنع اسم نطاق كامل يُقرأ ككلمة واحدة" data-en="Combine it with almost any English word ending in '-ly' to create a full domain that reads as a single word">يمكن دمجه مع أي كلمة إنجليزية تنتهي بـ -ly لصنع اسم نطاق كامل يُقرأ ككلمة واحدة</p>
+</div>
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">💰</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="تكلفة أقل بكثير من .com" data-en="Far Cheaper Than Premium .com">تكلفة أقل بكثير من .com</h4>
+<p class="text-sm text-gray-600" data-ar="تحصل على اسم قصير ومميز بجزء يسير من تكلفة نطاق .com المكافئ" data-en="Get a short, distinctive name for a fraction of the cost of the equivalent .com">تحصل على اسم قصير ومميز بجزء يسير من تكلفة نطاق .com المكافئ</p>
+</div>
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">✨</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="أسماء مميزة لا تزال متاحة" data-en="Strong Names Still Available">أسماء مميزة لا تزال متاحة</h4>
+<p class="text-sm text-gray-600" data-ar="بينما امتلأت أغلب أسماء .com الجيدة، لا تزال العديد من كلمات -ly القوية متاحة للتسجيل" data-en="While most good .com names are taken, many strong '-ly' words are still available to register">بينما امتلأت أغلب أسماء .com الجيدة، لا تزال العديد من كلمات -ly القوية متاحة للتسجيل</p>
+</div>
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">🌍</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="إثبات عالمي على نطاق واسع" data-en="Proven at Global Scale">إثبات عالمي على نطاق واسع</h4>
+<p class="text-sm text-gray-600" data-ar="أثبتت قصص bit.ly وmusical.ly أن نطاق .ly قادر على دعم منصات بمليارات المستخدمين" data-en="The bit.ly and musical.ly stories prove a .ly domain can support platforms with billions of users">أثبتت قصص bit.ly وmusical.ly أن نطاق .ly قادر على دعم منصات بمليارات المستخدمين</p>
+</div>
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">🏛️</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="إدارة رسمية محدثة" data-en="Modernized Governance">إدارة رسمية محدثة</h4>
+<p class="text-sm text-gray-600" data-ar="أصبحت إدارة الامتداد على أساس قانوني أوضح بعد نقل الإشراف من IANA إلى GACI عام 2025" data-en="Oversight of the extension is now on clearer legal footing following the 2025 IANA transfer to GACI">أصبحت إدارة الامتداد على أساس قانوني أوضح بعد نقل الإشراف من IANA إلى GACI عام 2025</p>
+</div>
+<div class="p-5 bg-gray-50 rounded-lg border border-gray-200">
+<div class="text-2xl mb-2">🤝</div>
+<h4 class="font-bold text-gray-900 mb-1" data-ar="هوية مزدوجة: عالمية ومحلية" data-en="Dual Identity: Global &amp; Local">هوية مزدوجة: عالمية ومحلية</h4>
+<p class="text-sm text-gray-600" data-ar="مثالي لعلامة تجارية عالمية بأسلوب -ly، وفي الوقت نفسه هوية رقمية أصيلة للسوق الليبي والمحلي" data-en="Ideal for a global '-ly' style brand, while also serving as an authentic digital identity for the Libyan and regional market">مثالي لعلامة تجارية عالمية بأسلوب -ly، وفي الوقت نفسه هوية رقمية أصيلة للسوق الليبي والمحلي</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Domains Grid -->
+<section class="py-16 container mx-auto px-6" id="domains">
+<div class="flex justify-center mb-6">
+<a class="inline-flex items-center gap-2 bg-blue-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-800 transition shadow" href="articles.html">
+<span>📰</span>
+<span data-ar="تصفّح المقالات" data-en="Browse Articles">تصفّح المقالات</span>
+</a>
+</div>
+<div class="section-kicker text-center mb-2" data-ar="المحفظة" data-en="THE PORTFOLIO">THE PORTFOLIO</div><h2 class="section-title text-3xl md:text-4xl font-black text-center text-gray-900 mb-3" data-ar="جميع النطاقات المتاحة للاستثمار" data-en="All Available Domains for Investment">جميع النطاقات المتاحة للاستثمار</h2><p class="text-center text-slate-500 max-w-2xl mx-auto mb-8" data-ar="ابحث في كامل المحفظة أو صفِّ النطاقات حسب المجال." data-en="Search the full portfolio or filter domains by category.">Search the full portfolio or filter domains by category.</p>
+<div class="domain-toolbar max-w-5xl mx-auto mb-10"><div class="mb-4"><input class="w-full px-4 rounded-xl border border-slate-200 bg-white outline-none focus:ring-2 focus:ring-blue-200" data-ar-placeholder="ابحث عن اسم النطاق..." data-en-placeholder="Search domain name..." id="domain-search" placeholder="Search domain name..." type="search"/></div><div class="filter-wrap flex gap-2 pb-2 mb-4"><button class="filter-chip" data-ar="جميع الأقسام" data-category="all" data-en="All Categories" type="button">All Categories</button><button class="filter-chip" data-ar="مالي" data-category="finance" data-en="Finance" type="button">Finance</button><button class="filter-chip" data-ar="أعمال" data-category="business" data-en="Business" type="button">Business</button><button class="filter-chip" data-ar="تقني" data-category="tech" data-en="Tech" type="button">Tech</button><button class="filter-chip" data-ar="خيري" data-category="charity" data-en="Charity" type="button">Charity</button><button class="filter-chip" data-ar="إعلام" data-category="media" data-en="Media" type="button">Media</button><button class="filter-chip" data-ar="أداة" data-category="tool" data-en="Tool" type="button">Tool</button><button class="filter-chip" data-ar="بيانات" data-category="data" data-en="Data" type="button">Data</button><button class="filter-chip" data-ar="أمان" data-category="security" data-en="Security" type="button">Security</button><button class="filter-chip" data-ar="سرعة" data-category="speed" data-en="Speed" type="button">Speed</button><button class="filter-chip" data-ar="طاقة / قوة" data-category="power" data-en="Power" type="button">Power</button><button class="filter-chip" data-ar="علامة" data-category="brand" data-en="Brand" type="button">Brand</button><button class="filter-chip" data-ar="حماية" data-category="protection" data-en="Protection" type="button">Protection</button><button class="filter-chip" data-ar="فرص" data-category="opportunity" data-en="Opportunity" type="button">Opportunity</button><button class="filter-chip" data-ar="بحث" data-category="search" data-en="Search" type="button">Search</button><button class="filter-chip" data-ar="ترفيه" data-category="entertainment" data-en="Entertainment" type="button">Entertainment</button><button class="filter-chip" data-ar="فاخر" data-category="luxury" data-en="Luxury" type="button">Luxury</button><button class="filter-chip" data-ar="لوجستي" data-category="logistics" data-en="Logistics" type="button">Logistics</button><button class="filter-chip" data-ar="طبيعة" data-category="nature" data-en="Nature" type="button">Nature</button><button class="filter-chip" data-ar="مزرعة" data-category="farm" data-en="Farm" type="button">Farm</button><button class="filter-chip" data-ar="لعبة" data-category="game" data-en="Game" type="button">Game</button><button class="filter-chip" data-ar="صحة" data-category="health" data-en="Health" type="button">Health</button><button class="filter-chip" data-ar="نفط" data-category="oil" data-en="Oil" type="button">Oil</button><button class="filter-chip" data-ar="تأمل" data-category="meditation" data-en="Meditation" type="button">Meditation</button><button class="filter-chip" data-ar="معايير" data-category="standards" data-en="Standards" type="button">Standards</button><button class="filter-chip" data-ar="رياضة" data-category="sports" data-en="Sports" type="button">Sports</button><button class="filter-chip" data-ar="عافية" data-category="wellness" data-en="Wellness" type="button">Wellness</button><button class="filter-chip" data-ar="عمراني" data-category="urban" data-en="Urban" type="button">Urban</button><button class="filter-chip" data-ar="تعدين" data-category="mining" data-en="Mining" type="button">Mining</button><button class="filter-chip" data-ar="بحري" data-category="marine" data-en="Marine" type="button">Marine</button><button class="filter-chip" data-ar="طاقة (كهربائية)" data-category="energy" data-en="Energy" type="button">Energy</button><button class="filter-chip" data-ar="فاخر (Premium)" data-category="premium" data-en="Premium" type="button">Premium</button><button class="filter-chip" data-ar="تصميم" data-category="design" data-en="Design" type="button">Design</button></div>
+<div class="w-full max-w-xs">
+<label class="block text-center text-gray-600 text-sm font-bold mb-2" data-ar="تصفية حسب القسم" data-en="Filter by Category" for="category-filter">تصفية حسب القسم</label>
+<select class="sr-only" id="category-filter" onchange="filterDomains(this.value)">
+<option data-ar="جميع الأقسام" data-en="All Categories" value="all">جميع الأقسام</option>
+<option data-ar="مالي" data-en="Finance" value="finance">مالي</option>
+<option data-ar="أعمال" data-en="Business" value="business">أعمال</option>
+<option data-ar="تقني" data-en="Tech" value="tech">تقني</option>
+<option data-ar="خيري" data-en="Charity" value="charity">خيري</option>
+<option data-ar="إعلام" data-en="Media" value="media">إعلام</option>
+<option data-ar="أداة" data-en="Tool" value="tool">أداة</option>
+<option data-ar="بيانات" data-en="Data" value="data">بيانات</option>
+<option data-ar="أمان" data-en="Security" value="security">أمان</option>
+<option data-ar="سرعة" data-en="Speed" value="speed">سرعة</option>
+<option data-ar="طاقة / قوة" data-en="Power" value="power">طاقة / قوة</option>
+<option data-ar="علامة" data-en="Brand" value="brand">علامة</option>
+<option data-ar="حماية" data-en="Protection" value="protection">حماية</option>
+<option data-ar="فرص" data-en="Opportunity" value="opportunity">فرص</option>
+<option data-ar="بحث" data-en="Search" value="search">بحث</option>
+<option data-ar="ترفيه" data-en="Entertainment" value="entertainment">ترفيه</option>
+<option data-ar="فاخر" data-en="Luxury" value="luxury">فاخر</option>
+<option data-ar="لوجستي" data-en="Logistics" value="logistics">لوجستي</option>
+<option data-ar="طبيعة" data-en="Nature" value="nature">طبيعة</option>
+<option data-ar="مزرعة" data-en="Farm" value="farm">مزرعة</option>
+<option data-ar="لعبة" data-en="Game" value="game">لعبة</option>
+<option data-ar="صحة" data-en="Health" value="health">صحة</option>
+<option data-ar="نفط" data-en="Oil" value="oil">نفط</option>
+<option data-ar="تأمل" data-en="Meditation" value="meditation">تأمل</option>
+<option data-ar="معايير" data-en="Standards" value="standards">معايير</option>
+<option data-ar="رياضة" data-en="Sports" value="sports">رياضة</option>
+<option data-ar="عافية" data-en="Wellness" value="wellness">عافية</option>
+<option data-ar="عمراني" data-en="Urban" value="urban">عمراني</option>
+<option data-ar="تعدين" data-en="Mining" value="mining">تعدين</option>
+<option data-ar="بحري" data-en="Marine" value="marine">بحري</option>
+<option data-ar="طاقة (كهربائية)" data-en="Energy" value="energy">طاقة (كهربائية)</option>
+<option data-ar="فاخر (Premium)" data-en="Premium" value="premium">فاخر (Premium)</option>
+<option data-ar="تصميم" data-en="Design" value="design">تصميم</option>
+</select>
+<p class="hidden text-center text-gray-500 text-sm mt-4" data-ar="لا توجد نطاقات في هذا القسم حاليًا" data-en="No domains in this category right now" id="no-results-msg">لا توجد نطاقات في هذا القسم حاليًا</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
+<!-- Fintech.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-600 domain-card" data-category="finance" id="domain-fintech">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Fintech.ly</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة التكنولوجيا المالية، أخبار Fintech، أو دليل الشركات المالية الناشئة" data-en="Fintech platform, financial news, or startup directory">منصة التكنولوجيا المالية، أخبار Fintech، أو دليل الشركات المالية الناشئة</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Fintech.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Company.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-600 domain-card" data-category="business" id="domain-company">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Company.ly</h3>
+<span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أعمال" data-en="Business">أعمال</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="دليل الشركات، منصة B2B، أو أداة إدارة الأعمال" data-en="Company directory, B2B platform, or business tool">دليل الشركات، منصة B2B، أو أداة إدارة الأعمال</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Company.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Protocol.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech" id="domain-protocol">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Protocol.ly</h3>
+<span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="توثيق APIs، إدارة بروتوكولات الشبكات، أو منصة blockchain" data-en="API documentation, network protocols, or blockchain platform">توثيق APIs، إدارة بروتوكولات الشبكات، أو منصة blockchain</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Protocol.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Charity.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-600 domain-card" data-category="charity" id="domain-charity">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Charity.ly</h3>
+<span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="خيري" data-en="Charity">خيري</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة تبرعات شفافة، دليل الجمعيات الخيرية" data-en="Transparent donation platform, charity directory">منصة تبرعات شفافة، دليل الجمعيات الخيرية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Charity.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Vlog.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-600 domain-card" data-category="media" id="domain-vlog">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Vlog.ly</h3>
+<span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="إعلام" data-en="Media">إعلام</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة فيديوهات Vlog، أداة تحليل يوتيوب" data-en="Vlog platform, YouTube analytics tool">منصة فيديوهات Vlog، أداة تحليل يوتيوب</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vlog.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Downloader.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-600 domain-card" data-category="tool" id="domain-downloader">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Downloader.ly</h3>
+<span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أداة" data-en="Tool">أداة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="أداة تحميل ملفات/فيديوهات، مدير التحميلات" data-en="File/video downloader, download manager">أداة تحميل ملفات/فيديوهات، مدير التحميلات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Downloader.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Crunch.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-600 domain-card" data-category="data" id="domain-crunch">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Crunch.ly</h3>
+<span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بيانات" data-en="Data">بيانات</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="أداة ضغط ملفات، منصة أخبار تقنية" data-en="File compression tool, tech news platform">أداة ضغط ملفات، منصة أخبار تقنية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Crunch.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Bunker.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-gray-700 domain-card" data-category="security" id="domain-bunker">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Bunker.ly</h3>
+<span class="bg-gray-200 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="أمان" data-en="Security">أمان</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="استضافة آمنة، تخزين مشفر، حماية البيانات" data-en="Secure hosting, encrypted storage, data protection">استضافة آمنة، تخزين مشفر، حماية البيانات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Bunker.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Haste.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-600 domain-card" data-category="speed" id="domain-haste">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Haste.ly</h3>
+<span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="سرعة" data-en="Speed">سرعة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تسريع المواقع، توصيل سريع، تحسين الأداء" data-en="Website acceleration, fast delivery, performance">تسريع المواقع، توصيل سريع، تحسين الأداء</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Haste.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Thunder.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-500 domain-card" data-category="power" id="domain-thunder">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Thunder.ly</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Power">طاقة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="ألعاب سحابية، بريد جماعي سريع" data-en="Cloud gaming, fast bulk email">ألعاب سحابية، بريد جماعي سريع</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Thunder.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Cobra.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-700 domain-card" data-category="brand" id="domain-cobra">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Cobra.ly</h3>
+<span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="علامة" data-en="Brand">علامة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="أمن سيبراني، أحذية رياضية، علامة تجارية قوية" data-en="Cybersecurity, sports shoes, strong brand">أمن سيبراني، أحذية رياضية، علامة تجارية قوية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cobra.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Anti.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-600 domain-card" data-category="protection" id="domain-anti">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Anti.ly</h3>
+<span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="حماية" data-en="Protection">حماية</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="مكافحة الفيروسات، حظر الإعلانات" data-en="Antivirus, ad blocking">مكافحة الفيروسات، حظر الإعلانات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Anti.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Cent.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-emerald-600 domain-card" data-category="finance" id="domain-cent">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Cent.ly</h3>
+<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="إدارة المصروفات، Micro-investing" data-en="Expense management, micro-investing">إدارة المصروفات، Micro-investing</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cent.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Chance.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-teal-600 domain-card" data-category="opportunity" id="domain-chance">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Chance.ly</h3>
+<span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فرص" data-en="Opportunity">فرص</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="يانصيب خيرية، تحليل احتمالات" data-en="Charity lottery, probability analysis">يانصيب خيرية، تحليل احتمالات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Chance.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- What.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-violet-600 domain-card" data-category="search" id="domain-what">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">What.ly</h3>
+<span class="bg-violet-100 text-violet-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحث" data-en="Search">بحث</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="محرك بحث ذكي AI، أسئلة وأجوبة" data-en="AI search engine, Q&amp;A platform">محرك بحث ذكي AI، أسئلة وأجوبة</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20What.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Joker.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-600 domain-card" data-category="entertainment" id="domain-joker">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Joker.ly</h3>
+<span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="ألعاب ترفيهية، تطبيق نكت، محتوى فكاهي" data-en="Fun games, jokes app, comedy content">ألعاب ترفيهية، تطبيق نكت، محتوى فكاهي</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Joker.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Lion.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-600 domain-card" data-category="power" id="domain-lion">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Lion.ly</h3>
+<span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="قوة" data-en="Power">قوة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منتجات فاخرة، ريادة أعمال" data-en="Luxury products, entrepreneurship">منتجات فاخرة، ريادة أعمال</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Lion.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Severus.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-purple-800 domain-card" data-category="luxury" id="domain-severus">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Severus.ly</h3>
+<span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Luxury">فاخر</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="عطور فاخرة، استوديو تصميم" data-en="Luxury perfumes, design studio">عطور فاخرة، استوديو تصميم</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Severus.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Vessel.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-600 domain-card" data-category="logistics" id="domain-vessel">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Vessel.ly</h3>
+<span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لوجستي" data-en="Logistics">لوجستي</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="شحن ولوجستيات، نقل بحري" data-en="Shipping, logistics, maritime transport">شحن ولوجستيات، نقل بحري</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vessel.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Twig.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-lime-600 domain-card" data-category="nature" id="domain-twig">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Twig.ly</h3>
+<span class="bg-lime-100 text-lime-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طبيعة" data-en="Nature">طبيعة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="أزياء مستدامة، محتوى عن الطبيعة" data-en="Sustainable fashion, nature content">أزياء مستدامة، محتوى عن الطبيعة</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Twig.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Sheep.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-sky-400 domain-card" data-category="farm" id="domain-sheep">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Sheep.ly</h3>
+<span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مزرعة" data-en="Farm">مزرعة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تطبيق تأمل/نوم، إدارة قطعان" data-en="Meditation/sleep app, herd management">تطبيق تأمل/نوم، إدارة قطعان</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Sheep.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Snake.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-green-700 domain-card" data-category="game" id="domain-snake">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Snake.ly</h3>
+<span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="لعبة" data-en="Game">لعبة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="لعبة موبايل، تعليم برمجة Python" data-en="Mobile game, Python programming education">لعبة موبايل، تعليم برمجة Python</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Snake.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Teeth.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-white domain-card" data-category="health" id="domain-teeth">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Teeth.ly</h3>
+<span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="صحة" data-en="Health">صحة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="عيادة أسنان افتراضية، حجز مواعيد" data-en="Virtual dental clinic, appointment booking">عيادة أسنان افتراضية، حجز مواعيد</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Teeth.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Crude.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-stone-700 domain-card" data-category="oil" id="domain-crude">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Crude.ly</h3>
+<span class="bg-stone-200 text-stone-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تحليل أسعار النفط، محتوى صناعي" data-en="Oil price analysis, industrial content">تحليل أسعار النفط، محتوى صناعي</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Crude.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Still.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-400 domain-card" data-category="meditation" id="domain-still">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Still.ly</h3>
+<span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تأمل" data-en="Meditation">تأمل</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تأمل وMindfulness، تصوير فوتوغرافي" data-en="Meditation &amp; mindfulness, photography">تأمل وMindfulness، تصوير فوتوغرافي</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Still.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Norm.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-400 domain-card" data-category="standards" id="domain-norm">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Norm.ly</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="معايير" data-en="Standards">معايير</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="معايير ومقارنات المنتجات" data-en="Product standards and comparisons">معايير ومقارنات المنتجات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Norm.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Banking.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-blue-700 domain-card" data-category="finance" id="domain-banking">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Banking.ly</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="مالي" data-en="Finance">مالي</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة خدمات مصرفية رقمية، تطبيق بنكي، أو دليل مقارنة بنوك" data-en="Digital banking platform, neobank app, or bank comparison directory">منصة خدمات مصرفية رقمية، تطبيق بنكي، أو دليل مقارنة بنوك</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Banking.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Oils.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-amber-700 domain-card" data-category="oil" id="domain-oils">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Oils.ly</h3>
+<span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="نفط" data-en="Oil">نفط</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تجارة الزيوت والنفط، منتجات الزيوت العطرية، أو منصة صناعية للطاقة" data-en="Oil and petroleum trading, essential oils products, or an energy-industry platform">تجارة الزيوت والنفط، منتجات الزيوت العطرية، أو منصة صناعية للطاقة</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Oils.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Vamos.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-orange-500 domain-card" data-category="sports" id="domain-vamos">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Vamos.ly</h3>
+<span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="رياضة" data-en="Sports">رياضة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="علامة رياضية تحفيزية، منصة حجوزات سفر ومغامرات، أو تطبيق لياقة بدنية" data-en="A motivational sports brand, a travel &amp; adventure booking platform, or a fitness app">علامة رياضية تحفيزية، منصة حجوزات سفر ومغامرات، أو تطبيق لياقة بدنية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Vamos.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Dawn.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-rose-400 domain-card" data-category="wellness" id="domain-dawn">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Dawn.ly</h3>
+<span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عافية" data-en="Wellness">عافية</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="تطبيق روتين صباحي وعادات صحية، منصة تصوير الفجر، أو علامة تجارية لـ«بداية جديدة»" data-en="A morning-routine &amp; healthy-habits app, a sunrise photography platform, or a 'fresh start' brand">تطبيق روتين صباحي وعادات صحية، منصة تصوير الفجر، أو علامة تجارية لـ«بداية جديدة»</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Dawn.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Cities.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-slate-500 domain-card" data-category="urban" id="domain-cities">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Cities.ly</h3>
+<span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="عمراني" data-en="Urban">عمراني</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="دليل المدن والمدن الذكية، منصة استكشاف وجهات سياحية، أو أداة تحليل بيانات حضرية" data-en="A city &amp; smart-city directory, a destination-discovery platform, or an urban data-analytics tool">دليل المدن والمدن الذكية، منصة استكشاف وجهات سياحية، أو أداة تحليل بيانات حضرية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Cities.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Serial.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-red-500 domain-card" data-category="entertainment" id="domain-serial">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Serial.ly</h3>
+<span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="ترفيه" data-en="Entertainment">ترفيه</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة مسلسلات وأفلام، تطبيق قصص متسلسلة (Serialized Fiction)، أو أداة تتبّع أرقام تسلسلية للمنتجات" data-en="A TV series &amp; movies platform, a serialized-fiction reading app, or a product serial-number tracking tool">منصة مسلسلات وأفلام، تطبيق قصص متسلسلة (Serialized Fiction)، أو أداة تتبّع أرقام تسلسلية للمنتجات</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Serial.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Mining.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-zinc-600 domain-card" data-category="mining" id="domain-mining">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Mining.ly</h3>
+<span class="bg-zinc-200 text-zinc-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تعدين" data-en="Mining">تعدين</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة تعدين عملات رقمية، شركة تعدين معادن، أو محتوى عن صناعة التعدين" data-en="A crypto-mining platform, a minerals &amp; mining company, or industry content about the mining sector">منصة تعدين عملات رقمية، شركة تعدين معادن، أو محتوى عن صناعة التعدين</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Mining.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Apis.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-indigo-600 domain-card" data-category="tech" id="domain-apis">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Apis.ly</h3>
+<span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تقني" data-en="Tech">تقني</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="سوق أو توثيق APIs للمطورين، منصة تكامل بيانات، أو أداة إدارة واجهات برمجية" data-en="An API marketplace or developer documentation hub, a data-integration platform, or an API management tool">سوق أو توثيق APIs للمطورين، منصة تكامل بيانات، أو أداة إدارة واجهات برمجية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Apis.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Marine.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-cyan-700 domain-card" data-category="marine" id="domain-marine">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Marine.ly</h3>
+<span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="بحري" data-en="Marine">بحري</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="خدمات بحرية ونقل بحري، منصة حجز يخوت وقوارب، أو محتوى عن الحياة البحرية" data-en="Maritime &amp; shipping services, a yacht/boat booking platform, or marine-life content">خدمات بحرية ونقل بحري، منصة حجز يخوت وقوارب، أو محتوى عن الحياة البحرية</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Marine.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Plasma.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-fuchsia-600 domain-card" data-category="energy" id="domain-plasma">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Plasma.ly</h3>
+<span class="bg-fuchsia-100 text-fuchsia-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="طاقة" data-en="Energy">طاقة</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="شركة تقنية طاقة أو بلازما، مصنّع شاشات وإلكترونيات، أو محتوى علمي متخصص" data-en="A plasma/energy technology company, a display &amp; electronics manufacturer, or specialized science content">شركة تقنية طاقة أو بلازما، مصنّع شاشات وإلكترونيات، أو محتوى علمي متخصص</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Plasma.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Superior.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-yellow-700 domain-card" data-category="premium" id="domain-superior">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Superior.ly</h3>
+<span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="فاخر" data-en="Premium">فاخر</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة" data-en="A premium luxury brand, a product-quality ranking &amp; comparison platform, or a top-tier consultancy">علامة تجارية فاخرة، منصة تصنيفات ومقارنة جودة المنتجات، أو شركة استشارات متميزة</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Superior.ly" target="_blank">استفسر الآن</a>
+</div>
+<!-- Dots.ly -->
+<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 border-t-4 border-pink-500 domain-card" data-category="design" id="domain-dots">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black text-gray-900">Dots.ly</h3>
+<span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full" data-ar="تصميم" data-en="Design">تصميم</span>
+</div>
+<p class="text-gray-600 mb-4 text-sm" data-ar="منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»" data-en="An interactive UI/UX design platform, a data-points &amp; connections analytics tool, or a creative 'connect the dots' brand">منصة تصميم UI/UX تفاعلي، أداة تحليل بيانات ونقاط اتصال، أو علامة إبداعية بفكرة «ربط النقاط»</p>
+<a class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-bold hover:bg-green-600 transition" data-ar="استفسر الآن" data-en="Inquire Now" href="https://wa.me/218918883918?text=مرحباً،%20أنا%20مهتم%20بنطاق%20Dots.ly" target="_blank">استفسر الآن</a>
+</div>
+</div>
+</section>
+<!-- Why Buy Section -->
+<section class="py-14 md:py-18 bg-white" id="how"><div class="container mx-auto px-0"><div class="section-kicker text-center mb-2" data-ar="ببساطة" data-en="HOW IT WORKS">HOW IT WORKS</div><h2 class="section-title text-3xl md:text-4xl font-black text-center mb-10" data-ar="من اختيار النطاق إلى التواصل" data-en="From discovery to contact">From discovery to contact</h2><div class="grid grid-cols-1 md:grid-cols-4 gap-4"><div class="how-card"><div class="step-num mb-4">1</div><h3 class="font-black text-lg mb-2" data-ar="اختر النطاق" data-en="Choose a domain">Choose a domain</h3></div><div class="how-card"><div class="step-num mb-4">2</div><h3 class="font-black text-lg mb-2" data-ar="أرسل استفسارك" data-en="Send your inquiry">Send your inquiry</h3></div><div class="how-card"><div class="step-num mb-4">3</div><h3 class="font-black text-lg mb-2" data-ar="تفاوض على الشروط" data-en="Discuss the terms">Discuss the terms</h3></div><div class="how-card"><div class="step-num mb-4">4</div><h3 class="font-black text-lg mb-2" data-ar="أكمل عملية النقل" data-en="Complete the transfer">Complete the transfer</h3></div></div></div></section><section class="py-14 md:py-18 bg-slate-50" id="why">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl font-black text-gray-900 mb-12" data-ar="لماذا تشتري من digitally.ly؟" data-en="Why Buy from digitally.ly?">لماذا تشتري من digitally.ly؟</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-6">
+<div class="text-4xl mb-4">🔒</div>
+<h3 class="text-xl font-bold mb-2" data-ar="نقل آمن ومضمون" data-en="Secure &amp; Guaranteed Transfer">نقل آمن ومضمون</h3>
+<p class="text-gray-600" data-ar="نستخدم خدمات الضمان المعتمدة (مثل Escrow.com) لضمان نقل ملكية النطاق بأمان كامل" data-en="We use trusted escrow services (like Escrow.com) to ensure safe domain transfer">نستخدم خدمات الضمان المعتمدة (مثل Escrow.com) لضمان نقل ملكية النطاق بأمان كامل</p>
+</div>
+<div class="p-6">
+<div class="text-4xl mb-4">💎</div>
+<h3 class="text-xl font-bold mb-2" data-ar="نطاقات مختارة بعناية" data-en="Carefully Selected Domains">نطاقات مختارة بعناية</h3>
+<p class="text-gray-600" data-ar="جميع النطاقات قصيرة، سهلة النطق، ولها قيمة علامة تجارية عالية" data-en="All domains are short, easy to pronounce, and have high brand value">جميع النطاقات قصيرة، سهلة النطق، ولها قيمة علامة تجارية عالية</p>
+</div>
+<div class="p-6">
+<div class="text-4xl mb-4">🤝</div>
+<h3 class="text-xl font-bold mb-2" data-ar="تفاوض مرن" data-en="Flexible Negotiation">تفاوض مرن</h3>
+<p class="text-gray-600" data-ar="نحن منفتحون على العروض المعقولة وخيارات الدفع المرنة" data-en="We're open to reasonable offers and flexible payment options">نحن منفتحون على العروض المعقولة وخيارات الدفع المرنة</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-14 md:py-20 container mx-auto px-0" id="contact">
+<div class="bg-white rounded-2xl shadow-xl p-8">
+<h2 class="text-3xl font-black text-center text-gray-900 mb-2" data-ar="هل وجدت النطاق المثالي؟" data-en="Found Your Perfect Domain?">هل وجدت النطاق المثالي؟</h2>
+<p class="text-center text-gray-600 mb-8" data-ar="املأ النموذج أدناه أو تواصل معنا مباشرة" data-en="Fill the form below or contact us directly">املأ النموذج أدناه أو تواصل معنا مباشرة</p>
+<form action="https://formspree.io/f/meaovrjb" class="space-y-4" method="POST">
+<div>
+<label class="block text-gray-700 font-bold mb-2" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+<input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" name="name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-bold mb-2" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
+<input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" name="email" required="" type="email"/>
+</div>
+<div>
+<label class="block text-gray-700 font-bold mb-2" data-ar="النطاق المهتم به" data-en="Domain Interested In">النطاق المهتم به</label>
+<select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" id="domain-select" name="domain">
+<option value="Fintech.ly">Fintech.ly</option>
+<option value="Company.ly">Company.ly</option>
+<option value="Protocol.ly">Protocol.ly</option>
+<option value="Charity.ly">Charity.ly</option>
+<option value="Vlog.ly">Vlog.ly</option>
+<option value="Downloader.ly">Downloader.ly</option>
+<option value="Crunch.ly">Crunch.ly</option>
+<option value="Bunker.ly">Bunker.ly</option>
+<option value="Haste.ly">Haste.ly</option>
+<option value="Thunder.ly">Thunder.ly</option>
+<option value="Cobra.ly">Cobra.ly</option>
+<option value="Anti.ly">Anti.ly</option>
+<option value="Cent.ly">Cent.ly</option>
+<option value="Chance.ly">Chance.ly</option>
+<option value="What.ly">What.ly</option>
+<option value="Joker.ly">Joker.ly</option>
+<option value="Lion.ly">Lion.ly</option>
+<option value="Severus.ly">Severus.ly</option>
+<option value="Vessel.ly">Vessel.ly</option>
+<option value="Twig.ly">Twig.ly</option>
+<option value="Sheep.ly">Sheep.ly</option>
+<option value="Snake.ly">Snake.ly</option>
+<option value="Teeth.ly">Teeth.ly</option>
+<option value="Crude.ly">Crude.ly</option>
+<option value="Still.ly">Still.ly</option>
+<option value="Norm.ly">Norm.ly</option>
+<option value="Banking.ly">Banking.ly</option>
+<option value="Oils.ly">Oils.ly</option>
+<option value="Vamos.ly">Vamos.ly</option>
+<option value="Dawn.ly">Dawn.ly</option>
+<option value="Cities.ly">Cities.ly</option>
+<option value="Serial.ly">Serial.ly</option>
+<option value="Mining.ly">Mining.ly</option>
+<option value="Apis.ly">Apis.ly</option>
+<option value="Marine.ly">Marine.ly</option>
+<option value="Plasma.ly">Plasma.ly</option>
+<option value="Superior.ly">Superior.ly</option>
+<option value="Dots.ly">Dots.ly</option>
+<option data-ar="نطاق آخر / استفسار عام" data-en="Other Domain / General Inquiry" value="other">نطاق آخر / استفسار عام</option>
+</select>
+</div>
+<div>
+<label class="block text-gray-700 font-bold mb-2" data-ar="رسالتك أو عرضك المبدئي" data-en="Your Message or Initial Offer">رسالتك أو عرضك المبدئي</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" name="message" required="" rows="4"></textarea>
+</div>
+<button class="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-blue-800 transition shadow-lg" data-ar="إرسال الاستفسار" data-en="Send Inquiry" type="submit">إرسال الاستفسار</button>
+</form>
+<div class="mt-8 pt-8 border-t border-gray-200 text-center">
+<p class="text-gray-600 mb-2" data-ar="أو تواصل معنا مباشرة:" data-en="Or contact us directly:">أو تواصل معنا مباشرة:</p>
+<a class="text-blue-600 font-bold hover:underline" href="mailto:Tech.co.ly@gmail.com">Tech.co.ly@gmail.com</a>
+<span class="mx-2 text-gray-400">|</span>
+<a class="text-green-600 font-bold hover:underline" dir="ltr" href="https://wa.me/218918883918">+218 91 888 3918</a>
+</div>
+</div>
+</section>
+<!-- Also Listed On -->
+<section class="py-8 text-center bg-slate-50 border-t border-slate-100">
+<div class="container mx-auto px-6">
+<p class="text-gray-700 font-semibold" data-ar="جميع نطاقاتنا متوفرة أيضًا للشراء عبر منصة" data-en="All our domains are also available for purchase on">جميع نطاقاتنا متوفرة أيضًا للشراء عبر منصة</p>
+<a class="inline-block mt-2 text-blue-700 font-black text-lg hover:underline" dir="ltr" href="https://atom.com" target="_blank">Atom.com</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-400 py-10 text-center"><div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-6 text-sm font-bold"><a href="#domains">Domains</a><a href="#featured">Featured</a><a href="#about">About .ly</a><a href="#why">Why Us</a><a href="#contact">Contact</a></div>
+<div class="container mx-auto px-6">
+<p>© 2026 digitally.ly. <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span>.</p>
+<p class="text-sm mt-2" data-ar="نضمن نقل ملكية آمن عبر خدمات الطرف الثالث الموثوقة" data-en="We guarantee secure transfer through trusted third-party services">نضمن نقل ملكية آمن عبر خدمات الطرف الثالث الموثوقة</p>
+</div>
+</footer>
+<script>
+let currentLang=localStorage.getItem('preferredLang')||'en';
+let currentCategory='all';
+function filterDomains(category='all'){
+ currentCategory=category;
+ const q=(document.getElementById('domain-search')?.value||'').trim().toLowerCase();
+ let count=0;
+ document.querySelectorAll('.domain-card').forEach(card=>{
+   const ok=(category==='all'||card.dataset.category===category)&&(!q||card.textContent.toLowerCase().includes(q));
+   card.style.display=ok?'':'none'; if(ok) count++;
+ });
+ document.getElementById('no-results-msg')?.classList.toggle('hidden',count>0);
+ document.querySelectorAll('.filter-chip').forEach(b=>b.classList.toggle('active',b.dataset.category===category));
+ const select=document.getElementById('category-filter'); if(select) select.value=category;
+}
+function setLanguage(lang){
+ currentLang=lang; document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ document.body.classList.toggle('en',lang==='en');
+ document.getElementById('btn-ar')?.classList.toggle('active',lang==='ar');
+ document.getElementById('btn-en')?.classList.toggle('active',lang==='en');
+ document.querySelectorAll('[data-ar][data-en]').forEach(el=>{
+   if(el.tagName!=='OPTION') el.textContent=el.getAttribute('data-'+lang);
+ });
+ const search=document.getElementById('domain-search');
+ if(search) search.placeholder=search.getAttribute('data-'+lang+'-placeholder')||search.placeholder;
+ localStorage.setItem('preferredLang',lang);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+ document.querySelectorAll('.filter-chip').forEach(b=>b.addEventListener('click',()=>filterDomains(b.dataset.category)));
+ document.getElementById('domain-search')?.addEventListener('input',()=>filterDomains(currentCategory));
+ const mb=document.getElementById('mobile-menu-btn'), mp=document.getElementById('mobile-menu-panel');
+ mb?.addEventListener('click',()=>{
+   const isOpen=mp?.classList.toggle('open');
+   mb.setAttribute('aria-expanded',isOpen?'true':'false');
+   mb.textContent=isOpen?'×':'☰';
+ });
+ mp?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+   mp.classList.remove('open');
+   mb?.setAttribute('aria-expanded','false');
+   if(mb) mb.textContent='☰';
+ }));
+ filterDomains('all'); setLanguage(currentLang);
+});
+</script>
 </body>
 </html>
